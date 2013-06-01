@@ -1,0 +1,32 @@
+<div class="left_tile1 tile">
+</div>
+
+<div class="right_tile1 tile">
+</div>
+
+<div class="left_tile2 tile">
+</div>
+
+<div class="right_tile2 tile">
+</div>
+
+<div id="box">
+	<div id="tranparent">
+		<div id="title">Get Fat in Portugal!</div>
+	</div>
+	<%= form_tag("/search", :method => "post") do %>
+	  <%= text_field_tag(:q, nil, :id => "search", :placeholder => "Search here...") %>
+	<% end %>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+    	$('.left_tile1').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
+    	$('.right_tile1').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
+    	$('.left_tile2').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
+    	$('.right_tile2').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
+	});
+</script>
+
+
+

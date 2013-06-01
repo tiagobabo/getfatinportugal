@@ -82,4 +82,15 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def main
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @products }
+    end
+  end
+
+  def search
+    redirect_to :action => "main"
+  end
 end
