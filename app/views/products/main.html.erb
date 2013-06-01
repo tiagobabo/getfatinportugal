@@ -21,10 +21,10 @@
 
 <script type="text/javascript">
     $(function() {
-    	$('.left_tile1').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
-    	$('.right_tile1').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
-    	$('.left_tile2').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
-    	$('.right_tile2').css('background-image', 'url("http://www.acozinhar.pt/portal/receitas/files/2012/12/rissois-camarao.jpg")');
+    	$('.left_tile1').css('background-image', 'url("<%= @urls[0] %>")');
+    	$('.right_tile1').css('background-image', 'url("<%= @urls[1] %>")');
+    	$('.left_tile2').css('background-image', 'url("<%= @urls[2] %>")');
+    	$('.right_tile2').css('background-image', 'url("<%= @urls[3] %>")');
 	});
 </script>
 
