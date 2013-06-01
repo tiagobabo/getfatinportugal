@@ -36,13 +36,23 @@
 		background-image:url(subtle_white_feathers.png);
 		background-color: rgba(129, 127, 127, 0.65);
 		padding: 1% 10%;
-		opacity: 0.75;
+		opacity: 0.85;
+		-moz-box-shadow: 0 0 5px #888;
+		-webkit-box-shadow: 0 0 5px#888;
+		box-shadow: 0 0 5px #888;
 	}
 
 	#productDescription{
 		z-index: 100;
-		background-color: white;
-		padding: 1% 10%;
+		background-color: #ccc;
+		background-image:url(subtle_white_feathers.png);
+		padding: 5%;
+	}
+
+	#descriptionText{
+		font-size: 21px;
+		line-height: 30px;
+		padding: 5% 10%;
 	}
 
 }
