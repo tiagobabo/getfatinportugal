@@ -196,3 +196,18 @@ html,body {
 }
 
 iframe.fb_ltr { width:90% !important; }
+
+#logo{
+	color: rgb(241, 240, 240);
+	text-shadow: 0px 2px 3px #555;
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Lobster', cursive;
+	padding-bottom: 0;
+	padding-top: 0;
+	line-height: 70px;
+}
+
+#logo:hover{
+	color: rgb(204, 164, 164);
+}

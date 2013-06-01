@@ -1,4 +1,5 @@
 <%= javascript_include_tag "product_crowl" %>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -11,6 +12,8 @@
 <div id="imageDiv">
   <img src=<%= @product.photo %>>
 </div>
+
+<a href="http://getfatinportugal.herokuapp.com/"><div id="logo">Get Fat in Portugal!</div></a>
 
 <div id="productBody">
   <div id="productHighlights" class="row">
@@ -52,9 +55,10 @@
 
       <h1 id><%= @product.hashtag %> on Twitter</h1>
       <div id="tweets" class="large-4 columns">
-        <% url = "https://twitter.com/search?q=%23" +  @product.hashtag %>
-        <a class="twitter-timeline" href="https://twitter.com/search?q=%23pastelnata" data-widget-id="340782195151077379">Tweets about "#pastelnata"</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <% url = "https://twitter.com/search?q=%23" +  @product.hashtag[1..@product.hashtag.size-1] %>
+        <a class="twitter-timeline" href=<%=url%> data-widget-id="340725787776925696">Tweets about "<%= @product.hashtag %>"</a>
+        <script>function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+          twit(document,"script","twitter-wjs");</script>
       </div>
     </div>
   </div>

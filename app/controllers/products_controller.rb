@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @next = Product.where("id > ?", @product.id).order("id ASC").limit(1)
+    @previous = Product.where("id < ?", @product.id).order("id DESC").limit(1)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -96,4 +98,5 @@ class ProductsController < ApplicationController
   def search
     redirect_to :action => "main"
   end
+
 end
