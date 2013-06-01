@@ -5,6 +5,8 @@ subtle_white_feathers.png: subtle_white_feathers-2d529a83c2e365107ec188e066a206b
 subtle_white_feathers/index.png: subtle_white_feathers-2d529a83c2e365107ec188e066a206b3.png
 application.js: application-0a5d755407a5140720742c80ca88c526.js
 application/index.js: application-0a5d755407a5140720742c80ca88c526.js
+product_crowl.js: product_crowl-f3611be0930f37c95caf14b633e5d7de.js
+product_crowl/index.js: product_crowl-f3611be0930f37c95caf14b633e5d7de.js
 application.css: application-40521d6eaca4d08fd1fffc1398d654f7.css
 application/index.css: application-40521d6eaca4d08fd1fffc1398d654f7.css
 jquery.min.map: jquery.min-8b58c0fbf303b938d8e749262f7e50dd.map
