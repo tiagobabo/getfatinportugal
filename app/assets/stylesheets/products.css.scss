@@ -188,5 +188,11 @@ html,body {
 			box-shadow: 0 0 5px #888;
 			margin: 1%;
 		}
+
+		a:hover{
+			background: transparent;
+		}
 	}
 }
+
+iframe.fb_ltr { width:90% !important; }

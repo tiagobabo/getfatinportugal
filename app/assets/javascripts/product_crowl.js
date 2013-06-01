@@ -3,7 +3,6 @@ $(document).ready(function() {
 	hash = $("#hashtag").html();
 	hash = hash.replace('#','');
 	url = "https://api.instagram.com/v1/tags/" + hash + "/media/recent?access_token=211418731.f59def8.1196a7a0ca134b12a0a70d87a3d7de57";
-	console.log(url);
 	CallURL(url);
 });
 
@@ -24,7 +23,13 @@ function CallURL(url){
 
 function JsonpCallback(json)
 {
-	for (var i=0;i<json.data.length;i++)
+	var max = json.data.length;
+	if(json.data.length > 6){
+		max = 6;
+	}
+	console.log(max);
+
+	for (var i=0;i<max;i++)
 	{
 		var link = document.createElement('a'); // create the link
 		link.setAttribute('href', json.data[i].link); // set link path
