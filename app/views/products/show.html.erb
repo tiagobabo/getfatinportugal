@@ -1,35 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div id="imageDiv">
+  <img src=<%= @product.photo %>>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+<div id="productBody">
+  <div id="productHighlights" class="row">
+    <div class="row">
+      <div class="large-6 columns">
+        <h1><%= @product.name %></h1>
+      </div>
+      <div class="large-6 columns right">
+        <h2><%= @product.region %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <h3><%= @product.category.name %></h3>
+      </div>
+      <div class="large-4 columns centered">
+        <a href="#" class="small success button round">+</a>
+      </div>
+      <div class="large-4 columns right">
+        <h3><%= @product.hashtag %></h3>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <b>Region:</b>
-  <%= @product.region %>
-</p>
+  <div id="productDescription" class="row">
+    <div id="descriptionText" class="large-8 columns">
+      <%= @product.description %>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Photo:</b>
-  <%= @product.photo %>
-</p>
-
-<p>
-  <b>Hashtag:</b>
-  <%= @product.hashtag %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @product.category.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+      <br>
+      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
+    </div>
+    <div class="large-4 columns">
+      <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pt/maps?f=q&amp;source=s_q&amp;hl=pt-PT&amp;geocode=&amp;q=porto&amp;aq=&amp;sll=38.995438,-9.141194&amp;sspn=1.248728,2.469177&amp;ie=UTF8&amp;hq=&amp;hnear=Porto&amp;t=m&amp;z=13&amp;ll=41.156689,-8.623925&amp;output=embed"></iframe><br />
+    </div>
+  </div>
+</div>
