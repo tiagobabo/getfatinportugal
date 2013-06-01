@@ -132,7 +132,7 @@ html,body {
 	#descriptionText{
 		font-size: 21px;
 		line-height: 30px;
-		padding: 5% 10%;
+		padding: 2% 10%;
 	}
 
 }
@@ -147,5 +147,23 @@ html,body {
 
 .right{
 	text-align: right;
+}
+
+
+#social{
+	background-color: #ccc;
+	background-image:url(subtle_white_feathers.png);
+	#instaPics{
+		text-align: center;
+
+		img{
+			width: 30%;
+			border-radius: 10px;
+			-moz-box-shadow: 0 0 5px #888;
+			-webkit-box-shadow: 0 0 5px#888;
+			box-shadow: 0 0 5px #888;
+			margin: 1%;
+		}
+	}
 }
 
