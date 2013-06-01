@@ -78,8 +78,33 @@ html,body {
 
 #search {
 	left: 5%;
+	width: 95%;
 	height: 50px;
-	font-size: 20pt;
+	font-size: 15pt;
+}
+
+#link {
+	font-size: 15pt;
+	color: black;
+}
+
+.ui-menu-item img {
+	display: absolute;
+}
+
+.ui-menu .ui-menu-item a {
+	display: absolute;
+	width: 100%;
+	font-size: 15pt;
+	color: #000000;
+}
+
+#teste {
+	margin-left: 20px;
+}
+
+.ui-menu .ui-menu-item a:visited {
+	color: #000000;
 }
 
 #imageDiv{
@@ -109,7 +134,7 @@ html,body {
 	z-index: 100;
 	width: 100%;	
 	position: absolute;
-	top: 550px;
+	top: 77%;
 
 	#productHighlights{
 		z-index: 100;
@@ -149,7 +174,6 @@ html,body {
 	text-align: right;
 }
 
-
 #social{
 	background-color: #ccc;
 	background-image:url(subtle_white_feathers.png);
@@ -166,4 +190,3 @@ html,body {
 		}
 	}
 }
-
