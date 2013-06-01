@@ -1,3 +1,60 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#imageDiv{
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-height: 700px;
+	overflow: hidden;
+}
+ 
+ h1, h2, h3{
+ 	font-family: 'Lobster', cursive;
+	text-shadow: 0px 2px 3px #555;
+ }
+
+ h1, h2{
+ 	color: rgb(77, 22, 22);
+ }
+
+ h3{
+ 	color: rgb(255, 138, 0);
+ }
+
+#productBody{
+	z-index: 100;
+	width: 100%;	
+	position: absolute;
+	top: 550px;
+
+	#productHighlights{
+		z-index: 100;
+		background-image:url(subtle_white_feathers.png);
+		background-color: rgba(129, 127, 127, 0.65);
+		padding: 1% 10%;
+		opacity: 0.75;
+	}
+
+	#productDescription{
+		z-index: 100;
+		background-color: white;
+		padding: 1% 10%;
+	}
+
+}
+
+#navigation{
+	background-color: #eee;
+}
+
+.centered{
+	text-align: center;
+}
+
+.right{
+	text-align: right;
+}

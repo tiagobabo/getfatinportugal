@@ -1,35 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div id="imageDiv">
+  <img src=<%= @product.photo %>>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+<div id="productBody">
+  <div id="productHighlights" class="row">
+    <div class="row">
+      <div class="large-6 columns">
+        <h1><%= @product.name %></h1>
+      </div>
+      <div class="large-6 columns right">
+        <h2><%= @product.region %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <h3><%= @product.category.name %></h3>
+      </div>
+      <div class="large-4 columns centered">
+        <a href="#" class="small success button round">+</a>
+      </div>
+      <div class="large-4 columns right">
+        <h3><%= @product.hashtag %></h3>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <b>Region:</b>
-  <%= @product.region %>
-</p>
+  <div id="productDescription">
+    <p>
+      <%= @product.description %>
+    </p>
+  </div>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Photo:</b>
-  <%= @product.photo %>
-</p>
-
-<p>
-  <b>Hashtag:</b>
-  <%= @product.hashtag %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @product.category.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <div id="navigation">
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
