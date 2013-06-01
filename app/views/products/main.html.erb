@@ -21,10 +21,10 @@
 
 <script type="text/javascript">
     $(function() {
-    	$('.left_tile1').css('background-image', 'url("<%= @urls[2] %>")');
+    	$('.left_tile1').css('background-image', 'url("<%= @urls[3] %>")');
     	$('.right_tile1').css('background-image', 'url("<%= @urls[0] %>")');
-    	$('.left_tile2').css('background-image', 'url("<%= @urls[1] %>")');
-    	$('.right_tile2').css('background-image', 'url("<%= @urls[3] %>")');
+    	$('.left_tile2').css('background-image', 'url("<%= @urls[2] %>")');
+    	$('.right_tile2').css('background-image', 'url("<%= @urls[1] %>")');
     $( "#search" ).autocomplete({
       source: <%= @projects %>
     }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
