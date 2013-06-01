@@ -34,9 +34,7 @@ function JsonpCallback(json)
 		link.appendChild(elem)
 		document.getElementById("instaPics").appendChild(link);
 	}
-	var loading = document.getElementById("loading");
 	var polaroid = document.getElementById("instaPics");
-	polaroid.removeChild(loading);
 }
 
 function ErrorFunction(){
