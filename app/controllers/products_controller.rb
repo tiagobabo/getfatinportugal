@@ -85,6 +85,8 @@ class ProductsController < ApplicationController
 
   def main
     @urls = Category.all.map{|x| Product.where(:category_id => x.id).sample.photo}
+
+    @projects = Product.all.map{|x| {"value" => x.name, "id" => x.id, "icon" => x.photo}}.to_json.html_safe
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

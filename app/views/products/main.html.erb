@@ -14,17 +14,25 @@
 	<div id="tranparent">
 		<div id="title">Get Fat in Portugal!</div>
 	</div>
-	<%= form_tag("/search", :method => "post") do %>
-	  <%= text_field_tag(:q, nil, :id => "search", :placeholder => "Search here...") %>
-	<% end %>
+	<input id="search" />
 </div>
+
+
 
 <script type="text/javascript">
     $(function() {
-    	$('.left_tile1').css('background-image', 'url("<%= @urls[3] %>")');
+    	$('.left_tile1').css('background-image', 'url("<%= @urls[2] %>")');
     	$('.right_tile1').css('background-image', 'url("<%= @urls[0] %>")');
     	$('.left_tile2').css('background-image', 'url("<%= @urls[1] %>")');
-    	$('.right_tile2').css('background-image', 'url("<%= @urls[2] %>")');
+    	$('.right_tile2').css('background-image', 'url("<%= @urls[3] %>")');
+    $( "#search" ).autocomplete({
+      source: <%= @projects %>
+    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+        .append("<a href='products/" + item.id + "'>" + "<img style='width:40px;height:40px' src='" + item.icon + "' />" + "<span id='teste'>" + item.value + "</span></a>")
+        .appendTo( ul );
+    };
+
 	});
 </script>
 
