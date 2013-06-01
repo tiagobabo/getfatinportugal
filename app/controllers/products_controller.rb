@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    @categories = Category.all.map{|x| [x.name, x.id]}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,6 +35,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @categories = Category.all.map{|x| [x.name, x.id]}
     @product = Product.find(params[:id])
   end
 

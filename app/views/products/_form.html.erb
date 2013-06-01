@@ -32,8 +32,8 @@
     <%= f.text_field :hashtag %>
   </div>
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.label :category_id %><br />
+    <%= f.select(:category_id, options_for_select(@categories, 0)) %>
   </div>
   <div class="actions">
     <%= f.submit %>
