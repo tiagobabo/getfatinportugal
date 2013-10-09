@@ -1,8 +1,9 @@
 Getfatinportugal::Application.routes.draw do
-  resources :products
+resources :products
 
+resources :categories
 
-  resources :categories
+get 'contacts/index'
 
 
   # The priority is based upon order of creation:
