@@ -1,9 +1,9 @@
 Getfatinportugal::Application.routes.draw do
+
 resources :products
 
 resources :categories
 
-get 'contacts/index'
 
 
   # The priority is based upon order of creation:
@@ -66,4 +66,8 @@ get 'contacts/index'
   root :to => 'products#main'
 
   match 'search' => 'products#search'
+
+get 'contacts/index'
+post 'contacts/sendemail'
+
 end
