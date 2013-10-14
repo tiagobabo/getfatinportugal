@@ -12,7 +12,7 @@ email = params[:email]
 subject = params[:subject]
 message =  params[:message]
     
-    Emailer.welcome_email("sexta.feira.13@gmail.com").deliver
+    Emailer.welcome_email(email).deliver
 end
 
 end

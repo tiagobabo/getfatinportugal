@@ -52,7 +52,7 @@
         <%= @product.description %>
       </div>
       <div class="large-4 columns">
-        <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pt/maps?f=q&amp;source=s_q&amp;hl=pt-PT&amp;geocode=&amp;q=porto&amp;aq=&amp;sll=38.995438,-9.141194&amp;sspn=1.248728,2.469177&amp;ie=UTF8&amp;hq=&amp;hnear=Porto&amp;t=m&amp;z=13&amp;ll=41.156689,-8.623925&amp;output=embed"></iframe><br />
+        <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pt/maps?f=q&amp;source=s_q&amp;hl=pt-PT&amp;geocode=&amp;q=&amp;aq=&amp;sll=&amp;sspn=&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;t=m&amp;z=13&amp;ll=<%= @product.latitude %>,<%= @product.longitude %>&amp;output=embed"></iframe><br />
          <ins class="adsbygoogle products-deliciously-portugal"
      style="display:inline-block"
      data-ad-client="ca-pub-5281126661789169"
@@ -70,7 +70,14 @@
       <div id="tweets" class="large-4 columns">
         <% url = "https://twitter.com/search?q=%23" +  @product.hashtag[1..@product.hashtag.size-1] %>
         <a class="twitter-timeline" href=<%=url%> data-widget-id="340725787776925696">Tweets about "<%= @product.hashtag %>"</a>
-        <script>function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+        <script>function twit(d,s,id)
+        {
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+            js=d.createElement(s);
+            js.id=id;
+            js.src="//platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js,fjs);}}
           twit(document,"script","twitter-wjs");</script>
       </div>
     </div>
