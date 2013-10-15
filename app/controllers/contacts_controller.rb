@@ -8,11 +8,11 @@ end
 
 def sendemail
 name = params[:name]
-@email = params[:email]
+email = params[:email]
 subject = params[:subject]
 message =  params[:message]
-    
- #   Emailer.welcome_email(email).deliver
+
+Emailer.welcome_email(email).deliver
 end
 
 end
