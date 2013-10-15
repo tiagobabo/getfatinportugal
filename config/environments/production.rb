@@ -74,7 +74,7 @@ config.action_mailer.smtp_settings = {
       :port => 587,
       :domain => 'deliciouslyportugal.com',
       :user_name => "deliciouslyportugal@gmail.com",
-      :password => "Hackaton2013",
+      :password => "Hackaton#2013",
       :authentication => :plain,
       :enable_starttls_auto => true
 }
