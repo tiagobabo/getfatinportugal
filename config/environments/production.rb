@@ -67,13 +67,15 @@ Getfatinportugal::Application.configure do
 
   config.assets.precompile += %w(product_crowl.js)
   
-    config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => "deliciouslyportugal.com" }
 config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'gmail.com',
-  user_name:            ENV["GMAIL_USERNAME"],
-  password:             ENV["GMAIL_PASSWORD"],
-  authentication:       'plain',
-  enable_starttls_auto: true  }
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'deliciouslyportugal.com',
+      :user_name => "deliciouslyportugal@gmail.com",
+      :password => "Hackaton2013",
+      :authentication => :plain,
+      :enable_starttls_auto => true
+}
 end
