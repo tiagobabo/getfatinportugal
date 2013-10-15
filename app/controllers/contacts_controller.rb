@@ -8,7 +8,7 @@ end
 
 def sendemail
 name = params[:name]
-email = params[:email]
+@email = params[:email]
 subject = params[:subject]
 message =  params[:message]
     
