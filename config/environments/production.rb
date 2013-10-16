@@ -5,8 +5,8 @@ Getfatinportugal::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
@@ -73,8 +73,8 @@ config.action_mailer.smtp_settings = {
       :address => "smtp.gmail.com",
       :port => 587,
       :domain => 'deliciouslyportugal.com',
-      :user_name => "deliciouslyportugal@gmail.com",
-      :password => "Hackaton#2013",
+      :user_name => ENV["GMAIL_USERNAME"],
+      :password => ENV["GMAIL_PASSWORD"],
       :authentication => :plain,
       :enable_starttls_auto => true
 }

@@ -17,6 +17,9 @@ class ProductsController < ApplicationController
     @next = Product.where("id > ?", @product.id).order("id ASC").limit(1)
     @previous = Product.where("id < ?", @product.id).order("id DESC").limit(1)
 
+    @twitter = Twitter::Client.new
+    @twitter = @twitter.search(@product.hashtag[1..@product.hashtag.size-1], :include_entities=>"t", :count => 6, :result_type => "mixed").results
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
