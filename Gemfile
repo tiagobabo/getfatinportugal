@@ -6,10 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-gem 'sqlite3'
-gem 'pg'
-gem "unicorn", "~> 4.6.2"
-gem 'figaro'
+  gem 'sqlite3'
+  #gem 'pg'
+  gem "unicorn", "~> 4.6.2"
+  gem 'figaro'
 end
 
 # Gems used only for assets and not required
