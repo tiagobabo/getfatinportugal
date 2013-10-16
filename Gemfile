@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'pg'
 gem "unicorn", "~> 4.6.2"
 gem 'figaro'
+gem 'twitter'
 end
 
 # Gems used only for assets and not required
@@ -30,6 +31,7 @@ group :production do
   gem 'rack-google_analytics', :require => "rack/google_analytics"
   gem "unicorn", "~> 4.6.2"
   gem 'figaro'
+  gem 'twitter'
 end
 
 gem 'jquery-rails'
