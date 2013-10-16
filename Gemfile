@@ -6,18 +6,12 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-<<<<<<< HEAD
+
   gem 'sqlite3'
   #gem 'pg'
   gem "unicorn", "~> 4.6.2"
   gem 'figaro'
-=======
-gem 'sqlite3'
-gem 'pg'
-gem "unicorn", "~> 4.6.2"
-gem 'figaro'
-gem 'twitter'
->>>>>>> abbc705591ac07bdc868d4a218af5ba5164bfd82
+  gem 'twitter'
 end
 
 # Gems used only for assets and not required
