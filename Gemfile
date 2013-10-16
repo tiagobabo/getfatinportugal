@@ -34,6 +34,7 @@ group :production do
   gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
+  gem 'instagram'
 end
 
 gem 'jquery-rails'
