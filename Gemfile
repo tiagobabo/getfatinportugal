@@ -12,6 +12,7 @@ group :development, :test do
   gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
+  gem 'instagram'
 end
 
 # Gems used only for assets and not required

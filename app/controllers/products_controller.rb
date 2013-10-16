@@ -20,6 +20,9 @@ class ProductsController < ApplicationController
     @twitter = Twitter::Client.new
     @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent").results
 
+    @instagram = Instagram::Client.new
+    @instagram = @instagram.tag_recent_media(@product.hashtag[1..@product.hashtag.size-1]);
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

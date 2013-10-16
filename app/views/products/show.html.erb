@@ -92,7 +92,17 @@
     </li>
   <% end %>
 </ul>     
-
+<div>
+  <ul>
+  <% @instagram.map do |inst| %>
+  <img src=<%="#{inst.images.thumbnail.url}"%> ></img>
+  <li>
+  <%= "#{inst.user.username}: #{inst.caption.text}" %>
+  <img src= <%= "#{inst.user.profile_picture}" %> ></img>
+  </li>
+  <% end %>
+</ul>
+</div>
     </div>
      <!-- Products - Deliciously Portugal ( -->
   </div>

@@ -42,13 +42,21 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
     foundation (0.05)
       jammit
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.1)
+    instagram (0.10.0)
+      faraday (>= 0.7, < 0.9)
+      faraday_middleware (~> 0.8)
+      hashie (>= 0.4.0)
+      multi_json (~> 1.0, >= 1.0.3)
     jammit (0.6.6)
       cssmin (>= 1.0.3)
       jsmin (>= 1.0.1)
@@ -137,6 +145,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   figaro
   foundation
+  instagram
   jquery-rails
   pg
   rack-google_analytics
