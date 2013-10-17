@@ -1,4 +1,7 @@
-<%= javascript_include_tag "product_crowl" %>
+<%= stylesheet_link_tag 'instagram.css' %>
+<%= javascript_include_tag "jquery.instagram.js" %>
+<%= javascript_include_tag "jquery.slimbox2.js" %>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -10,12 +13,10 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                   
 
-
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <div id="imageDiv">
   <img src=<%= @product.photo %>>
@@ -53,60 +54,38 @@
       </div>
       <div class="large-4 columns">
         <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pt/maps?f=q&amp;source=s_q&amp;hl=pt-PT&amp;geocode=&amp;q=&amp;aq=&amp;sll=&amp;sspn=&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;t=m&amp;z=13&amp;ll=<%= @product.latitude %>,<%= @product.longitude %>&amp;output=embed"></iframe><br />
-         <ins class="adsbygoogle products-deliciously-portugal"
-     style="display:inline-block"
-     data-ad-client="ca-pub-5281126661789169"
-     data-ad-slot="3622614122"></ins>
+        <ins class="adsbygoogle products-deliciously-portugal"
+        style="display:inline-block"
+        data-ad-client="ca-pub-5281126661789169"
+        data-ad-slot="3622614122"></ins>
       </div>
 
     </div>
 
-    <div id="social" class="row">
-      <h1><%= @product.hashtag %> on Instagram</h1>
-      <div id="instaPics" class="large-8 columns">
+    <div class="row">  
+    <div class = "large-8 columns"></div>
+      <div  class="large-4 columns">
+        <h1><%= @product.hashtag %> on Instagram</h1>
+        <div class="instagram">
+          
+        </div>
+        <h1 id><%= @product.hashtag %> on Twitter</h1>
+       <div>
+         <ul>
+          <% @twitter.map do |status| %>
+          <img src=<%="#{status.profile_image_url}"%> ></img>
+          <li>
+           <%= "#{status.from_user}: #{status.text}" %>
+         </li>
+         <% end %>
+       </ul>   
+     </div>  
       </div>
 
-      <h1 id><%= @product.hashtag %> on Twitter</h1>
-      <div id="tweets" class="large-4 columns">
-        <% url = "https://twitter.com/search?q=%23" +  @product.hashtag[1..@product.hashtag.size-1] %>
-        <a class="twitter-timeline" href=<%=url%> data-widget-id="340725787776925696">Tweets about "<%= @product.hashtag %>"</a>
-        <script>function twit(d,s,id)
-        {
-          var js,fjs=d.getElementsByTagName(s)[0];
-          if(!d.getElementById(id)){
-            js=d.createElement(s);
-            js.id=id;
-            js.src="//platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js,fjs);}}
-          twit(document,"script","twitter-wjs");</script>
-      </div>
-    </div>
-    
-
-    <div>
-     <ul>
-  <% @twitter.map do |status| %>
-  <img src=<%="#{status.profile_image_url}"%> ></img>
-    <li>
-       <%= "#{status.from_user}: #{status.text}" %>
-    </li>
-  <% end %>
-</ul>     
-<div>
-  <ul>
-  <% @instagram.map do |inst| %>
-  <img src=<%="#{inst.images.thumbnail.url}"%> ></img>
-  <li>
-  <%= "#{inst.user.username}: #{inst.caption.text}" %>
-  <img src= <%= "#{inst.user.profile_picture}" %> ></img>
-  </li>
-  <% end %>
-</ul>
+      
 </div>
-    </div>
-     <!-- Products - Deliciously Portugal ( -->
-  </div>
-</div>
+<!-- Products - Deliciously Portugal ( -->
+
 
 
 
