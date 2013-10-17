@@ -65,7 +65,9 @@ Getfatinportugal::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.assets.precompile += %w(product_crowl.js)
+  config.assets.precompile += %w(jquery.instagram.js)
+  config.assets.precompile += %w(jquery.slimbox2.js)
+  config.assets.precompile += %w(instagram.css)
   
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.default_url_options = { :host => "deliciouslyportugal.com" }
