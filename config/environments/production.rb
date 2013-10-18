@@ -68,6 +68,8 @@ Getfatinportugal::Application.configure do
   config.assets.precompile += %w(jquery.instagram.js)
   config.assets.precompile += %w(jquery.slimbox2.js)
   config.assets.precompile += %w(instagram.css)
+  config.assets.precompile += %w(twitter-styles.css)
+  config.assets.precompile += %w(twitterfeed-search.js)
   
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.default_url_options = { :host => "deliciouslyportugal.com" }

@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag 'instagram.css' %>
+<%= stylesheet_link_tag 'twitter-styles.css' %>
 <%= javascript_include_tag "jquery.instagram.js" %>
 <%= javascript_include_tag "jquery.slimbox2.js" %>
-
+<%= javascript_include_tag "twitterfeed-search.js" %>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -70,15 +71,8 @@
 
         </div>
         <h1 id><%= @product.hashtag %> on Twitter</h1>
-        <div>
-         <ul>
-          <% @twitter.map do |status| %>
-          <img src=<%="#{status.profile_image_url}"%> ></img>
-          <li>
-           <%= "#{status.from_user}: #{status.text}" %>
-         </li>
-         <% end %>
-       </ul>   
+        <div id="twitter-feed">
+         <%= @twitter.inspect %>
      </div>  
    </div>
 

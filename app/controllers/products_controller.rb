@@ -18,8 +18,9 @@ class ProductsController < ApplicationController
     @previous = Product.where("id < ?", @product.id).order("id DESC").limit(1)
 
     @twitter = Twitter::Client.new
-    @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent").results
-
+    @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent")
+    gon.twitter=@twitter
+    gon.hashtag=@product.hashtag
    
     respond_to do |format|
       format.html # show.html.erb
