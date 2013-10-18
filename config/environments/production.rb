@@ -70,6 +70,7 @@ Getfatinportugal::Application.configure do
   config.assets.precompile += %w(instagram.css)
   config.assets.precompile += %w(twitter-styles.css)
   config.assets.precompile += %w(twitterfeed-search.js)
+  config.assets.precompile += %w(main_product.js)
   
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.default_url_options = { :host => "deliciouslyportugal.com" }
