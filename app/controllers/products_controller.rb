@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     @twitter = Twitter::Client.new
     @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent").results
 
-   gon.hashtag = @product.hashtag[1..@product.hashtag.size-1]
+   
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

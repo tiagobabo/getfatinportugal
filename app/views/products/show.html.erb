@@ -63,14 +63,14 @@
     </div>
 
     <div class="row">  
-    <div class = "large-8 columns"></div>
+      <div class = "large-8 columns"></div>
       <div  class="large-4 columns">
         <h1><%= @product.hashtag %> on Instagram</h1>
         <div class="instagram">
-          
+
         </div>
         <h1 id><%= @product.hashtag %> on Twitter</h1>
-       <div>
+        <div>
          <ul>
           <% @twitter.map do |status| %>
           <img src=<%="#{status.profile_image_url}"%> ></img>
@@ -80,12 +80,28 @@
          <% end %>
        </ul>   
      </div>  
-      </div>
-
-      
-</div>
-<!-- Products - Deliciously Portugal ( -->
+   </div>
 
 
+ </div>
+ <!-- Products - Deliciously Portugal ( -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".instagram").instagram({   
+        hash: "<%= @product.hashtag[1..@product.hashtag.size-1] %>", 
+        show: '6',
+        clientId: '467ede5a6b9b48ae8e03f4e2582aeeb3'
+      });
+      $('div.instagram-placeholder').each( function(i) {
+        if( i % 4 != 3 )
+          return
+        $(this).addClass('last')
+      })
+    });
 
+
+
+
+
+  </script>
 
