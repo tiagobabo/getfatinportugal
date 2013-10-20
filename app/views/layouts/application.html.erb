@@ -7,6 +7,7 @@
   <head>
   	<meta charset="utf-8" />
 
+
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
@@ -26,9 +27,26 @@
   </head>
 
   <body>
+      
     <%= javascript_include_tag "application" %>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     
     <%= yield %>
+<footer>
+    <div class="inner">
+    <section id="footer-copyright" class="clear left">
+    <ul>
+    <li>© 2013
+    <a href="/">Company</a>
+    |
+    <a href="contacts/index">Contact us</a>
+    |
+    <a href="suggest/index">Suggest us a product</a>
+    </li>
+    </ul>
+    </section>
+    </div>
+</footer>
+
   </body>
 </html>

@@ -14,6 +14,7 @@ group :development, :test do
   gem 'twitter'
   gem 'instagram'
   gem 'gon'
+  gem 'koala'
 end
 
 group :production do
@@ -28,6 +29,7 @@ group :production do
 end
 
 gem 'foundation'
+gem "compass"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

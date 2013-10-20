@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.where("is_active=1") 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent")
     gon.twitter=@twitter
     gon.hashtag=@product.hashtag
-   
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -93,9 +93,17 @@ class ProductsController < ApplicationController
   def main
     @urls = Category.all.map{|x| Product.where(:category_id => x.id).sample.photo}
 
-    @projects = Product.all.map{|x| {"value" => x.name, "id" => x.id, "icon" => x.photo}}
+    @projects = Product.where("is_active=1").map{|x| {"value" => x.name, "id" => x.id, "icon" => x.photo}}
 	gon.projects = @projects
 	gon.urls = @urls
+
+#session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/')
+#@auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream publish_stream")  
+ 
+ #redirect_to @auth_url
+  #@graph = Koala::Facebook::API.new
+   # @facebook_posts=@graph.search("pastel")
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }

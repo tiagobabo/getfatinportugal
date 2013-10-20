@@ -69,5 +69,7 @@ resources :categories
 
 get 'contacts/index'
 post 'contacts/sendemail'
+get 'suggest/index'
+post 'suggest/set_suggestion'
 
 end
