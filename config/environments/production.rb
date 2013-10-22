@@ -55,7 +55,7 @@ DeliciouslyPortugalV2::Application.configure do
   config.assets.precompile += %w(main.js)
   config.assets.precompile += %w(product.js)
   config.assets.precompile += %w(contact.css.scss)
-  config.assets.precompile += %w(main.css)
+  config.assets.precompile += %w(main.css.scss)
   config.assets.precompile += %w(product.css.scss)
 
    #config.assets.precompile += %w( main.js )
