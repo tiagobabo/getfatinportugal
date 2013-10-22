@@ -53,7 +53,7 @@ DeliciouslyPortugalV2::Application.configure do
   config.assets.precompile += %w(twitter-styles.css)
   config.assets.precompile += %w(twitterfeed-search.js)
   config.assets.precompile += %w(main.js)
-  config.assets.precompile += %w(product.js)
+  config.assets.precompile += %w(products.js)
 
    #config.assets.precompile += %w( main.js )
    #config.assets.precompile += %w( product.js )
