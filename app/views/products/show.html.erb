@@ -1,0 +1,72 @@
+<%= stylesheet_link_tag 'instagram.css' %>
+<%= stylesheet_link_tag 'twitter-styles.css' %>
+<%= javascript_include_tag "jquery.instagram.js" %>
+<%= javascript_include_tag "jquery.slimbox2.js" %>
+<%= javascript_include_tag "twitterfeed-search.js" %>
+
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div id="imageDiv">
+  <img src=<%= @product.photo %>>
+</div>
+
+<a href="http://deliciouslyportugal.com/"><div id="logoProduct">Deliciously Portugal</div></a>
+
+<div id="productBody">
+  <div id="productHighlights" class="row">
+    <div class="row">
+      <div class="large-6 columns">
+        <h1><%= @product.name %></h1>
+      </div>
+      <div class="large-6 columns right">
+        <h2><%= @product.region %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 columns">
+        <h3><%= @product.category.name %></h3>
+      </div>
+      <div class="large-4 columns centered">
+        <div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      </div>
+      <div class="large-4 columns right">
+        <h3 id="hashtag"><%= @product.hashtag %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="productDescription" class="row">
+    <div class="row">
+      <div id="descriptionText" class="large-8 columns">
+        <%= @product.description %>
+      </div>
+      <div class="large-4 columns">
+        <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pt/maps?f=q&amp;source=s_q&amp;hl=pt-PT&amp;geocode=&amp;q=&amp;aq=&amp;sll=&amp;sspn=&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;t=m&amp;z=13&amp;ll=<%= @product.latitude %>,<%= @product.longitude %>&amp;output=embed"></iframe><br />
+        <ins class="adsbygoogle products-deliciously-portugal"
+        style="display:inline-block"
+        data-ad-client="ca-pub-5281126661789169"
+        data-ad-slot="3622614122"></ins>
+      </div>
+
+    </div>
+
+    <div class="row">  
+      <div class = "large-8 columns"></div>
+      <div  class="large-4 columns">
+        <h1><%= @product.hashtag %> on Instagram</h1>
+        <div class="instagram">
+        </div>
+        <h1 id><%= @product.hashtag %> on Twitter</h1>
+        <div id="twitter-feed">
+         <%= @twitter.inspect %>
+     </div>  
+   </div>
+ </div>
+ </div>
+ <!-- Products - Deliciously Portugal ( -->
+
