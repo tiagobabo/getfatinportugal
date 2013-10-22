@@ -47,7 +47,7 @@ DeliciouslyPortugalV2::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
    #config.assets.precompile += %w( jquery.instagram.js )
-   config.assets.precompile += ['*.js', '*.css','*.scss']
+   config.assets.precompile = [ /\A[^\/\\]+\.(css|js)$/i ]
    #config.assets.precompile += %w( main.js )
    #config.assets.precompile += %w( product.js )
    #config.assets.precompile += %w( twitterfeed-search.js )
