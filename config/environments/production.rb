@@ -47,21 +47,17 @@ DeliciouslyPortugalV2::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
    #config.assets.precompile += %w( jquery.instagram.js )
-   config.assets.precompile << Proc.new { |path|
-  if path =~ /\.(css|js|scss)\z/
-    full_path = Rails.application.assets.resolve(path).to_path
-    app_assets_path = Rails.root.join('app', 'assets').to_path
-    if full_path.starts_with? app_assets_path
-      puts "including asset: " + full_path
-      true
-    else
-      puts "excluding asset: " + full_path
-      false
-    end
-  else
-    false
-  end
-}
+  config.assets.precompile += %w(jquery.instagram.js)
+  config.assets.precompile += %w(jquery.slimbox2.js)
+  config.assets.precompile += %w(instagram.css)
+  config.assets.precompile += %w(twitter-styles.css)
+  config.assets.precompile += %w(twitterfeed-search.js)
+  config.assets.precompile += %w(main.js)
+  config.assets.precompile += %w(product.js)
+  config.assets.precompile += %w(contact.css.scss)
+  config.assets.precompile += %w(main.css.scss)
+  config.assets.precompile += %w(product.css.scss)
+
    #config.assets.precompile += %w( main.js )
    #config.assets.precompile += %w( product.js )
    #config.assets.precompile += %w( twitterfeed-search.js )
