@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Getfatinportugal::Application.config.secret_token = '7f5b46528cbdd4170f1b750ff27f932fa2ae0ca5a92e37324dc7300b6d8b1c50b3c692438ca4fd83823619d59ab237f266f61788612179cd70e3c7b5e9866c1e'
+DeliciouslyPortugalV2::Application.config.secret_token = 'a6257311ee25f0ac0baece2f6c19102ef4a14d28d4d85f6ff3678f1cd054926157188148ac4a15e5d44d0aad549b63fa09b33750a2ed9067e41090b29e144907'

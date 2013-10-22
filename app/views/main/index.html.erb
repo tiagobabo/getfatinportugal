@@ -1,0 +1,110 @@
+ <%= stylesheet_link_tag "main.css.scss" %>
+ <%= javascript_include_tag "main.js" %>
+
+ <div class="row">
+  <div class="large-12 columns">
+
+    <!-- Desktop Slider -->
+
+    <div class="large-10 large-centered columns">
+      <div class="slideshow-wrapper">
+        <div class="preloader"></div>
+        <ul style="height: 361px" data-orbit>
+       <li> <a href="<%= @urls[0] %>"> <img src="<%= @urls[0] %>"  height="100px"></a></li>
+        <li> <a href="<%= @urls[1] %>"><img src="<%= @urls[1] %>"  height="100px"></a></li>
+        <li><a href="<%= @urls[2] %>"><img src="<%= @urls[2] %>"  height="100px"></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Desktop Slider -->
+
+
+    <!-- Mobile Header -->
+
+
+    <div class="row">
+      <div class="small-12 show-for-small"><br>
+        <img src="http://placehold.it/1000x600&text=For Small Screens" />
+      </div>
+    </div>
+
+
+    <!-- End Mobile Header -->
+
+  </div>
+</div><br>
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+
+      <!-- Content -->
+
+      <div class="large-12 columns">
+        <div class="panel radius">
+
+          <input id="search" type="search" class="main search" placeholder="Search for delicious portuguese food..." />
+
+        </div>
+      </div>
+
+      <!-- End Content -->
+
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+
+      <!-- Thumbnails -->
+
+      <div class="large-3 small-6 columns">
+    
+        <img  src="<%= @products_all.select{|x| x.category_id ==1}.sample.photo %>"  class="main thumbnail" />
+        <h6 class="panel">Desserts</h6>
+      </div>
+
+      <div class="large-3 small-6 columns">
+        <img src="<%= @products_all.select{|x| x.category_id ==2}.sample.photo %>" class="main thumbnail"/>
+        <h6 class="panel">Main course</h6>
+      </div>
+
+      <div class="large-3 small-6 columns">
+        <img src="<%= @products_all.select{|x| x.category_id ==3}.sample.photo %>" class="main thumbnail" />
+        <h6 class="panel">Drinks</h6>
+      </div>
+
+      <div class="large-3 small-6 columns">
+        <img src="<%= @products_all.select{|x| x.category_id ==4}.sample.photo %>" class="main thumbnail"/>
+        <h6 class="panel">Starters</h6>
+      </div>
+
+      <!-- End Thumbnails -->
+
+      <div class="large-12 columns hide-for-small">
+
+        <h4>Get In Touch!</h4><hr/>
+      </div>
+      <div class="large-6 columns">
+        <a href="/contact/index">
+          <div class="large button expand" align="center">
+            <strong>Contact us!</strong>
+          </div>
+        </a>
+      </div>
+      <div class="large-6 columns">
+        <a href="/contact/suggest_food">
+          <div class="large button expand" align="center">
+            <strong>Suggest us a delicious Portuguese food!</strong>
+          </div>
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</div>

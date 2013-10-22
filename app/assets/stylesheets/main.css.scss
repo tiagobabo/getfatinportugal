@@ -1,39 +1,24 @@
-footer .inner {
-    padding-top: 50px;
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main.search
+{
+width: 100%; 
+height: 50px; 
+font-size: 15pt;
 }
 
-#footer-copyright {
-    display: block;
-    padding-top: 35px;
-    width:50%;
+.orbit-container .orbit-slides-container > * {
+height: 400px; /* max-height if you prefer */
+overflow: hidden;
+}
+.orbit-container .orbit-slides-container img {
+width: 100%;
 }
 
-#footer-box {
-    display: block;
-    padding-top: 35px;
-}
-
-footer ul {
-    color: #FFFFFF;
-    list-style: none outside none;
-    padding: 10px 0;
-}
-
-.inner {
-    margin: 0 auto;
-    position: relative;
-    width: 1000px;
-}
-
-.clear {
-    clear: both;
-    display: block;
-}
-
-.right, .alignright {
-    float: right;
-}
-
-.left {
-   float:left;
+.main.thumbnail
+{
+	width:220;
+	height: 147px;
 }

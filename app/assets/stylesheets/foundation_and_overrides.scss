@@ -65,7 +65,7 @@ $default-float: left;
 
 // $body-bg: #fff;
 // $body-font-color: #222;
- $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -149,7 +149,6 @@ $default-float: left;
 // Grid Variables
 //
 
-$row-width: 100%;
 // $row-width: em-calc(1000);
 // $column-gutter: em-calc(30);
 // $total-columns: 12;
@@ -1256,7 +1255,7 @@ $row-width: 100%;
 
 // Background color for the top bar
 
-// $topbar-bg-color: #111;
+ $topbar-bg-color: #BDBDBD;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

@@ -3,10 +3,10 @@
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
   	<meta charset="utf-8" />
-
 
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
@@ -14,39 +14,82 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
- 
   	<title><%= content_for?(:title) ? yield(:title) : "Deliciously Portugal" %></title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  	<%= include_gon %>
-    <%= stylesheet_link_tag "application" %>
+<%= include_gon %>
+  	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
-
     <%= csrf_meta_tags %>
-
   </head>
 
   <body>
-      
-    <%= javascript_include_tag "application" %>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    
-    <%= yield %>
-<footer>
-    <div class="inner">
-    <section id="footer-copyright" class="clear left">
-    <ul>
-    <li>© 2013
-    <a href="/">Company</a>
-    |
-    <a href="/contacts/index">Contact us</a>
-    |
-    <a href="/suggest/index">Suggest us a product</a>
-    </li>
-    </ul>
-    </section>
-    </div>
-</footer>
+  <div class="row">
+  <div class="large-12 columns">
 
+    <!-- Navigation -->
+      <nav class="top-bar">
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name">
+            <h1>
+              <a href="#">
+                Top Bar Title
+              </a>
+            </h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="left">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+          </ul>
+
+          <ul class="right">
+            <li class="search">
+              <form>
+                <input type="search">
+              </form>
+            </li>
+
+            <li class="has-button">
+              <a class="small button" href="#">Search</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+
+    <!-- End Navigation -->
+  
+    </div>
+  </div>
+
+   
+
+    
+    <%= javascript_include_tag "application" %>
+     
+      <%= yield %>
+     
+    <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

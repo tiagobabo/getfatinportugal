@@ -1,0 +1,68 @@
+<%= stylesheet_link_tag "contact.css.scss" %>
+<div class="row">
+<!-- Contact Details -->
+    <div class="large-9 columns">
+ 
+      <h3>Get in Touch!</h3>
+      <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
+ 
+      <form class="custom">
+  <fieldset>
+    <legend class="contact legend">Suggest...</legend>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Name</label>
+        <input type="text" placeholder="Name...">
+      </div>
+    </div>
+	
+	<div class="row">
+	 <div class="large-12 columns">
+	<label> Photo url </label>
+	<input type="text" placeholder="web url to an image representing the food..."/>
+	</div>
+	</div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Region</label>
+        <input type="text" placeholder="typical region for the food...">
+      </div>
+      <div class="large-4 columns">
+	  <div class ="row collapse">
+        <label>Hashtag</label>
+		<div class="small-3 columns">
+		<span class="prefix">#</span>
+		</div>
+		<div class="small-9 columns">
+        <input type="text" placeholder="hashtag for Twitter and Instagram...">
+		</div>
+      </div>
+	  </div>
+      <div class="large-4 columns">
+<label>Category</label>	
+	 <select id="customDropdown1" class="medium">
+      <%=  options_for_select(@categories) %>
+      </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Description</label>
+        <textarea placeholder="Insert a short description of the Portuguese delicious food..."></textarea>
+      </div>
+    </div>
+    <button type="submit" class="radius button">Submit</button>
+  </fieldset>
+</form>
+      
+        
+         
+         
+               
+    </div>
+ 
+    <!-- End Contact Details -->
+	</div>

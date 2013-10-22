@@ -1,0 +1,11 @@
+@import "foundation_and_overrides";
+@import "jquery.ui.all";
+/** Removes black background on menu item **/
+.top-bar-section ul  
+{
+    background: none;    
+}
+body
+{
+	background-image:url(subtle_white_feathers.png);
+}

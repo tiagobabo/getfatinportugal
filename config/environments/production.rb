@@ -1,12 +1,12 @@
-Getfatinportugal::Application.configure do
+DeliciouslyPortugalV2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
@@ -64,23 +64,4 @@ Getfatinportugal::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-
-  config.assets.precompile += %w(jquery.instagram.js)
-  config.assets.precompile += %w(jquery.slimbox2.js)
-  config.assets.precompile += %w(instagram.css)
-  config.assets.precompile += %w(twitter-styles.css)
-  config.assets.precompile += %w(twitterfeed-search.js)
-  config.assets.precompile += %w(main_product.js)
-  
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.default_url_options = { :host => "deliciouslyportugal.com" }
-config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => 'deliciouslyportugal.com',
-      :user_name => ENV["GMAIL_USERNAME"],
-      :password => ENV["GMAIL_PASSWORD"],
-      :authentication => :plain,
-      :enable_starttls_auto => true
-}
 end

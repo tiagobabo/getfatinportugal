@@ -5,6 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-["Drinks", "Desserts", "Main Course", "Starters"].each do |cat|
-  Category.find_or_create_by_name(cat)
-end

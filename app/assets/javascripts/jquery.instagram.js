@@ -87,7 +87,7 @@
       $(document).ready(function() {
       $(".instagram").instagram({   
         hash: gon.hashtag.substring(1), 
-        show: '6',
+        show: '7',
         clientId: '467ede5a6b9b48ae8e03f4e2582aeeb3'
       });
       $('div.instagram-placeholder').each( function(i) {

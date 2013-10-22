@@ -3,13 +3,13 @@
 (function($) {	
 	$(document).ready(function () {
 		var displaylimit = 10;
-		var twittersearchtitle = gon.hashtag +" on twitter";
+		var twittersearchtitle = gon.hashtag +" on Twitter";
 		var showretweets = false;
 		var showtweetlinks = true;
 		var autorefresh = true;
 		var showtweetactions = true;
 		var showretweetindicator = true;
-		var refreshinterval = 60000; //Time to autorefresh tweets in milliseconds. 60000 milliseconds = 1 minute
+		var refreshinterval = 600000; //Time to autorefresh tweets in milliseconds. 600000 milliseconds = 1 minute
 		var refreshtimer;
 		
 		

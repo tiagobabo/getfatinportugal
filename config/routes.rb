@@ -1,11 +1,4 @@
-Getfatinportugal::Application.routes.draw do
-
-resources :products
-
-resources :categories
-
-
-
+DeliciouslyPortugalV2::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -62,14 +55,11 @@ resources :categories
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-
-  root :to => 'products#main'
-
-  match 'search' => 'products#search'
-
-get 'contacts/index'
-post 'contacts/sendemail'
-get 'suggest/index'
-post 'suggest/set_suggestion'
+root :to => 'main#index'
+get 'products/index'
+get 'main/index'
+match 'products/:id' => 'products#view_details'
+get 'contact/index'
+get 'contact/suggest_food'
 
 end

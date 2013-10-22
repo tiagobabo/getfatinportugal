@@ -7,9 +7,9 @@ gem 'rails', '3.2.13'
 
 group :development, :test do
 
-  gem 'sqlite3'
-  #gem 'pg'
-  #gem "unicorn", "~> 4.6.2"
+  #gem 'sqlite3'
+  gem 'pg'
+  gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
   gem 'instagram'
@@ -21,26 +21,26 @@ group :production do
   # gems specifically for Heroku go here
   gem "pg"
   gem 'rack-google_analytics', :require => "rack/google_analytics"
-  #gem "unicorn", "~> 4.6.2"
+  gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
   gem 'instagram'
   gem 'gon'
 end
 
-gem 'foundation'
-gem "compass"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   # Add Foundation Here
+  gem 'compass-rails' # you need this or you get an err
   gem 'zurb-foundation'
  
 end
 
  gem 'jquery-rails'
+ gem 'jquery-ui-rails'
  
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
