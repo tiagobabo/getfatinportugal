@@ -22,6 +22,8 @@
   </head>
 
   <body>
+   <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
   <div class="row">
   <div class="large-12 columns">
 
@@ -31,8 +33,8 @@
           <!-- Title Area -->
           <li class="name">
             <h1>
-              <a href="#">
-                Top Bar Title
+              <a href="/">
+                Deliciously Portugal
               </a>
             </h1>
           </li>
@@ -40,15 +42,15 @@
         </ul>
 
         <section class="top-bar-section">
-          <ul class="left">
+          <!--<ul class="left">
             <li><a href="#">Link 1</a></li>
             <li><a href="#">Link 2</a></li>
-          </ul>
+          </ul> -->
 
           <ul class="right">
             <li class="search">
               <form>
-                <input type="search">
+                <input type="search" id="searchMain">
               </form>
             </li>
 
@@ -78,14 +80,13 @@
       <hr>
       <div class="row">
         <div class="large-6 columns">
-          <p>&copy; Copyright no one at all. Go to town.</p>
+          <p>&copy; Copyright 2013.</p>
         </div>
         <div class="large-6 columns">
           <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
+            <li><a href="/contact/about_us">About us</a></li>
+            <li><a href="/contact/suggest_food">Suggest</a></li>
+            <li><a href="/contact/index">Contact us</a></li>            
           </ul>
         </div>
       </div>

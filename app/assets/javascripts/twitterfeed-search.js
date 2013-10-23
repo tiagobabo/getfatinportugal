@@ -9,7 +9,7 @@
 		var autorefresh = true;
 		var showtweetactions = true;
 		var showretweetindicator = true;
-		var refreshinterval = 600000; //Time to autorefresh tweets in milliseconds. 600000 milliseconds = 1 minute
+		var refreshinterval = 300000; //Time to autorefresh tweets in milliseconds. 600000 milliseconds = 1 minute
 		var refreshtimer;
 		
 		
@@ -29,8 +29,7 @@
 		 
 		function gettwitterjson() { 
 			 
-				   var feeds = gon.twitter.statuses; //search returns an array of statuses
-					//alert(feeds);   
+				   var feeds = gon.twitter.statuses; //search returns an array of statuses					
 					var feedHTML = '';
 					var displayCounter = 1;  
 					for (var i=0; i<feeds.length; i++) {

@@ -7,21 +7,22 @@ gem 'rails', '3.2.13'
 
 group :development, :test do
 
-  #gem 'sqlite3'
-  gem 'pg'
-  gem "unicorn", "~> 4.6.2"
+  gem 'sqlite3'
+  #gem 'pg'
+  #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
   gem 'instagram'
   gem 'gon'
   gem 'koala'
+  gem 'devise'
 end
 
 group :production do
   # gems specifically for Heroku go here
   gem "pg"
   gem 'rack-google_analytics', :require => "rack/google_analytics"
-  gem "unicorn", "~> 4.6.2"
+  #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
   gem 'instagram'

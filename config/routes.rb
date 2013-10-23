@@ -1,4 +1,7 @@
 DeliciouslyPortugalV2::Application.routes.draw do
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,10 +59,21 @@ DeliciouslyPortugalV2::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 root :to => 'main#index'
-get 'products/index'
-get 'main/index'
+
+#admin section
+ namespace :admin do
+ #match 'products/index' => 'products#index'
+	resources :products   
+ end
+
+match 'main/index' => 'main#index'
 match 'products/:id' => 'products#view_details'
+match 'contact' => 'contact#index'
+
+
+
 get 'contact/index'
 get 'contact/suggest_food'
+
 
 end
