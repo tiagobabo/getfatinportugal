@@ -1,1 +1,68 @@
-<p class="teste"> <%= @a %> </h1>
+
+<div class="row">
+<!-- Contact Details -->
+    <div class="large-9 columns">
+ 
+      <h3>Add new product.</h3>
+      <p>Interface to insert new products.</p>
+ 
+      <form class="custom">
+  <fieldset>
+    <legend class="contact legend">Product...</legend>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Name</label>
+        <input type="text" placeholder="Name...">
+      </div>
+    </div>
+	
+	<div class="row">
+	 <div class="large-12 columns">
+	<label> Photo url </label>
+	<input type="text" placeholder="web url to an image representing the food..."/>
+	</div>
+	</div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Region</label>
+        <input type="text" placeholder="typical region for the food...">
+      </div>
+      <div class="large-4 columns">
+	  <div class ="row collapse">
+        <label>Hashtag</label>
+		<div class="small-3 columns">
+		<span class="prefix">#</span>
+		</div>
+		<div class="small-9 columns">
+        <input type="text" placeholder="hashtag for Twitter and Instagram...">
+		</div>
+      </div>
+	  </div>
+      <div class="large-4 columns">
+<label>Category</label>	
+	 <select id="customDropdown1" class="medium">
+      <%=  options_for_select(@categories) %>
+      </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Description</label>
+        <textarea placeholder="Insert a short description of the Portuguese delicious food..."></textarea>
+      </div>
+    </div>
+    <button type="submit" class="radius button">Submit</button>
+  </fieldset>
+</form>
+      
+        
+         
+         
+               
+    </div>
+ 
+    <!-- End Contact Details -->
+	</div>

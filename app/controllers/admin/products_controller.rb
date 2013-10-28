@@ -1,7 +1,8 @@
 class Admin::ProductsController < ApplicationController
-layout 'teste'
+layout 'admin'
+#before_filter :authenticate_user!
 def show
-@a=1;
+ @categories = Category.all.map{|x| [x.name, x.id]}
 end
 
 def index

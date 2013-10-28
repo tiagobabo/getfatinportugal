@@ -64,5 +64,14 @@ module DeliciouslyPortugalV2
 	
 	# devise 
 	config.assets.initialize_on_precompile = false
+	
+	#devise views
+	config.to_prepare do
+  Devise::SessionsController.layout "application"
+  Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "admin" : "application" }
+  Devise::ConfirmationsController.layout "admin"
+  Devise::UnlocksController.layout "admin"            
+  Devise::PasswordsController.layout "admin"        
+end
   end
 end

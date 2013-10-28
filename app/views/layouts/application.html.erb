@@ -22,11 +22,7 @@
   </head>
 
   <body>
-   <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
-  <div class="row">
-  <div class="large-12 columns">
-
+  
     <!-- Navigation -->
       <nav class="top-bar">
         <ul class="title-area">
@@ -62,16 +58,13 @@
       </nav>
 
     <!-- End Navigation -->
-  
-    </div>
-  </div>
 
    
 
-    
+     <%= yield %>
     <%= javascript_include_tag "application" %>
      
-      <%= yield %>
+     
      
     <!-- Footer -->
 
