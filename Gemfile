@@ -27,6 +27,8 @@ group :production do
   gem 'twitter'
   gem 'instagram'
   gem 'gon'
+    gem 'koala'
+  gem 'devise'
 end
 
 
