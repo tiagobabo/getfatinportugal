@@ -4,11 +4,11 @@ layout 'admin'
 # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
+    @products = Product.where("is_active=1")
     
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @product }
+      format.json { render json: @products }
     end
   end
 

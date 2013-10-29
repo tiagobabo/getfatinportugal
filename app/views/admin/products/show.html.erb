@@ -1,1 +1,21 @@
-<%=@product.inspect%>
+<!-- Main Feed -->
+<!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+<div class="large-6 columns">
+<% @products.each do |product| %>
+  <!-- Feed Entry -->
+  <div class="row">
+    <div class="large-2 columns small-3"><img src="<%= product.photo %>" /></div>
+    <div class="large-10 columns">
+      <p><%= product.name%></p>
+      <ul class="inline-list">
+        <li><a href="">Edit</a></li>
+        <li><a href="">Remove</a></li>
+      </ul>
+
+    </div>
+  </div>
+  <!-- End Feed Entry -->
+
+  <hr />
+<% end %>
+
