@@ -1,5 +1,13 @@
 class Product < ActiveRecord::Base
   belongs_to :category
+  validates :description, :presence=>true
+  validates :hashtag,  :presence => true
+  validates :name, :presence => true
+  validates :photo, :presence => true
+  validates :region, :presence => true 
+validates  :category_id, :presence=>true  
+validates  :latitude, :presence=>true
+validates   :longitude, :presence=>true
 
   attr_accessible :description, :hashtag, :name, :photo, :region, :category_id, :category, :latitude, :longitude, :isactive
 
