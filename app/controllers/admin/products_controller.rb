@@ -4,12 +4,18 @@ layout 'admin'
 # GET /products/1
   # GET /products/1.json
   def show
-    @products = Product.where("is_active=1")
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @products }
+  
+    if request.xhr?
+        @products = Product.where(category_id: params[:id])		
+        render :partial => "/admin/products/list_products", :object => @products
+    else
+        @products = Product.where(is_active: 1)		
     end
+
+
+
+
+ 
   end
 
 def index
@@ -48,11 +54,12 @@ end
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-
-    respond_to do |format|
-      format.html { redirect_to admin_products_url }
-      format.json { head :no_content }
+	
+	 respond_to do |format|
+      format.html {redirect_to  :action => "show" }
+      format.js   { render :nothing => true }
     end
+   
   end
   
    # GET /products/1/edit

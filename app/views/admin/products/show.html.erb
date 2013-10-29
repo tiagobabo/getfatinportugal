@@ -1,31 +1,16 @@
 <!-- Main Feed -->
 <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 <div class="large-10 large-centered columns">
-<% @products.each do |product| %>
-
-  <!-- Feed Entry -->
-  <div class="row">
-    <div class="large-2 columns small-3">
-	<img src="<%= product.photo %>" />
-	<p> <%= product.name%> </p>
-	</div>
-    <div class="large-10 columns">
-	<p> <strong>Region: </strong> <%=product.region %> </p>
-	<p> <strong>Category: </strong> <%=product.category.name %> </p>
-      <p> <strong>Description: </strong> <%=product.description %> </p>	
-	  <p> <strong>Coordinates: </strong> latitude: <%=product.latitude %> -  longitude: <%= product.longitude %> </p>	
-      <ul class="inline-list">
-        <li><%= link_to 'Edit', edit_admin_product_path(product) %></li>
-        <li><%= link_to 'Remove', [:admin, product], method: :delete, data: { confirm: 'Are you sure you want to delete the product?' } %></li>
-      </ul>
-
-    </div>
+<dl class="sub-nav">
+  <dt>Filter:</dt>
+  <dd class="active"><a href="#">All</a></dd>
+  <dd><a onclick="teste(this);">Active</a></dd>
+  <dd><a href="#">Pending</a></dd>
+  <dd><a href="#">Suspended</a></dd>
+</dl>
+<div id="list_products">
+  <%= render "list_products" %>
   </div>
-  <!-- End Feed Entry -->
-
-  <hr />
-  
-<% end %>
 </div>
 
 

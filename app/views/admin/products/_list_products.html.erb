@@ -1,0 +1,26 @@
+<% @products.each do |product| %>
+
+  <!-- Feed Entry -->
+  <div class="row">
+    <div class="large-2 columns small-3">
+	<img src="<%= product.photo %>" />
+	<p> <%= product.name%> </p>
+	</div>
+    <div class="large-10 columns">
+	<p> <strong>Region: </strong> <%=product.region %> </p>
+	<p> <strong>Category: </strong> <%=product.category.name %> </p>
+      <p> <strong>Description: </strong> <%=product.description %> </p>	
+	  <p> <strong>Coordinates: </strong> latitude: <%=product.latitude %> -  longitude: <%= product.longitude %> </p>	
+      <ul class="inline-list">
+        <li><%= link_to 'Edit', edit_admin_product_path(product) %></li>
+        <li><%= link_to 'Remove', [:admin, product], method: :delete, :remote=>true, :class=>'delete_post', data: { confirm: 'Are you sure you want to delete the product?' } %></li>
+      </ul>
+
+    </div>
+	<hr />
+  </div>
+  <!-- End Feed Entry -->
+
+  
+  
+<% end %>
