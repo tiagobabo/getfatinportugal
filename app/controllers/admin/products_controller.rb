@@ -42,4 +42,24 @@ end
      end
    end
  end
+ 
+  # DELETE /products/1
+  # DELETE /products/1.json
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    respond_to do |format|
+      format.html { redirect_to admin_products_url }
+      format.json { head :no_content }
+    end
+  end
+  
+   # GET /products/1/edit
+  def edit
+    @categories = Category.all.map{|x| [x.name, x.id]}
+    @product = Product.find(params[:id])
+  end
+ 
+ 
 end

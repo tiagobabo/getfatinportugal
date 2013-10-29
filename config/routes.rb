@@ -62,7 +62,7 @@ root :to => 'main#index'
 
 #admin section
  namespace :admin do
- #match 'products/index' => 'products#index'
+ match 'products' => 'products#show'
 	resources :products  
 root :to => 'main#index'	
 	

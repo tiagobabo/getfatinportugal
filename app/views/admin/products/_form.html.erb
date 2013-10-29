@@ -1,0 +1,80 @@
+  <%= form_for [:admin, @product], :html => {:class => 'custom',"data-abide" => ''} do |f| %>
+	 <% if @product.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+	      <ul>
+	      <% @product.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+  <fieldset>
+    <legend class="contact legend">Product...</legend>
+
+    <div class="row">
+      <div class="large-12 columns">
+		 <%= f.label :name %><br />
+		<%= f.text_field :name, :required => true, :placeholder=>"Name of the food..."%>		
+		<small class="error">Name is required.</small>       
+      </div>
+    </div>
+	
+	<div class="row">
+	 <div class="large-12 columns">
+		 <%= f.label :photo %><br />
+		 <%= f.url_field :photo, :required=>true, :pattern=>"url", :placeholder=>"web url to an image representing the food..."%>
+			<small class="error">Please insert a valid url.(example: http://www.example.com) </small>   
+	</div>
+	</div>
+
+    <div class="row">
+      <div class="large-4 columns">
+		<%= f.label :region %><br />
+		 <%= f.text_field :region, :required=>true, :placeholder=>"typical region for the food..."%>  
+		<small class="error">Region is a required field.</small>        
+      </div>
+      <div class="large-4 columns">
+	  <div class ="row collapse">
+			<%= f.label :hashtag %><br />			         
+		<div class="small-3 columns">
+		<span class="prefix">#</span>
+		</div>
+		<div class="small-9 columns">
+			<%= f.text_field :hashtag, :required=>true,:placeholder=>"hashtag for Twitter and Instagram..."%>  
+			<small class="error">Hashtag is a required field.</small>       
+		</div>
+      </div>
+	  </div>
+      <div class="large-4 columns">
+			<%= f.label :category_id %><br />		   	 
+	      <%= f.select(:category_id, options_for_select(@categories, @product.category_id),{},{ :class => 'medium' } ) %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+		<%= f.label :description %><br />
+		 <%= f.text_area :description, :required=>true, :placeholder=>"Insert a short description of the Portuguese delicious food..."%>
+        <small class="error">Description is a required field.</small> 
+      </div>
+    </div>
+<div class="row">
+	<div class="large-4 columns">
+			<%= f.label :latitude %><br />
+			 <%= f.text_field :latitude, :placeholder=>"latitude for the product region..."%>
+		</div>
+		<div class="large-4 columns">
+				<%= f.label :longitude %><br />
+				 <%= f.text_field :longitude, :placeholder=>"longitude for the product region..."%>
+			</div>
+			<div class="large-4 columns">
+				</div>
+	</div>
+<%= f.submit 'submit', :class => 'radius button' %>
+   
+  </fieldset>
+</form>
+<%end%>
