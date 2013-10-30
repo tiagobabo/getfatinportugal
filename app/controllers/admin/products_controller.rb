@@ -69,7 +69,7 @@ class Admin::ProductsController < ApplicationController
   def prods_category
     if request.xhr?
       if params[:id].to_s == -1.to_s
-        @products = Product.where(is_active: '1')            
+        @products = Product.where(is_active: 1)            
       else 
         @products = Product.where(category_id: params[:id])	          
       end	
