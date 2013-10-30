@@ -63,6 +63,8 @@ root :to => 'main#index'
 #admin section
  namespace :admin do
 	resources :products  
+	
+	match 'products/prods_category/:id' => "products#prods_category"
 root :to => 'main#index'	
 	
  end
