@@ -1,4 +1,4 @@
-function getCategoriesContent(url,element)
+function get_product_categories_content(url,element)
 {
 	set_active_class(element);
 
