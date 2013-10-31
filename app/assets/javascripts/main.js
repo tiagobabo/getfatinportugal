@@ -1,4 +1,4 @@
-var projects = gon.projects
+var projects = gon.projects;
 $(document).ready(function() {
   $(function() {
 
