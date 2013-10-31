@@ -8,7 +8,7 @@ function get_product_categories_content(url,element)
 }
 
 $(document).ready(function() {
-	$('.delete_post').bind('ajax:success', function() {
+	$('.delete_product').bind('ajax:success', function() {
 		$(this).closest('div.row').fadeOut();
 	});
 });

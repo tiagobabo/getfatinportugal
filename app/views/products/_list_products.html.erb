@@ -10,12 +10,7 @@
 	<p> <strong>Region: </strong> <%=product.region %> </p>
 	<p> <strong>Category: </strong> <%=product.category.name %> </p>
       <p> <strong>Description: </strong> <%=product.description %> </p>	
-	  <p> <strong>Coordinates: </strong> latitude: <%=product.latitude %> -  longitude: <%= product.longitude %> </p>	
-      <ul class="inline-list">
-        <li><%= link_to 'Edit', edit_admin_product_path(product) %></li>
-        <li><%= link_to 'Remove', [:admin, product], method: :delete, :remote=>true, :class=>'delete_product', data: { confirm: 'Are you sure you want to delete the product?' } %></li>
-      </ul>
-
+	  <p> <strong>Coordinates: </strong> latitude: <%=product.latitude %> -  longitude: <%= product.longitude %> </p>	     
     </div>
 	<hr />
   </div>
