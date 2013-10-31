@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def prods_by_category
-
+    gon.projects=session[:projects]
     @products = Product.where(category_id: params[:id])	   
     @category_name= @products.first.name       
     respond_to do |format|

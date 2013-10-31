@@ -1,8 +1,9 @@
+var projects = gon.projects
 $(document).ready(function() {
   $(function() {
 
     $("#search").autocomplete({
-      source: gon.projects,
+      source: projects
       select: function( event, ui ) {
         window.location = "products/" + ui.item.id;
         return false;
