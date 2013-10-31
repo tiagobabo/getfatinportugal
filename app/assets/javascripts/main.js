@@ -3,7 +3,7 @@ $(document).ready(function() {
   $(function() {
 
     $("#search").autocomplete({
-      source: projects
+      source: projects,
       select: function( event, ui ) {
         window.location = "products/" + ui.item.id;
         return false;
