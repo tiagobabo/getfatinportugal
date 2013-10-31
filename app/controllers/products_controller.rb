@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def prods_by_category
 
     @products = Product.where(category_id: params[:id])	          
-
+    @category_name= @products.first.category.name
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @products }
