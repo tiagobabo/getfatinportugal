@@ -1,2 +1,13 @@
 @import "foundation_and_overrides";
 @import "jquery.ui.all";
+
+#map-canvas {
+        height: 400px;
+        display: inline-block;
+        width: 400px;
+        margin: 10px;
+    }
+
+    .gmnoprint img {
+        max-width: none;
+    }
