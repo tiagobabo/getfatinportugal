@@ -80,6 +80,7 @@ match 'products/prods_by_category/:id' => 'products#prods_by_category'
 
 get 'contact/index'
 get 'contact/suggest_food'
+post 'contact/sendemail'
 
 
 end
