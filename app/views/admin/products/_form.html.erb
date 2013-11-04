@@ -61,7 +61,16 @@
         <small class="error">Description is a required field.</small> 
       </div>
     </div>
-<div class="row">
+	
+	<div class="row">
+		<div class="large-4 columns">
+		<input type="text" id="map_search" placeholder="enter city to find..."/>
+		<input type = "button" onclick="codeAddress()" value="search"/> 
+		<div id="map-canvas"/>
+		</div>
+	</div>	
+	
+<div class="row" style="visibility:hidden">
 	<div class="large-4 columns">
 			<%= f.label :latitude %><br />
 			 <%= f.text_field :latitude, :placeholder=>"latitude for the product region..."%>
