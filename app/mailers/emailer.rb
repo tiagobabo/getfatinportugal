@@ -4,5 +4,11 @@ class Emailer < ActionMailer::Base
   def welcome_email(user)
           @user=user
     mail(to: @user, subject: 'Welcome to My Awesome Site', message: 'Eheh isto bomba' )
-end
+	end
+	
+	def contact_us(name, email, subject, message)
+		@info = [name, email, subject, message];
+		mail(to: email)
+	end
+	
 end

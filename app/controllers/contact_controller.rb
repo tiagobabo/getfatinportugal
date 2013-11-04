@@ -6,13 +6,8 @@ class ContactController < ApplicationController
 	  @categories = Category.all.map{|x| [x.name, x.id]}
 	end
 	
-	def sendemail
-		name = params[:name]
-		email = params[:email]
-		subject = params[:subject]
-		message =  params[:message]
-
-		Emailer.welcome_email(email).deliver
+	def sendemail	
+		Emailer.contact_us(params[:name], params[:email], params[:subject], params[:message]).deliver
 	end
 
 end
