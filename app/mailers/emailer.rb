@@ -8,7 +8,7 @@ class Emailer < ActionMailer::Base
 	
 	def contact_us(name, email, subject, message)
 		@info = [name, email, subject, message];
-		mail(to: email)
+		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New contact:' )
 	end
 	
 end
