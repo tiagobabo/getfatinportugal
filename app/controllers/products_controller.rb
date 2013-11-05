@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
     gon.twitter=@twitter
     gon.hashtag=@product.hashtag
     gon.region = @product.region
+	gon.latitude  = @product.latitude
+	gon.longitude = @product.longitude
   end
 
   def prods_by_category

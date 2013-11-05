@@ -80,6 +80,8 @@ class Admin::ProductsController < ApplicationController
   def edit
     @categories = Category.all.map{|x| [x.name, x.id]}
     @product = Product.find(params[:id])
+	gon.latitude = @product.latitude
+	gon.longitude = @product.longitude
   end
 
   def prods_category
