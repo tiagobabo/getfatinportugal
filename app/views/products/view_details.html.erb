@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag "instagram.css" %>
 <%= stylesheet_link_tag "twitter-styles.css" %>
-<%= javascript_include_tag "products.js" %>
+<%= javascript_include_tag "google.maps.js"  %>
+<%= javascript_include_tag params[:controller]  %>
 <%= javascript_include_tag "jquery.instagram.js" %>
 <%= javascript_include_tag "jquery.slimbox2.js" %>
 <%= javascript_include_tag "twitterfeed-search.js" %>
@@ -14,15 +15,14 @@
 
 <div class="row">
 
+
     <!-- Main Content Section -->
     <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 
     <div class="large-9 push-3 columns">
 
         <h2><%= @product.name %> <small><%= @product.region %></small></h2>
-
-
-   
+		
             <div> 
                 <img src="<%= @product.photo %>" />
             </div>

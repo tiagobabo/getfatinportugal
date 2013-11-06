@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.ui.all
+//= require google.maps
 //= require admin/products
 //= require admin/categories
 

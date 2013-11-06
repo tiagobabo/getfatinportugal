@@ -54,6 +54,7 @@ DeliciouslyPortugalV2::Application.configure do
   config.assets.precompile += %w(twitterfeed-search.js)
   config.assets.precompile += %w(main.js)
   config.assets.precompile += %w(products.js)
+  config.assets.precompile += %w(google.maps.js)
 
    #config.assets.precompile += %w( main.js )
    #config.assets.precompile += %w( product.js )

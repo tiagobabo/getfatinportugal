@@ -20,7 +20,7 @@ function set_active_class(element) {
 
 }
 
-var markersArray = [];
+/*var markersArray = [];
 
 function initialize() {
     var myLatlng = new google.maps.LatLng(gon.latitude, gon.longitude);
@@ -40,9 +40,20 @@ function initialize() {
     }
     placeMarker(myLatlng);
 
-}
+}*/
 $(document).ready(function () {
-    google.maps.event.addDomListener(window, 'load', initialize);
+
+  var googleMaps = new GoogleMaps('map-canvas');
+   googleMaps.zoom=10;   
+   googleMaps.mapType = google.maps.MapTypeId.ROADMAP;
+  
+  if(!gon.latitude && !gon.longitude)
+   {	   
+	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeAtCurrentLocation(gon.region));
+   }
+   else {	   
+	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude));
+   }  	    
 });
 
 function codeAddress() {
@@ -70,20 +81,4 @@ function codeAddress() {
 
         }
     });
-}
-
-function placeMarker(location) {
-    clearOverlays();
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map,
-    });
-    markersArray.push(marker);
-}
-
-function clearOverlays() {
-    for (var i = 0; i < markersArray.length; i++) {
-        markersArray[i].setMap(null);
-    }
-    markersArray = [];
 }
