@@ -25,10 +25,10 @@ CONTENTS:
 3 / Instagram
 
 ----------------------------------------------- */
-.instagram { overflow:hidden; margin-bottom:7px;  }
-.instagram-placeholder { float:left; margin-right:20px; margin-bottom:20px; }
-.last { margin-right:20; }
-.instagram-placeholder a img { height:65px; width:65px; }
+.instagram-gallery { overflow:hidden; margin-bottom:7px;  }
+.instagram-placeholder-gallery { float:left; margin-right:20px; margin-bottom:20px; }
+.last-gallery { margin-right:20; }
+.instagram-placeholder-gallery a img { height:65px; width:65px; }
 
 
 /*

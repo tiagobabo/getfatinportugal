@@ -19,7 +19,7 @@
     function createPhotoElement(photo) {
 		 if((photo.caption) !== null){        var photo_content = photo.caption.text + "  -  ";      }      else {        var photo_content = " "      }
       return $('<div>')
-        .addClass('instagram-placeholder')
+        .addClass('instagram-placeholder-gallery')
         .attr('id', photo.id)
         .append(
           $('<a>')
@@ -85,15 +85,15 @@
     return this;
   };
       $(document).ready(function() {
-      $(".instagram").instagram({   
+      $(".instagram-gallery").instagram({   
         hash: gon.hashtag.substring(1), 
         show: '7',
         clientId: '467ede5a6b9b48ae8e03f4e2582aeeb3'
       });
-      $('div.instagram-placeholder').each( function(i) {
+      $('div.instagram-placeholder-gallery').each( function(i) {
         if( i % 4 != 3 )
           return
-        $(this).addClass('last')
+        $(this).addClass('last-gallery')
       })
     });
 })(jQuery);
