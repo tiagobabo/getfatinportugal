@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   validates :region, :presence => true 
 validates  :category_id, :presence=>true  
 
-  attr_accessible :description, :hashtag, :name, :photo, :region, :category_id, :category, :latitude, :longitude, :isactive
+  attr_accessible :description, :hashtag, :name, :photo, :region, :category_id, :category, :latitude, :longitude, :is_active
 
   def next
     Product.where("products.id > ?", self.id).order("products.id ASC").limit(1)

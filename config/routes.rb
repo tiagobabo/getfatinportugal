@@ -62,9 +62,12 @@ root :to => 'main#index'
 
 #admin section
  namespace :admin do
+ get 'products/list_suggestions' => 'products#list_suggestions'
+ match 'products/list_suggestions/:id' => "products#list_suggestions"
+  match 'products/activate/:id' => "products#activate"
+
 	resources :products  
-	resources :categories
-	
+	resources :categories	
 	match 'products/prods_category/:id' => "products#prods_category"
 root :to => 'main#index'	
 	
@@ -81,7 +84,7 @@ match 'products/prods_by_category/:id' => 'products#prods_by_category'
 get 'contact/index'
 get 'contact/suggest_food'
 post 'contact/sendemail'
-post 'contact/test'
+post 'contact/suggest'
 
 
 end

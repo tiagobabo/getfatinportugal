@@ -47,13 +47,13 @@ GoogleMaps.prototype.initializeWithRegion = function (region) {
     });
 }
 
-GoogleMaps.prototype.initializeAtCurrentLocation = function (latitude, longitude) {
+GoogleMaps.prototype.initializeAtCurrentLocation = function () {
 var _this = this;
 var mapOptions = {
         zoom: 10,      
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-   _this.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
+   _this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), mapOptions); 
 
  if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -79,4 +79,29 @@ var _this = this;
         map: _this.map,
     });
     this.markersArray.push(marker);
+}
+
+GoogleMaps.prototype.showMapByAddress = function(address, longitude, latitude)
+{	
+ var _this = this;	
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        'address': address
+    }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var myOptions = {
+                zoom: _this.zoom,
+                center: results[0].geometry.location,
+                mapTypeId:_this.mapType
+            }
+           _this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);      
+			
+			var myLatlng = new google.maps.LatLng(results[0].geometry.location.nb, results[0].geometry.location.ob);
+			_this.latitude= results[0].geometry.location.nb;
+			_this.longitude = results[0].geometry.location.ob;
+			latitude.val(_this.latitude);
+			longitude.val(_this.longitude);
+			_this.placeMarker(myLatlng);
+        }
+    });
 }

@@ -2,14 +2,24 @@
 @import "jquery.ui.all";
 @import "main";
 @import "contact";
-@import "products";
+@import 'foundation-social-web-icons';
+
 
 /** Removes black background on menu item **/
 .top-bar-section ul  
 {
     background: none;    
 }
+.top-bar-section li a:not(.button){
+background:none;
+}
 body
 {
 	background-image:url(subtle_white_feathers.png);
 }
+
+  	#map-canvas { height: 200px; display:inline-block;
+  		width: 200px; margin:10px;}
+  		.gmnoprint img {
+  			max-width: none; 
+  		}

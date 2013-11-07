@@ -65,7 +65,7 @@
 	<div class="row">
 		<div class="large-4 columns">
 		<input type="text" id="map_search" placeholder="enter city to find..."/>
-		<input type = "button" class="radius button" onclick="codeAddress()" value="search"/> 
+		<input type = "button" class="radius button" onclick="findByAddress()" value="search"/> 
 		<div id="map-canvas"/>
 		</div>
 	</div>	
@@ -79,8 +79,10 @@
 				<%= f.label :longitude %><br />
 				 <%= f.text_field :longitude, :placeholder=>"longitude for the product region..."%>
 			</div>
-			<div class="large-4 columns">
-				</div>
+			 <div class="large-4 columns">
+              <%= f.text_field :is_active%>
+          </div>
+				
 	</div>
 <%= f.submit 'submit', :class => 'radius button' %>
    

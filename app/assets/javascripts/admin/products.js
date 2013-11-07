@@ -8,7 +8,7 @@ function get_product_categories_content(url, element) {
 }
 
 $(document).ready(function () {
-    $('.delete_product').bind('ajax:success', function () {
+    $('.ajax_actions').bind('ajax:success', function () {
         $(this).closest('div.row').fadeOut();
     });
 });
@@ -20,65 +20,24 @@ function set_active_class(element) {
 
 }
 
-/*var markersArray = [];
-
-function initialize() {
-    var myLatlng = new google.maps.LatLng(gon.latitude, gon.longitude);
-    var mapOptions = {
-        zoom: 10,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-    if (navigator.geolocation && !gon.latitude && !gon.longitude) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            map.setCenter(myLatlng);
-            placeMarker(myLatlng);
-        });
-    }
-    placeMarker(myLatlng);
-
-}*/
+var googleMaps = new GoogleMaps('map-canvas');
 $(document).ready(function () {
+    googleMaps.zoom = 12;
+    googleMaps.mapType = google.maps.MapTypeId.ROADMAP;
+	if(typeof gon !== 'undefined'){
+    if (!gon.latitude && !gon.longitude) {
+        google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeAtCurrentLocation());
+    }
+    else {
 
-  var googleMaps = new GoogleMaps('map-canvas');
-   googleMaps.zoom=10;   
-   googleMaps.mapType = google.maps.MapTypeId.ROADMAP;
-  
-  if(!gon.latitude && !gon.longitude)
-   {	   
-	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeAtCurrentLocation(gon.region));
-   }
-   else {	   
-	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude));
-   }  	    
+        google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude));
+    }
+}
 });
 
-function codeAddress() {
-    address = $("#map_search").val();
-    geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-        'address': address
-    }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var myOptions = {
-                zoom: 12,
-                center: results[0].geometry.location,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-
-
-            google.maps.event.addListener(map, 'click', function (event) {
-
-                $(product_longitude).val(event.latLng.lng());
-                $(product_latitude).val(event.latLng.lat())                
-                placeMarker(event.latLng);
-            });
-
-
-        }
-    });
+function findByAddress()
+{
+	googleMaps.showMapByAddress($("#map_search").val(),$("#product_longitude"),$("#product_latitude"));
 }
+
+

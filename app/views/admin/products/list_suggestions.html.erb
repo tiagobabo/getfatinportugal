@@ -5,15 +5,13 @@
 <div class="large-10 large-centered columns">
 <dl class="sub-nav">
   <dt>Filter:</dt>
-  <dd class="active"><a onclick="get_product_categories_content('/admin/products/prods_category/-1',this);">All</a></dd>
+  <dd class="active"><a onclick="get_product_categories_content('/admin/products/list_suggestions/-1',this);">All</a></dd>
 <% @categories.each do |category|  %>
-  <dd><a onclick="get_product_categories_content('/admin/products/prods_category/<%=category.id%>', this );"><%=category.name%></a></dd>
+  <dd><a onclick="get_product_categories_content('/admin/products/list_suggestions/<%=category.id%>', this );"><%=category.name%></a></dd>
 <%end%>
 </dl>
 <div id="list_products">
   <%= render "list_products" %>
   </div>
 </div>
-
-
 

@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     gon.projects=session[:projects]
     
     @products = Product.where(category_id: params[:id])	   
-    @category_name= @products.first.name       
+    @category_name= @products.first.category.name       
     
     respond_to do |format|
       format.html # new.html.erb

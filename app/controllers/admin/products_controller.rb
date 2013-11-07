@@ -8,9 +8,9 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.all	
     if request.xhr?
-      @products = Product.where(category_id: params[:id])		
+      @products = Product.where(category_id: params[:id], is_active: 1);		
       render :partial => "/admin/products/list_products", :object => @products
     else
       @products = Product.where(is_active: 1)		
@@ -90,9 +90,34 @@ gon.latitude = ''
       if params[:id].to_s == -1.to_s
         @products = Product.where(is_active: 1)            
       else 
-        @products = Product.where(category_id: params[:id])	          
+        @products = Product.where(category_id: params[:id], is_active: 1);	          
       end	
       render :partial => "/admin/products/list_products", :object => @products	
+    end
+  end
+  
+  def list_suggestions
+   @categories = Category.all	
+    if request.xhr?
+       if params[:id].to_s == -1.to_s
+        @products = Product.where(is_active: 0)            
+      else 
+        @products = Product.where(category_id: params[:id], is_active: 0);	          
+      end		
+    render :partial => "/admin/products/list_products", :object => @products
+    else
+      @products = Product.where(is_active: 0)		
+    end
+  end
+  
+  def activate
+   if request.xhr?
+    @product = Product.find(params[:id])
+	@product.update_attributes(:is_active=> 1)
+   end
+   respond_to do |format|
+      format.html {redirect_to  :action => "index" }
+      format.js   { render :nothing => true }
     end
   end
 
