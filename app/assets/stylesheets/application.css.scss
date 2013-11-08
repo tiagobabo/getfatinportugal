@@ -13,6 +13,13 @@
 .top-bar-section li a:not(.button){
 background:none;
 }
+
+.fc-webicon.facebook {
+  width: 30px;
+  height: 30px;
+  background: url(/assets/foundation-social-web-icons.png) -490px -9px no-repeat;
+}
+
 body
 {
 	background-image:url(subtle_white_feathers.png);
