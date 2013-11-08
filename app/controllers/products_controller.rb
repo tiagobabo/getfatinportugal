@@ -1,8 +1,17 @@
 class ProductsController < ApplicationController
-  def view_details
+  def show
+   @product = Product.find(params[:id])    
+   
+   if request.path != product_path(@product)
+	redirect_to @product, status: :moved_permanently
+	end
+	
     gon.projects=session[:projects]
 
-    @product = Product.find(params[:id])    
+   
+	
+	
+	
     @twitter = Twitter::Client.new
     @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent")
     
@@ -13,6 +22,10 @@ class ProductsController < ApplicationController
 	gon.longitude = @product.longitude
   end
 
+  def index
+  end
+  
+  
   def prods_by_category
     gon.projects=session[:projects]
     

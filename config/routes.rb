@@ -1,7 +1,6 @@
 DeliciouslyPortugalV2::Application.routes.draw do
 
   devise_for :users
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -73,8 +72,10 @@ root :to => 'main#index'
 	
  end
 
+ resources :products
+ 
 match 'main/index' => 'main#index'
-match 'products/:id' => 'products#view_details'
+
 match 'contact' => 'contact#index'
 
 match 'products/prods_by_category/:id' => 'products#prods_by_category'

@@ -16,7 +16,8 @@ group :development, :test do
   gem 'gon'
   gem 'koala'
   gem 'devise'
-    gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
+  gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
+  gem 'friendly_id'
 end
 
 group :production do

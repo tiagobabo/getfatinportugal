@@ -7,6 +7,9 @@ class Product < ActiveRecord::Base
   validates :region, :presence => true 
 validates  :category_id, :presence=>true  
 
+extend FriendlyId
+friendly_id :name, use: [:slugged, :history]
+
   attr_accessible :description, :hashtag, :name, :photo, :region, :category_id, :category, :latitude, :longitude, :is_active
 
   def next

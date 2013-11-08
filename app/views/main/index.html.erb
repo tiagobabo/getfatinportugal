@@ -8,9 +8,9 @@
 			<div class="slideshow-wrapper">
 				<div class="preloader"></div>
 				<ul style="height: 361px" data-orbit>
-					<li> <a href="<%= @urls[0] %>"> <img src="<%= @urls[0] %>"  height="100px"></a></li>
-					<li> <a href="<%= @urls[1] %>"><img src="<%= @urls[1] %>"  height="100px"></a></li>
-					<li><a href="<%= @urls[2] %>"><img src="<%= @urls[2] %>"  height="100px"></a></li>
+				<% @products_all.sample(3).each do |product|  %>
+					<li> <a href="/products/<%= product.id %>"> <img src="<%= product.photo %>"  height="100px"></a></li>					
+					<%end%>
 				</ul>
 			</div>
 		</div>

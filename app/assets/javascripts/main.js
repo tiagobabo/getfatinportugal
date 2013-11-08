@@ -5,12 +5,12 @@ $(document).ready(function() {
     $("#search").autocomplete({
       source: projects,
       select: function( event, ui ) {
-        window.location = "/products/" + ui.item.id;
+        window.location = "/products/" + ui.item.slug;
         return false;
       }
     }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
       return $( "<li>" )
-      .append("<a href='/products/" + item.id + "'>" + "<img style='width:40px;height:40px' src='" + item.icon + "' />" + "<span id='teste'>" + item.value + "</span></a>")
+      .append("<a href='/products/" + item.slug + "'>" + "<img style='width:40px;height:40px' src='" + item.icon + "' />" + "<span id='teste'>" + item.value + "</span></a>")
       .appendTo( ul );
     };
   });
