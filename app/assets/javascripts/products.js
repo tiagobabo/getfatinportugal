@@ -18,5 +18,4 @@ $(document).ready(function () {
   js.src = "//connect.facebook.net/pt_PT/all.js#xfbml=1&appId=544436338959490";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-   
 });
