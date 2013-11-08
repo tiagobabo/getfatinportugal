@@ -9,7 +9,7 @@
 				<div class="preloader"></div>
 				<ul style="height: 361px" data-orbit>
 				<% @products_all.sample(3).each do |product|  %>
-					<li> <a href="/products/<%= product.id %>"> <img src="<%= product.photo %>"  height="100px"></a></li>					
+					<li> <a href="<%= product_path(product) %>"> <img src="<%= product.photo %>"  height="100px"></a></li>					
 					<%end%>
 				</ul>
 			</div>
