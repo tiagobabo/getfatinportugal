@@ -12,6 +12,11 @@
 	<p> <strong>Region: </strong> <%=product.region %> </p>
 	<p> <strong>Category: </strong> <%=@category_name %> </p>
       <p> <strong>Description: </strong> <%=product.description %> </p>	
+	  <div class="map-canvas" id="<%= product.id%>"></div>
+	  <script>
+	  googleMaps.mapCanvas = "<%= product.id%>";
+ googleMaps.initializeCoordinates(<%=product.latitude %>, <%= product.longitude %>);
+</script>
 	  <p> <strong>Coordinates: </strong> latitude: <%=product.latitude %> -  longitude: <%= product.longitude %> </p>	     
     </div>
 	<hr />
