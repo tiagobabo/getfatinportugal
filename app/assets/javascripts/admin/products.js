@@ -30,7 +30,7 @@ $(document).ready(function () {
     }
     else {
 
-        google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude));
+        google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude, true));
     }
 }
 });

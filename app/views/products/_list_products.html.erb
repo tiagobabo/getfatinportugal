@@ -15,7 +15,7 @@
 	  <div class="map-canvas" id="<%= product.id%>"></div>
 	  <script>
 	  googleMaps.mapCanvas = "<%= product.id%>";
- googleMaps.initializeCoordinates(<%=product.latitude %>, <%= product.longitude %>);
+ googleMaps.initializeCoordinates(<%=product.latitude %>, <%= product.longitude %>, false);
 </script>
 	  <p> <strong>Coordinates: </strong> latitude: <%=product.latitude %> -  longitude: <%= product.longitude %> </p>	     
     </div>

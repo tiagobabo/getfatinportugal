@@ -9,7 +9,7 @@ $(document).ready(function () {
 	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeWithRegion(gon.region));
    }
    else {	   
-	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude));
+	google.maps.event.addDomListener($("#map-canvas"), 'load', googleMaps.initializeCoordinates(gon.latitude, gon.longitude, true));
    }
 //google ads
 (adsbygoogle = window.adsbygoogle || []).push({});

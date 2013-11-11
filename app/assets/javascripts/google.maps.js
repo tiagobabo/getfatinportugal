@@ -13,7 +13,7 @@ function GoogleMaps(_mapCanvas) {
 	this.markersArray=[];
 }
 
-GoogleMaps.prototype.initializeCoordinates = function (latitude, longitude) {
+GoogleMaps.prototype.initializeCoordinates = function (latitude, longitude, removeMarkers) {
     var _this = this;
     this.latitude = latitude;
     this.longitude = longitude;   
@@ -25,7 +25,7 @@ GoogleMaps.prototype.initializeCoordinates = function (latitude, longitude) {
     }
     _this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), mapOptions);
 	
-	 this.placeMarker(myLatlng);
+	 this.placeMarker(myLatlng, removeMarkers);
 
 }
 
@@ -43,6 +43,11 @@ GoogleMaps.prototype.initializeWithRegion = function (region) {
                 mapTypeId: _this.mapType
             }
             _this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
+			
+			var myLatlng = new google.maps.LatLng(results[0].geometry.location.nb, results[0].geometry.location.ob);
+			_this.latitude= results[0].geometry.location.nb;
+			_this.longitude = results[0].geometry.location.ob;			
+			_this.placeMarker(myLatlng, true);
         }
     });
 }
@@ -59,7 +64,7 @@ var mapOptions = {
         navigator.geolocation.getCurrentPosition(function (position) {
             var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             _this.map.setCenter(myLatlng);
-            _this.placeMarker(myLatlng);
+            _this.placeMarker(myLatlng,true);
         });
     }
 }
@@ -71,9 +76,11 @@ GoogleMaps.prototype.clearOverlays = function() {
     this.markersArray = [];
 }
 
-GoogleMaps.prototype.placeMarker = function(location) {
+GoogleMaps.prototype.placeMarker = function(location, removeMarkers) {
 var _this = this;
+if(removeMarkers)
     this.clearOverlays();
+	
     var marker = new google.maps.Marker({
         position: location,
         map: _this.map,
@@ -101,7 +108,7 @@ GoogleMaps.prototype.showMapByAddress = function(address, longitude, latitude)
 			_this.longitude = results[0].geometry.location.ob;
 			latitude.val(_this.latitude);
 			longitude.val(_this.longitude);
-			_this.placeMarker(myLatlng);
+			_this.placeMarker(myLatlng, true);
         }
     });
 }
