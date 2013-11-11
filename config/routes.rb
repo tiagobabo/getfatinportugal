@@ -86,6 +86,6 @@ get 'contact/index'
 get 'contact/suggest_food'
 post 'contact/sendemail'
 post 'contact/suggest'
-
+get 'main/about_us'
 
 end
