@@ -11,4 +11,9 @@ class Emailer < ActionMailer::Base
 		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New contact:' )
 	end
 	
+	def suggest_us(name, email, contact, suggested_prod)
+		@info = [name, email, contact, suggested_prod];
+		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New suggestion:' )
+	end
+	
 end

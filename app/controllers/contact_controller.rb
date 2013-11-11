@@ -20,8 +20,11 @@ class ContactController < ApplicationController
 	 	 end
 	end
 	
-	def suggest
+	def suggest	
 	@product = Product.new(params[:product])
+  
+  Emailer.suggest_us(params[:name_user], params[:email_user], params[:phone_user], @product.name).deliver
+	
   
     respond_to do |format|
       if @product.save
