@@ -99,9 +99,44 @@
               <%= f.text_field :is_active,  :value =>0%>
           </div>
       </div>
-
-      <%= f.submit 'submit', :class => 'radius button' %>
+   
    
   </fieldset>
+  
+  <fieldset>
+    <legend class="contact legend">Personal info...</legend>
+	
+              <div class="row collapse">
+                <div class="large-2 columns">
+				 <%= label_tag 'name_user', 'Your name', :class=>'inline' %>                  
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'name_user',nil, :placeholder => 'Jane Smith', :required=>true %>
+                <small class="error">Name is a required field.</small>
+                </div>
+              </div>
+              <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'email_user', 'Your email', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'email_user',nil, :placeholder => 'jane@smithco.com', :required=>true %>                
+				<small class="error">Email is a required field.</small>
+                </div>
+              </div>
+			  
+			   <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'phone_user', 'Your phone contact', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'phone_user',nil, :placeholder => 'ex: +351 123 123 123...' %>                
+                </div>
+              </div>
+			  			                       
+  </fieldset>
+  
+  
+    <%= f.submit 'submit', :class => 'radius button' %>
 </form>
 <%end%>

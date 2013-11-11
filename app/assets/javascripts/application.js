@@ -28,4 +28,13 @@ $(function() {
       .append("<a href='/products/" + item.slug + "'>" + "<img style='width:40px;height:40px' src='" + item.icon + "' />" + "<span id='teste'>" + item.value + "</span></a>")
       .appendTo( ul );
     };
-});
+
+	(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/pt_PT/all.js#xfbml=1&appId=544436338959490";
+						fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+	
+	});
