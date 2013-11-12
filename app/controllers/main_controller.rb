@@ -14,5 +14,9 @@ class MainController < ApplicationController
   def about_us
 
   end
+  
+  def terms_conditions
+  
+  end
 
 end
