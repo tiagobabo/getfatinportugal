@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   layout 'admin'
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
   # GET /products/1
   # GET /products/1.json
   def show
