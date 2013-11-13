@@ -1,0 +1,96 @@
+<div class="row">
+<!-- Contact Details -->
+    <div class="large-9 columns">
+ 
+      <h3>Join us!</h3>
+     
+ <p>Do you want to partner with us?</p>
+
+<p>Do you want your business to be shown?</p>
+
+ <p> Contact us</p>
+ 
+ 
+      <div class="section-container tabs" data-section>
+        <section class="section active">
+          <h5 class="title"><a href="#panel1">Information</a></h5>
+          <div class="content" data-slug="panel1">
+          <%= form_tag ("/contact/send_client_interest"), {:class => 'custom', "data-abide" => ''} do %>
+              <div class="row collapse">
+                <div class="large-2 columns">
+				 <%= label_tag 'name', 'Restaurant name', :class=>'inline' %>                  
+                </div>
+                <div class="large-10 columns">
+				
+				<%=text_field_tag 'name',nil, :placeholder => 'Restaurante Delicioso', :required=> true %>
+                <small class="error">Name is required.</small>
+                </div>
+              </div>
+			    <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'address', 'Address', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'address',nil, :placeholder => 'Rua Deliciosa...', :required=> true %>   
+				<small class="error">Address is required.</small>				
+                </div>
+              </div>
+			  
+			    <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'locality', 'Locality', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'locality',nil, :placeholder => 'Porto', :required=> true %>   
+				<small class="error">Locality is required.</small>				
+                </div>
+              </div>
+			  
+			    <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'person_in_charge', 'Person in charge', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'person_in_charge',nil, :placeholder => 'Mr. John Smith', :required=> true %>  
+				<small class="error">Person name is required.</small>				
+                </div>
+              </div>
+			  
+              <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'email', 'Your email', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=email_field_tag 'email',nil, :placeholder => 'john@delicioso.com', :required=> true %>   
+					<small class="error">Email is required.</small>				
+                </div>
+              </div>
+			  
+			  <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'phone', 'Phone', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=text_field_tag 'phone',nil, :placeholder => '+351 123 123 123' %>                
+                </div>
+              </div>
+			  
+			   <div class="row collapse">
+                <div class="large-2 columns">
+				<%= label_tag 'product', 'Phone', :class=>'inline' %>                   
+                </div>
+                <div class="large-10 columns">
+				<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name"), :class => 'medium' %>
+                </div>
+              </div>			 
+			       
+              <button type="submit" class="radius button">Submit</button>
+             <%end%>
+          </div>
+        </section>        
+      </div>
+	
+    </div>
+ 
+    <!-- End Contact Details -->
+	</div>

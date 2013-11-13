@@ -8,12 +8,17 @@ class Emailer < ActionMailer::Base
 	
 	def contact_us(name, email, subject, message)
 		@info = [name, email, subject, message];
-		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New contact:' )
+		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New contact' )
 	end
 	
 	def suggest_us(name, email, contact, suggested_prod)
 		@info = [name, email, contact, suggested_prod];
-		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New suggestion:' )
+		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New suggestion' )
+	end
+	
+	def new_interest(client_name,address, locality, person_in_charge, email, phone, product)
+		@info = [client_name, address, locality, person_in_charge, email, phone, product]
+		mail(to: 'deliciouslyportugal@gmail.com', subject: 'New client interest' )
 	end
 	
 end

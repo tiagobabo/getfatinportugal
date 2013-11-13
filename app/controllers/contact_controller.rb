@@ -36,5 +36,19 @@ class ContactController < ApplicationController
       end
     end
 	end 
+	
+	def send_client_interest
+	@product = Product.find(params[:product])
+	Emailer.new_interest(params[:name], params[:address], params[:locality],params[:person_in_charge],params[:email],params[:phone],  @product.name).deliver
+		 flash[:notice] = "Email was successfully sent."
+		respond_to do |format|
+			format.html { redirect_to :action=> 'interest' }     
+	 	 end
+	end
+	
+	def interest
+	 @products = Product.where(is_active: 1)
+	gon.projects=session[:projects]
+	end
 
 end

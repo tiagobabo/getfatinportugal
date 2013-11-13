@@ -88,5 +88,7 @@ post 'contact/sendemail'
 post 'contact/suggest'
 get 'main/about_us'
 get 'main/terms_conditions'
+get 'contact/interest'
+post 'contact/send_client_interest'
 
 end
