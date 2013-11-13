@@ -2,13 +2,11 @@
 <!-- Contact Details -->
     <div class="large-9 columns">
  
-      <h3>Join us!</h3>
-     
- <p>Do you want to partner with us?</p>
+      <h3>Put your restaurant here!</h3>
+	 
+ <p>Do you want to promote your restaurant as the best place to eat a delicious portuguese food?</p>
 
-<p>Do you want your business to be shown?</p>
-
- <p> Contact us</p>
+<p>Then contact us and we will get in touch with you!</p>
  
  
       <div class="section-container tabs" data-section>
@@ -38,7 +36,7 @@
 			  
 			    <div class="row collapse">
                 <div class="large-2 columns">
-				<%= label_tag 'locality', 'Locality', :class=>'inline' %>                   
+				<%= label_tag 'locality', 'Location', :class=>'inline' %>                   
                 </div>
                 <div class="large-10 columns">
 				<%=text_field_tag 'locality',nil, :placeholder => 'Porto', :required=> true %>   
@@ -58,7 +56,7 @@
 			  
               <div class="row collapse">
                 <div class="large-2 columns">
-				<%= label_tag 'email', 'Your email', :class=>'inline' %>                   
+				<%= label_tag 'email', 'Email', :class=>'inline' %>                   
                 </div>
                 <div class="large-10 columns">
 				<%=email_field_tag 'email',nil, :placeholder => 'john@delicioso.com', :required=> true %>   
@@ -77,7 +75,7 @@
 			  
 			   <div class="row collapse">
                 <div class="large-2 columns">
-				<%= label_tag 'product', 'Phone', :class=>'inline' %>                   
+				<%= label_tag 'product', 'Your restaurant''s specialty', :class=>'inline' %>                   
                 </div>
                 <div class="large-10 columns">
 				<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name"), :class => 'medium' %>
