@@ -67,9 +67,14 @@ root :to => 'main#index'
 
 	resources :products  
 	resources :categories	
-	match 'products/prods_category/:id' => "products#prods_category"
-root :to => 'main#index'	
-	
+	resources :clients
+		match 'products/prods_category/:id' => "products#prods_category"
+
+ namespace :configuration do
+	resources :client_types
+	resources :service_modalities
+end
+	root :to => 'main#index'	
  end
 
  resources :products

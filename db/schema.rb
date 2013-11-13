@@ -11,12 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131112153547) do
+ActiveRecord::Schema.define(:version => 20131113153106) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "client_types", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "client_types", ["name"], :name => "index_client_types_on_name", :unique => true
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "nif"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "mobile_phone"
+    t.string   "person_in_charge"
+    t.string   "location"
+    t.string   "postal_code"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "friendly_id_slugs", :force => true do |t|
@@ -47,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20131112153547) do
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
   add_index "products", ["slug"], :name => "index_products_on_slug"
+
+  create_table "service_modalities", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "service_modalities", ["name"], :name => "index_service_modalities_on_name", :unique => true
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

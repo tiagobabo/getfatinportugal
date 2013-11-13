@@ -57,7 +57,32 @@
           </ul>
         </li>
         <li class="divider"></li>
-        <li><a href="#">Users</a></li>
+		 <li class="has-dropdown">
+          <a href="#">Users</a>
+          <ul class="dropdown">
+            <li><label>Manage user's</label></li>
+            
+            <li><a href="/admin/clients/new">Create new client...</a></li>
+            <li><a href="/admin/clients/show">Show users...</a></li>				
+			
+            <li class="divider"></li>
+            <li><label>Manage payments</label></li>
+            <li><a href="/admin/payments/show">Show all payments...</a></li>            
+            <li><a href="/admin/payments/new">New payment...</a></li>          
+			<li><a href="/admin/payments/set">Set payment plan...</a></li>   
+          </ul>
+        </li>     
+		 <li class="divider"></li>
+		 <li class="has-dropdown">
+          <a href="#">Configurations</a>
+          <ul class="dropdown">
+            <li><label>Types</label></li>
+            
+            <li><a href="/admin/configuration/client_types">Manage client types...</a></li>
+            <li><a href="/admin/configuration/service_modalities">Manage modalities types...</a></li>				
+			           
+          </ul>
+        </li>     
         <li class="divider"></li>
         <li class="has-dropdown">
           <a href="#">News</a>
@@ -76,7 +101,7 @@
     <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
   <% end %>
 </div>
- 
+  <%= render :partial => 'layouts/messages' %>
   <!-- End Top Bar -->
      
    
