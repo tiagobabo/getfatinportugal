@@ -1,11 +1,12 @@
 class Admin::Configuration::ServiceModalitiesController < ApplicationController
 layout 'admin'
+
 def index
 @service_modalities = ServiceModality.all
 respond_to do |format|
-      format.html 
-      format.json { render json: @service_modality }
-    end
+	  format.html 
+	  format.json { render json: @service_modality }
+	end
 end
 
 def show

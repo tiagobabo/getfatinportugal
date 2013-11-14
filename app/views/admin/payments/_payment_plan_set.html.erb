@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="large-10 columns">
+        <fieldset>
+            <legend class="contact legend">Payment plan information...</legend>
+            <%= label_tag 'modality_select', 'Modality' %>
+	 <%= select_tag "modality_select", options_from_collection_for_select(@service_modalities, "name", "name"), :class => 'medium' %>         
+     
+        <div id="pay-per-view-options">
+            <div class="row">
+                <div class="large-12 columns">
+                    <%= label_tag 'views', 'Number of views' %><br />
+                    <%= number_field_tag 'quantity', nil, :in => 1...99999, :placeholder => 'Ex: 1' %>         
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <%= label_tag 'date_begin', 'Start at:' %><br />
+                    <%= text_field_tag 'date_begin',nil, :placeholder => 'Ex: 2014-01-01' %>         
+                </div>
+
+            </div>
+
+        </div>
+        <div id="time-options">
+           <div class="row">
+                <div class="large-12 columns">
+                    <%= label_tag 'date_begin_time', 'Starts at:' %><br />
+                    <%= text_field_tag 'date_begin_time', nil, :placeholder => 'Ex: 2014-01-01' %>         
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <%= label_tag 'date_end_time', 'Ends at:' %><br />
+                    <%= text_field_tag 'date_end_time',nil, :placeholder => 'Ex: 2014-12-31' %>         
+                </div>
+
+            </div>
+        </div>
+       </fieldset>
+    </div>
+</div>

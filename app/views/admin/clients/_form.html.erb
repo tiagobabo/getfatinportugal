@@ -1,0 +1,115 @@
+<%= form_for [:admin, @client], :html => {:class => 'custom',"data-abide" => ''} do |f| %>
+	 <% if @client.errors.any? %>
+	    <div id="error_explanation">
+            <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+            <ul>
+                <% @client.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+<% end %>
+
+  <fieldset>
+      <legend class="contact legend">Client information...</legend>
+
+	  <div class="row">
+          <div class="large-12 columns">
+               <%= f.label :client_type_id %><br />
+              <%= f.select(:client_type_id, options_for_select(@client_types, @client.client_type_id),{},{ :class => 'medium' } ) %>         
+          </div>
+      </div>
+
+	  
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :name %><br />
+              <%= f.text_field :name, :required => true, :placeholder=>"Ex: Restaurante da Esquina"%>		
+		<small class="error">Name is required.</small>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :address %><br />
+              <%= f.url_field :address, :required=>true, :placeholder=>"Ex: Rua da Esquina, 1ºdto"%>
+			<small class="error">Address is required </small>
+          </div>
+      </div>
+	  
+	   <div class="row">        
+          <div class="large-4 columns">
+              <div class="row collapse">
+                  <%= f.label :location %><br />                
+                  <div class="small-9 columns">
+                      <%= f.text_field :location, :required=>true,:placeholder=>"Ex: Coimbra"%>  
+				      <small class="error">Location is a required field.</small>
+                  </div>
+              </div>
+          </div>
+          <div class="large-4 columns">
+              <%= f.label :postal_code %><br />
+              <%= f.text_field :postal_code, :placeholder=>"Ex: 3000-123"%>  
+          </div>
+		  <div class="large-4 columns">
+		  </div>
+      </div>
+	  
+	  
+
+      <div class="row">
+          <div class="large-4 columns">
+              <%= f.label :nif %><br />
+              <%= f.text_field :nif, :placeholder=>"Ex: 123123123"%>  		
+          </div>
+          <div class="large-4 columns">
+              <div class="row collapse">
+                  <%= f.label :mobile_phone %><br />                
+                  <div class="small-9 columns">
+                      <%= f.text_field :mobile_phone, :required=>true,:placeholder=>"Ex: +351 911 123 123"%>  
+				      <small class="error">Mobile phone is a required field.</small>
+                  </div>
+              </div>
+          </div>
+          <div class="large-4 columns">
+              <%= f.label :phone %><br />
+              <%= f.text_field :phone, :placeholder=>"Ex: 239 123 123"%>  
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, :required=>true, :placeholder=>"Ex: deliciouslyportugal@gmail.com"%>
+        <small class="error">Email is a required field.</small>
+          </div>
+      </div>     
+
+     
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :person_in_charge %><br />
+              <%= f.email_field :person_in_charge, :required=>true, :placeholder=>"Ex: Sr. João"%>
+        <small class="error">Person in charge is a required field.</small>
+          </div>
+      </div>     
+   
+    <div class="row">
+	<ul class="inline-list">
+          <li><input type="button" id="btn_products" value="Associate products" class="small button"/></li>
+		  <li><input type="button" id="btn_payment"  value="Associate payment" class="small button"/></li>
+		  <li><input type="button" id="btn_payment_plan" value="Associate payment plan" class="small button"/></li>
+		  </ul>
+		  <div class="large-12 columns">
+		  <div id="list_products" style="display:none"></div>
+		  <div id="payments" style="display:none"></div>
+		  <div id="payment_plans" style="display:none"></div>
+		  </div>
+      </div>     
+  </fieldset>
+    
+  
+    <%= f.submit 'submit', :class => 'radius button' %>
+</form>
+<%end%>

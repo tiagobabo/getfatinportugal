@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113153106) do
+ActiveRecord::Schema.define(:version => 20131114154758) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -39,7 +39,10 @@ ActiveRecord::Schema.define(:version => 20131113153106) do
     t.string   "postal_code"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "client_type_id"
   end
+
+  add_index "clients", ["client_type_id"], :name => "index_clients_on_client_type_id"
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -51,6 +54,19 @@ ActiveRecord::Schema.define(:version => 20131113153106) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "payment_plans", :force => true do |t|
+    t.integer  "client_id"
+    t.integer  "service_modality_id"
+    t.integer  "balance"
+    t.datetime "initial_date"
+    t.datetime "end_date"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "payment_plans", ["client_id"], :name => "index_payment_plans_on_client_id"
+  add_index "payment_plans", ["service_modality_id"], :name => "index_payment_plans_on_service_modality_id"
 
   create_table "products", :force => true do |t|
     t.string   "name"

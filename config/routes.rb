@@ -62,6 +62,7 @@ root :to => 'main#index'
 #admin section
  namespace :admin do
  get 'products/list_suggestions' => 'products#list_suggestions'
+ get 'payments/show_payment_plan' => 'payments#show_payment_plan'
  match 'products/list_suggestions/:id' => "products#list_suggestions"
   match 'products/activate/:id' => "products#activate"
 
@@ -69,6 +70,7 @@ root :to => 'main#index'
 	resources :categories	
 	resources :clients
 		match 'products/prods_category/:id' => "products#prods_category"
+		match 'products/list_all_products/:id' => "products#list_all_products"
 
  namespace :configuration do
 	resources :client_types

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client: 
+  service_modality: 
+  balance: 1
+  initial_date: 2013-11-14 15:47:58
+  end_date: 2013-11-14 15:47:58
+
+two:
+  client: 
+  service_modality: 
+  balance: 1
+  initial_date: 2013-11-14 15:47:58
+  end_date: 2013-11-14 15:47:58

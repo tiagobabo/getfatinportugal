@@ -19,7 +19,13 @@ class Admin::ClientsController < ApplicationController
   end
   
   def new
-    
+    @client = Client.new
+	@client_types = ClientType.all.map{|x| [x.name, x.id]}
+	
+	respond_to do |format|
+      format.html 
+      format.json { render json: @client }
+    end
     
   end
   

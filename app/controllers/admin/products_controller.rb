@@ -120,6 +120,15 @@ gon.latitude = ''
       format.js   { render :nothing => true }
     end
   end
+  
+  def list_all_products
+   if request.xhr?
+    @products = Product.where(is_active: 1)  
+	if params[:id].to_s == 1.to_s
+	 render :partial => "/admin/products/list_prod_checkboxes", :object => @products
+	 end
+   end
+  end
 
 
 end
