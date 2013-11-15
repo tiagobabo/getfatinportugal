@@ -1,29 +1,18 @@
-
-
-  <!-- Feed Entry -->
-  <div class="row">   
+<div class="row">
     <div class="large-10 columns">
-	<fieldset>
-      <legend class="contact legend">Products information...</legend>
-	<ul class="inline-list">
-	<% @products.each do |product| %>
-<li>
-	 <label for="<%=product.id%>">
-    <%= check_box_tag product.id, product.id, false,  :style => 'display:none'  %> 
-    <span class="custom checkbox"></span> <%= h product.name %>
-  </label>
-	
-	
-	
-
-</li>
-<% end %>
-</ul>
-</fieldset>
+        <fieldset>
+            <legend class="contact legend">Products information...</legend>
+            <ul class="inline-list">
+                <% @products.each do |product| %>
+                <li>
+                    <label for="<%=product.id%>">
+                        <%= check_box_tag 'products[]', product.id, false,  :style => 'display:none'  %> 
+						<span class="custom checkbox"></span><%= h product.name %>
+                    </label>
+                </li>
+                <% end %>
+            </ul>
+        </fieldset>
     </div>
-	<hr />
-  </div>
-  <!-- End Feed Entry -->
-
-  
-  
+    <hr />
+</div>

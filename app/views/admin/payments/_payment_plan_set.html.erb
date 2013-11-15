@@ -2,9 +2,15 @@
     <div class="large-10 columns">
         <fieldset>
             <legend class="contact legend">Payment plan information...</legend>
-            <%= label_tag 'modality_select', 'Modality' %>
-	 <%= select_tag "modality_select", options_from_collection_for_select(@service_modalities, "name", "name"), :class => 'medium' %>         
-     
+			
+			 <div class="row">
+          <div class="large-12 columns">              
+            <%= label_tag 'modality_select_id', 'Modality' %>
+			<%= select_tag "modality_select", options_from_collection_for_select(@service_modalities, "name", "name"), :class => 'medium' %>         
+     </div>
+      </div>
+			
+		
         <div id="pay-per-view-options">
             <div class="row">
                 <div class="large-12 columns">

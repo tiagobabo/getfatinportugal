@@ -31,7 +31,8 @@ $(function () {
             $("#payment_plans").show();
             if ($("#payment_plans").html().trim().length <= 0) {
                 $.get("/admin/payments/show_payment_plan", function (data) {
-                    $("#payment_plans").html(data);
+                    $("#payment_plans").html(data);				
+					$(document).foundation();					 // hack to put the select box with the same style
 					 $("#time-options").addClass("hideDivs");
 					 $('#date_begin').datepicker();
                     $("#modality_select").change(function () {

@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   belongs_to :category
+  has_many :client_product
+  has_many :clients, :through => :client_product
   validates :description, :presence=>true
   validates :hashtag,  :presence => true
   validates :name, :presence => true
