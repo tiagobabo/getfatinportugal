@@ -1,4 +1,6 @@
 $(function () {
+	 var pickerOpts = {dateFormat:"yy-mm-dd"}
+	
     $('#btn_products').click(function () {
         if ($("#list_products").is(":visible"))
             $("#list_products").hide();
@@ -34,17 +36,17 @@ $(function () {
                     $("#payment_plans").html(data);				
 					$(document).foundation();					 // hack to put the select box with the same style
 					 $("#time-options").addClass("hideDivs");
-					 $('#date_begin').datepicker();
+					 $('#date_begin').datepicker(pickerOpts);
                     $("#modality_select").change(function () {
                         if ($(this).val() == "pay-per-view") {
                             $("#pay-per-view-options").removeClass("hideDivs");
                             $("#time-options").addClass("hideDivs");
-							$('#date_begin').datepicker();							
+							$('#date_begin').datepicker(pickerOpts);							
                         }
                         else {                           
                             $("#time-options").removeClass("hideDivs");
-							$('#date_begin_time').datepicker();	
-							$('#date_end_time').datepicker();	
+							$('#date_begin_time').datepicker(pickerOpts);	
+							$('#date_end_time').datepicker(pickerOpts);	
 							$("#pay-per-view-options").addClass("hideDivs");
                         }
                     });												

@@ -6,7 +6,9 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
   gem 'sqlite3'
   #gem 'pg'
   #gem "unicorn", "~> 4.6.2"

@@ -22,8 +22,8 @@ class Admin::ProductsController < ApplicationController
   def new
     @categories = Category.all.map{|x| [x.name, x.id]}
     @product = Product.new
-gon.latitude = ''
-	gon.longitude = ''
+    gon.latitude = ''
+	  gon.longitude = ''
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }

@@ -30,23 +30,18 @@ class Admin::ClientsController < ApplicationController
   end
   
   def create
- @params = params;
- 
-     @client = Client.new(params[:client]) 
-	
-	 if @client.save
-			
-		if params[:products].count>0
-			params[:products].each do |product_id|			
-				@client_product = ClientProduct.new(:client_id => @client.id, :product_id => product_id, :position => 1, :created_at => Time.now)
-				@client_product.save
-			end
-		end
-		@service_modality = ServiceModality.where(name: params[:modality_select]).take(1)
-		@payment_plan = PaymentPlan.new(:balance => params[:quantity], :initial_date => params[:date_begin], :end_date => params[:date_end_time])
-	#	@payment_plan.save		
-	 end
-	
+    @client = Client.new(params[:client]) 	
+	  
+	  respond_to do |format|
+      if @client.create_client_with_products_and_payment_plan(params, @client)
+        flash[:notice]='Client was successfully created.'
+        format.html { redirect_to :action => 'new'}
+        format.json { render json: @client, status: :created, location: @client }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @client.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def show
