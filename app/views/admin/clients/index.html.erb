@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="large-12 columns">
+		<table>
+			<thead>
+				<tr>
+					<th >Name</th>
+					<th >Location</th>
+					<th>Email</th>
+					<th>Mobile phone</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @clients.each do |client| %>
+				<tr>
+					<td><%= client.name %></td>
+					<td><%= client.location %></td>
+					<td><%= client.email%></td>
+					<td><%= client.mobile_phone%></td>
+					<td><a href="/admin/clients/<%=client.id%>" class="tiny button">more details</a> </td>
+				</tr>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+</div>

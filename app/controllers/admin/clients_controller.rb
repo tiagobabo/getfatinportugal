@@ -3,6 +3,7 @@ class Admin::ClientsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
+    @clients = Client.all
           
   end
   
@@ -45,7 +46,12 @@ class Admin::ClientsController < ApplicationController
   end
   
   def show
-    
+     @client = Client.find(params[:id])   
+     	@client_types = ClientType.all.map{|x| [x.name, x.id]} 
+    respond_to do |format|
+         format.html 
+         format.json { render json: @client }
+       end
   end
   
 end
