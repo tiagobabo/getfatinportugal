@@ -13,7 +13,7 @@ Author URI: http://dev7studios.com
 .theme-default .nivoSlider a {border:0; display:block;}
 
 .theme-default .nivo-controlNav {position:absolute; left:50%; bottom:-42px; margin-left:-40px; /* Tweak this to center bullets */}
-.theme-default .nivo-controlNav a {display:block; width:22px; height:22px; background:url(bullets.png) no-repeat;	text-indent:-9999px; border:0;n margin-right:3px;	float:left;}
+.theme-default .nivo-controlNav a {display:block; width:22px; height:22px; background:url(bullets.png) no-repeat;	text-indent:-9999px; border:0;margin-right:3px;	float:left;}
 .theme-default .nivo-controlNav a.active {background-position:0 -22px;}
 
 .theme-default .nivo-directionNav a {display:block;	width:30px;	height:30px; background:url(arrows.png) no-repeat; text-indent:-9999px;	border:0;}
