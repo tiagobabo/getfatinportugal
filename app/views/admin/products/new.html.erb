@@ -1,0 +1,17 @@
+<%= javascript_include_tag "google.maps.js"  %>
+<%= javascript_include_tag params[:controller]  %>
+
+<div class="row">
+<!-- Contact Details -->
+    <div class="large-9 columns">
+ 
+      <h3>Add new product.</h3>
+      <p>Interface to insert new products.</p>
+       
+        <%= render "form" %>
+		<%= link_to "Back", admin_products_path %>
+                               
+    </div>
+ 
+    <!-- End Contact Details -->
+	</div>

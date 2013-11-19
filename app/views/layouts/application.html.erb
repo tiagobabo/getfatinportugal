@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame. Remove this if you use the .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Deliciously</title>
+
+	<link rel="stylesheet" href="/assets/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" media="all" type="text/css" href="assets/prettyPhoto.css" />
+
+	<!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<!-- ============= HEADER STARTS HERE ============== -->
+	<div id="header-wrapper">
+
+		<div id="header">
+			<!-- WEBSITE LOGO -->
+			<a href="index.html"><img src="/assets/logo.png" alt="Food Recipes" class="logo" /></a>
+
+		</div><!-- end of header div -->
+
+		<!-- NAVIGATION BAR STARTS HERE -->
+		<div id="nav-wrap">
+			<div class="inn-nav clearfix">
+
+				<!-- MAIN NAVIGATION STARTS HERE -->
+				<ul class="nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Sliders</a>
+						<ul>
+							<li><a href="basic-slider.html">Basic Slider</a></li>
+							<li><a href="index.html">Right Info Slider</a></li>
+							<li><a href="nivo-slider.html">Nivo Slider</a></li>
+							<li><a href="accordion-slider.html">Accordion Slider</a></li>
+							<li><a href="thumb-slider.html">Thumbnail Slider</a></li>
+
+						</ul>
+					</li>
+					<li><a href="recipes.html">Recent Recipes</a></li>
+					<li>
+						<a href="single-sb.html">Recipe Detail</a>
+						<ul>
+							<li><a href="single-sb.html">Variation One</a></li>
+							<li><a href="single-full.html">Variation Two</a></li>
+						</ul>
+					</li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="single.html">Single Post</a></li>										
+					<li>
+						<a href="features.html">Features</a>
+						<ul>
+							<li><a href="page.html">Full Width</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li><a href="features.html">Additional Features</a></li>												
+						</ul>
+					</li>										
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul><!-- end of nav ul -->
+				<!-- MAIN NAVIGATION ENDS HERE -->
+
+				<!-- SOCIAL NAVIGATION -->
+				<ul class="social-nav">
+					<li class="twitter"><a href="#"></a></li>
+					<li class="facebook"><a href="#"></a></li>
+					<li class="flickr"><a href="#"></a></li>
+					<li class="rss"><a href="#"></a></li>
+				</ul><!-- end of social-nav ul -->
+			</div>
+		</div><!-- end of nav-wrap -->
+		<!-- NAVIGATION BAR ENDS HERE -->
+
+		<span class="w-pet-border"></span>
+
+	</div><!-- end of header-wrapper div -->
+
+	<!-- ============= HEADER ENDS HERE ============== -->
+	<div id="container">
+		<%= yield %>
+	</div>
+	<div class="w-pet-border"></div>
+	<!-- ============= CONTAINER AREA ENDS HERE ============== -->
+
+
+
+<!-- ============= BOTTOM AREA STARTS HERE ============== -->
+<div id="bottom-wrap">
+	<ul id="bottom" class="clearfix">
+		<li>
+			<div class="about">
+				<a href="index.html">
+					<%= image_tag("footer-logo.png", alt: "Footer Logo", class: "footer-logo") %>
+				</a>
+				<p>For every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center. For every fine wine, there’s the For every fine wine...</p>
+				<a href="#" class="readmore">Read more About Us</a>
+			</div>
+		</li>
+		<li>
+			<h2>Recent <span>Recipes</span></h2>
+			<ul class="recent-posts">
+				<li>
+					<a href="#" class="img-box"><%= image_tag("tiny-images/tiny_16.jpg", alt: "Image") %></a>
+					<h5><a href="#">The World's Best</a></h5>
+					<p>Sandwich Recipes here once there will be chnace of going to go</p>
+				</li>
+
+				<li>
+
+					<a href="#" class="img-box"><%= image_tag("tiny-images/tiny_17.jpg", alt: "Image") %></a>
+					<h5><a href="#">The World's Best</a></h5>
+					<p>Sandwich Recipes here once there will be chnace of going to go</p>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<h2>Twitter <span>Updates</span></h2>
+			<div id="twitter_update_list" class="twitter">
+			</div>
+		</li>
+
+	</ul><!-- end of bottom div -->
+</div><!-- end of bottom-wrap div -->
+<!-- ============= BOTTOM AREA ENDS HERE ============== -->
+
+
+<!-- ============= FOOTER STARTS HERE ============== -->	
+
+<div id="footer-wrap">
+	<div id="footer">
+		<p class="copyright">Copyright © 2011, Food Recipes - A Premium HTML Template</p>
+		<p class="dnd">Designed <a href="http://themedesigner.in/">Sunil Joshi</a> and Developed by <a href="http://960development.com/">960Development</a></p>
+	</div><!-- end of footer div -->
+</div><!-- end of footer-wrapper div -->
+
+<!-- ============= FOOTER STARTS HERE ============== -->
+
+
+<!-- Remove it if you do not need jQuery -->
+<%= javascript_include_tag "jquery-1.7.js" %>
+<!-- Remove it if you do not need jquery.easing : http://gsgd.co.uk/sandbox/jquery/easing/ -->
+<%= javascript_include_tag "jquery.easing.1.3.js" %>
+<%= javascript_include_tag "jquery.cycle.js" %>
+<%= javascript_include_tag "jquery.prettyPhoto.js" %>
+<%= javascript_include_tag "jquery.backgroundPosition.js" %>
+<%= javascript_include_tag "jquery-ui-1.8.16.custom.min.js" %>
+<%= javascript_include_tag "jquery.nivo.slider.js" %>
+<%= javascript_include_tag "jquery.validate.js" %>
+<%= javascript_include_tag "jquery-twitterFetcher.js" %>
+
+
+
+</body>
+</html>
