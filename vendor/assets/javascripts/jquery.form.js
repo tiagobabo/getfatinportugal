@@ -331,7 +331,7 @@ $.fn.ajaxSubmit = function(options) {
 			return doc;
 		}
 		
-		// Rails CSRF hack (thanks to Yvan BARTHƒLEMY)
+		// Rails CSRF hack (thanks to Yvan BARTHÃ‰LEMY)
 		var csrf_token = $('meta[name=csrf-token]').attr('content');
 		var csrf_param = $('meta[name=csrf-param]').attr('content');
 		if (csrf_param && csrf_token) {
