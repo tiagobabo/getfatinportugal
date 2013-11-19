@@ -9,8 +9,11 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Deliciously
+module DeliciouslyPortugalV2
   class Application < Rails::Application
+    if Rails.env.production?
+      config.middleware.use("Rack::GoogleAnalytics", :web_property_id => "UA-41435619-1")
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -58,6 +61,18 @@ module Deliciously
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # devise 
+    config.assets.initialize_on_precompile = false
+
+    #devise views
+    config.to_prepare do
+      Devise::SessionsController.layout "application"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "admin" : "application" }
+      Devise::ConfirmationsController.layout "admin"
+      Devise::UnlocksController.layout "admin"            
+      Devise::PasswordsController.layout "admin"        
+    end
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end

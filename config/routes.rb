@@ -1,4 +1,4 @@
-Deliciously::Application.routes.draw do
+DeliciouslyPortugalV2::Application.routes.draw do
 
   devise_for :users
   root :to => 'main#index'
