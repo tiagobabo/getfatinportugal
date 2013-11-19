@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Deliciously::Application.load_tasks
+DeliciouslyPortugalV2::Application.load_tasks
