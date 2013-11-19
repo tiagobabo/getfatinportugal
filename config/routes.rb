@@ -21,6 +21,25 @@ DeliciouslyPortugalV2::Application.routes.draw do
     end
     root :to => 'main#index'	
   end
+  
+  resources :products
+
+  match 'main/index' => 'main#index'
+
+  match 'contacts' => 'contacts#index'
+
+  match 'products/prods_by_category/:id' => 'products#prods_by_category'
+
+
+
+  get 'contacts/index'
+  get 'contacts/suggest_food'
+  post 'contacts/sendemail'
+  post 'contacts/suggest'
+  get 'main/about_us'
+  get 'main/terms_conditions'
+  get 'contacts/interest'
+  post 'contacts/send_client_interest'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

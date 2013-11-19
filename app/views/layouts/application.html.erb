@@ -8,7 +8,7 @@
 	<title>Deliciously</title>
 
 	<link rel="stylesheet" href="/assets/nivo-slider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" media="all" type="text/css" href="assets/prettyPhoto.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="/assets/prettyPhoto.css" />
 
 	<!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
 	<link rel="shortcut icon" href="favicon.ico" />
@@ -54,16 +54,17 @@
 					</li>										
 					<li><a href="contact.html">FAQ</a></li>
 					<li><a href="contact.html">About Us</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="/contacts/">Contact Us</a></li>
 				</ul><!-- end of nav ul -->
 				<!-- MAIN NAVIGATION ENDS HERE -->
 
 				<!-- SOCIAL NAVIGATION -->
 				<ul class="social-nav">
-					<li class="twitter"><a href="#"></a></li>
-					<li class="facebook"><a href="#"></a></li>
-					<li class="flickr"><a href="#"></a></li>
+					<li class="twitter"><a href="https://twitter.com/DeliciouslyPT"></a></li>
+					<li class="facebook"><a href="https://www.facebook.com/DeliciouslyPortugal"></a></li>
+					<!-- <li class="flickr"><a href="#"></a></li>
 					<li class="rss"><a href="#"></a></li>
+					-->
 				</ul><!-- end of social-nav ul -->
 			</div>
 		</div><!-- end of nav-wrap -->
@@ -75,6 +76,17 @@
 
 	<!-- ============= HEADER ENDS HERE ============== -->
 	<div id="container">
+		<!-- WEBSITE SEARCH STARTS HERE -->    	
+		<div class="top-search clearfix">
+			<h3 class="head-pet"><span>Recipe Search</span></h3>
+			<form action="#" id="searchform" method="post">
+				<p>
+					<input type="text" name="2" id="s" class="field" value="Search for" />
+					<input type="submit" name="s_submit" id="s-submit" value="" />
+				</p>
+			</form>
+			<p class="statement"><span class="fireRed">Popular searches :</span> <a href="#">meatloaf recipes</a>, <a href="#">banana cake recipes</a>, <a href="#">cheesecake recipes</a>, <a href="#">carbonara recipes</a></p>
+		</div><!-- end of top-search div-->
 		<%= yield %>
 	</div>
 	<div class="w-pet-border"></div>
@@ -145,6 +157,7 @@
 <%= javascript_include_tag "jquery-ui-1.8.16.custom.min.js" %>
 <%= javascript_include_tag "jquery.nivo.slider.js" %>
 <%= javascript_include_tag "jquery.validate.js" %>
+<%= javascript_include_tag "jquery.form.js" %>
 <%= javascript_include_tag "jquery-twitterFetcher.js" %>
 
 
