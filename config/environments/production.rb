@@ -1,3 +1,14 @@
+ #the absolute beginning of the production.rb file
+def compile_asset?(path)
+  if File.basename(path) =~ /^[^_].*\.\w+$/
+    puts "Compiling: #{path}"
+    true
+  else
+    puts "Ignoring: #{path}"
+    false
+  end
+end
+
 DeliciouslyPortugalV2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -48,7 +59,7 @@ DeliciouslyPortugalV2::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   #config.assets.precompile += %w( jquery.instagram.js )
 
-config.assets.precompile = ['*.js', '*.css', '*.scss']
+config.assets.precompile = [ method(:compile_asset?).to_proc ]
 
   #config.assets.precompile += %w( main.js )
   #config.assets.precompile += %w( product.js )
