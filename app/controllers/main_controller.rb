@@ -6,7 +6,7 @@ class MainController < ApplicationController
   end
   
   def faq
-    products_all = Product.where(is_active: 1).order(created_at: :desc)
+    products_all = Product.where(is_active: 1).order('created_at DESC')
     @products_recent = products_all.limit(4)
     @products_random = products_all.sample(4) 
   end
