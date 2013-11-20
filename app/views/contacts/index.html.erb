@@ -12,18 +12,18 @@
 			-->
 			<h3>Quick Contact</h3>
 			<span class="w-pet-border"></span>
-			 <%= form_tag ("/contacts/sendemail"), {:id => 'contact-form'} do %>
+			 <%= form_tag ("/contacts/sendemail"), {:id => 'contact-form', remote: true } do %>
 			
-				<p><input type="text" name="name" class="required" id="name" value="Name here" /></p>
-				<p><input type="text" name="email" class="email required" id="email" value="Email here" /></p>
-				<p><input type="text" name="subject" class="required" id="subject" value="Subject here" /></p>
-				<p><textarea name="message" id="message" class="required" cols="30" rows="6">Message</textarea></p>
+				<p><input type="text" name="name" class="required" id="cname" value="Name here" /></p>
+				<p><input type="text" name="email" class="email required" id="cemail" value="Email here" /></p>
+				<p><input type="text" name="subject" class="required" id="csubject" value="Subject here" /></p>
+				<p><textarea name="message" id="cmessage" class="required" cols="30" rows="6">Message</textarea></p>
 				<p>
 					<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
 					<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
 					
 				</p>
-				<p id="message-sent">Thanks for Your Message! <br /> We will get in touch shortly.</p>
+				<p id="message-sent"></p>
 				<p>
 					<span class="w-pet-border"></span>
 				</p>
