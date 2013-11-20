@@ -40,6 +40,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   get 'main/terms_conditions'
   get 'contacts/interest'
   post 'contacts/send_client_interest'
+  get 'main/faq'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

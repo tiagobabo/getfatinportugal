@@ -5,4 +5,7 @@ class MainController < ApplicationController
      @products_slider = @products_all.sample(3)
   end
   
+  def faq
+  end
+  
 end
