@@ -56,84 +56,36 @@
 								
 								<div class="block current">
 										<ul class="recent">
+											<% @products_recent.each do |product| %>
 												<li>
-														<a href="#" class="img-box"><img src="images/tiny-images/tiny_4.jpg" alt="Hotest" /></a>
-														<h5><a href="#">Lorem Ipsum World's Best Recipe</a></h5>
+														<a href="#" class="img-box">
+																<%= image_tag(product.photo, alt: "Hotest")%>
+														</a>
+														<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
 														<p class="rate">
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="off"></span>
-																(4.0 / 5)
+																<%=product.region%>
 														</p>
 												</li>
-												<li>
-														<a href="#" class="img-box"><img src="images/tiny-images/tiny_5.jpg" alt="Hotest" /></a>
-														<h5><a href="#">Dolar It Somit Dolar Li Recipe</a></h5>
-														<p class="rate">
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="off"></span>
-																<span class="off"></span>
-																(4.0 / 5)
-														</p>
-												</li>
-												<li>
-														<a href="#" class="img-box"><img src="images/tiny-images/tiny_6.jpg" alt="Hotest" /></a>
-														<h5><a href="#">The World's Best Winning Recipe</a></h5>
-														<p class="rate">
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																(4.0 / 5)
-														</p>
-												</li>
+												<%end%>
+												
 										</ul>
 								</div><!-- end of block div -->
 								
 								<div class="block">
-										<ul class="recent">
-												<li>
-														<a href="#" class="img-box"><img src="images/tiny-images/tiny_7.jpg" alt="Hotest" /></a>
-														<h5><a href="#">The World's Best Sndwich Recipes here</a></h5>
-														<p class="rate">
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="off"></span>
-																(4.0 / 5)
-														</p>
-												</li>
-												<li>
-														<a href="#" class="img-box"><img src="images/tiny-images/tiny_8.jpg" alt="Hotest" /></a>
-														<h5><a href="#">The World's Best Bakery Recipes here</a></h5>
-														<p class="rate">
-                                                                <span class="on"></span>
-                                                                <span class="on"></span>
-                                                                <span class="on"></span>
-                                                                <span class="off"></span>
-                                                                <span class="off"></span>
-                                                                (4.0 / 5)
-														</p>
-												</li>
-												<li>
-														<a href="#" class="img-box"><img src="images/tiny-images/tiny_9.jpg" alt="Hotest" /></a>
-														<h5><a href="#">The World's Best Sandwich</a></h5>
-														<p class="rate">
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																<span class="on"></span>
-																(4.0 / 5)
-														</p>
-												</li>
-										</ul>
+									<ul class="recent">
+										<% @products_random.each do |product| %>
+											<li>
+													<a href="#" class="img-box">
+															<%= image_tag(product.photo, alt: "Hotest")%>
+													</a>
+													<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
+													<p class="rate">
+															<%=product.region%>
+													</p>
+											</li>
+											<%end%>
+											
+									</ul>
 								</div><!-- end of block div -->
                                 <div class="bot-border"></div>
 						</div><!-- end of tabed div -->
