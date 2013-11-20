@@ -12,7 +12,7 @@
 
 	<!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
 	<link rel="shortcut icon" href="favicon.ico" />
-
+	<%= include_gon %>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
@@ -23,7 +23,7 @@
 
 		<div id="header">
 			<!-- WEBSITE LOGO -->
-			<a href="index.html"><img src="/assets/logo.png" alt="Food Recipes" class="logo" /></a>
+			<a href="/"><img src="/assets/logo.png" alt="Food Recipes" class="logo" /></a>
 
 		</div><!-- end of header div -->
 
@@ -33,7 +33,7 @@
 
 				<!-- MAIN NAVIGATION STARTS HERE -->
 				<ul class="nav">
-					<li class="active"><a href="index.html">Home</a></li>				
+					<li class="active"><a href="/">Home</a></li>				
 					<li><a href="recipes.html">Delicious food</a>						
 						<ul>
 							<li><a href="basic-slider.html">Starters</a></li>

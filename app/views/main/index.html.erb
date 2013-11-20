@@ -30,7 +30,7 @@
 						<%= image_tag(product.photo, alt: "Hotest") %>
 					</a>
 					<div class="slide-info">
-						<h2><a href="#"><%=product.name%></a></h2>
+						<h2><a href="/products/<%= product.slug%>"><%=product.name%></a></h2>
 						<div class="rating">
 					<!--		<span class="on"></span>
 							<span class="on"></span>
@@ -40,7 +40,7 @@
 							<span>Region: <span><%=product.region%></span></span>
 						</div> 
 					
-						<p><%=product.description%></p>
+						<p><%= product.description.length>200 ? product.description[0..199] +"(...)" : product.description%></p>
 						<a href="/products/<%=product.id%>" class="readmore">Read more</a>
 					</div>
 				</li>
