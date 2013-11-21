@@ -1,4 +1,10 @@
+<% title 'Deliciously Portugal - '+@product.name %>
+<%= stylesheet_link_tag "instagram.css" %>
+<%= stylesheet_link_tag "twitter-styles.css" %>
 <%= javascript_include_tag params[:controller]  %>
+<%= javascript_include_tag "jquery.instagram.js" %>
+<%= javascript_include_tag "jquery.slimbox2.js" %>
+<%= javascript_include_tag "twitterfeed-search.js" %>
 <!-- ============= CONTENT AREA STARTS HERE ============== -->
 <div id="content" class="clearfix">
 		<div id="left-area" class="clearfix full-wide">
@@ -11,22 +17,9 @@
 						</div>
 					</div>
 					<div id="horiz_container_outer" class="small-img-cont">
-							<ul id="horiz_container" class="small-imgs">
-									<li><a rel="/assets/single-rec/recipe_1.jpg"><img src="/assets/single-rec/thumbs/recipe_1.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_2.jpg"><img src="/assets/single-rec/thumbs/recipe_2.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_3.jpg"><img src="/assets/single-rec/thumbs/recipe_3.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_4.jpg"><img src="/assets/single-rec/thumbs/recipe_4.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_5.jpg"><img src="/assets/single-rec/thumbs/recipe_5.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_6.jpg"><img src="/assets/single-rec/thumbs/recipe_6.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_7.jpg"><img src="/assets/single-rec/thumbs/recipe_7.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_8.jpg"><img src="/assets/single-rec/thumbs/recipe_8.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_9.jpg"><img src="/assets/single-rec/thumbs/recipe_9.jpg" alt="Image" /></a></li>
-									<li><a rel="/assets/single-rec/recipe_10.jpg"><img src="/assets/single-rec/thumbs/recipe_10.jpg" alt="Image" /></a></li>
-							</ul>
-							<div class="carnav">
-									<span class="left"></span>
-									<span class="right"></span>
-							</div>
+						<h4 class="red"><%=@product.hashtag%> on Instagram</h4>
+								<div class="instagram-gallery"></div>
+						
 					</div>
 				</div>
                 
@@ -110,11 +103,12 @@
 										</li>
 								</ol>
 						</div><!-- end of comments div -->
-				
+						<h4 class="red">Region</h4>
+						<div class="single-img-box">
+							<div id="map-canvas"></div>			        
+				        </div>
 				</div><!-- end of info-left div -->
-				<div class="single-img-box">
-					<div id="map-canvas"></div>			        
-		        </div>
+				
 				
 				<div class="info-right">
 						<div class="cookname">
