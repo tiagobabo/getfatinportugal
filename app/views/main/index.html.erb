@@ -41,7 +41,7 @@
 						</div> 
 					
 						<p><%= product.description.length>200 ? product.description[0..199] +"(...)" : product.description%></p>
-						<a href="/products/<%=product.id%>" class="readmore">Read more</a>
+						<a href="/products/<%=product.slug%>" class="readmore">Read more</a>
 					</div>
 				</li>
 <%end%>

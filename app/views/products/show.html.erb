@@ -1,5 +1,5 @@
 <% title 'Deliciously Portugal - '+@product.name %>
-<%= stylesheet_link_tag "instagram.css" %>
+<%= stylesheet_link_tag "instagram.css.scss" %>
 <%= stylesheet_link_tag "twitter-styles.css" %>
 <%= javascript_include_tag params[:controller]  %>
 <%= javascript_include_tag "jquery.instagram.js" %>
@@ -13,11 +13,11 @@
 				<div class="single-imgs">
 					<div class="single-img-box">
 						<div class="recipe-single-img">
-							<%= image_tag(@product.photo, alt: "Image") %>							
+							<%= image_tag(@product.photo, alt: "Image", class: "instagram-image") %>							
 						</div>
 					</div>
 					<div id="horiz_container_outer" class="small-img-cont">
-						<h4 class="red"><%=@product.hashtag%> on Instagram</h4>
+						<h6 class="red"><%=@product.hashtag%> on Instagram</h6>
 								<div class="instagram-gallery"></div>
 						
 					</div>
