@@ -100,7 +100,7 @@
 					}
 				}else
 				{
-					$('#twitter-feed').html(headerHTML+" <div> <h5 class='red'> no twits are available</h5></div>");
+					$('#twitter-feed').html(headerHTML+" <div> <h5 class='red'> no tweets are available</h5></div>");
 				}
 			
 		}
