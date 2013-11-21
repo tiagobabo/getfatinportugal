@@ -31,26 +31,43 @@
 			<div class="single-img-box">
 				<div id="map-canvas"></div>			        
 			</div>
-			
-			<div>
-				<p>
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%=request.original_url%>" data-via="DeliciouslyPT" data-hashtags="DeliciouslyPT">Tweet</a>
-					<div class="fb-like" data-href="<%=request.original_url%>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-				</p>
-			</div>
-			
-		</div><!-- end of info-left div -->
 
 
-		<div class="info-right">
+			<center style="border-top: 1px solid #EBEBEB; border-bottom: 1px solid #ebebeb; height: 70px;">                                
+				<!-- Redes externas -->
+				<!-- <center> -->
+					<p class="postmetadata alt">
+						<!-- <ul style="overflow: auto; list-style-type: none;"> -->
+						</p><ul style="list-style-type: none; margin-left: 15px;margin-top: 15px;">
+							<li style="height: 20px; float: left; margin-right: 0px; padding: 0 0px;">
+								<div class="fb-like" data-href="<%=request.original_url%>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
 
-			<div id="twitter-feed"></div>
-			<div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="5" data-width="230"></div>
+								&nbsp;&nbsp;
+							</li>
 
 
-		</div><!-- end of info-right div -->
+							<!-- Twitter -->
+							<li style="height: 20px; float: left; margin-right: 0px; padding: 0 0px; margin-left: -15px;"> 	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%=request.original_url%>" data-via="DeliciouslyPT" data-hashtags="DeliciouslyPT">Tweeter</a>
+							</li>
 
-		<span class="w-pet-border"></span>
+							<!-- Fim Redes externas --> 
+						</ul>
+						<!-- </center> -->
+					</center>
 
-	</div><!-- end of left-area -->
-</div><!-- end of content div -->
+
+				</div><!-- end of info-left div -->
+
+
+				<div class="info-right">
+
+					<div id="twitter-feed"></div>
+					<div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="5" data-width="230"></div>
+
+
+				</div><!-- end of info-right div -->
+
+				<span class="w-pet-border"></span>
+
+			</div><!-- end of left-area -->
+		</div><!-- end of content div -->
