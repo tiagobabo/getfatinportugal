@@ -29,7 +29,8 @@
 		 
 		function gettwitterjson() { 
 			 
-				   var feeds = gon.twitter.statuses; //search returns an array of statuses					
+				   var feeds = gon.twitter.statuses; //search returns an array of statuses	
+				if(feeds.length!=0){				
 					var feedHTML = '';
 					var displayCounter = 1;  
 					for (var i=0; i<feeds.length; i++) {
@@ -97,6 +98,10 @@
 						  return false;
 						});
 					}
+				}else
+				{
+					$('#twitter-feed').html(headerHTML+" <div> <h5 class='red'> no twits are available</h5></div>");
+				}
 			
 		}
 			 
