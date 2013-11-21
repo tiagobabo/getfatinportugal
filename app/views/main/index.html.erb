@@ -24,7 +24,7 @@
 		<p class="slogan">If food is an experience for you, then you will find it at the Food Recipe</p>
 		<div class="slides right-slider">
 			<ul>
-			<%@products_slider.each do |product| %>
+				<%@products_slider.each do |product| %>
 				<li>
 					<a href="/products/<%=product.slug%>" class="img-box">
 						<%= image_tag(product.photo, alt: "Hotest") %>
@@ -32,20 +32,20 @@
 					<div class="slide-info">
 						<h2><a href="/products/<%= product.slug%>"><%=product.name%></a></h2>
 						<div class="rating">
-					<!--		<span class="on"></span>
+							<!--		<span class="on"></span>
 							<span class="on"></span>
 							<span class="on"></span>
 							<span class="on"></span>
 							<span class="off"></span>	-->
 							<span>Region: <span><%=product.region%></span></span>
 						</div> 
-					
-						<p><%= product.description.length>200 ? product.description[0..199] +"(...)" : product.description%></p>
+
+						<p><%= product.description.length>200 ? product.description[0..199] +" (...)" : product.description%></p>
 						<a href="/products/<%=product.slug%>" class="readmore">Read more</a>
 					</div>
 				</li>
-<%end%>
-				
+				<%end%>
+
 			</ul>
 			<p class="sliderNav"><span></span></p>
 		</div><!-- end of slides -->
@@ -57,9 +57,9 @@
 
 		<ul class="cat-list clearfix">
 			<li>
-				<h3><a href="#">Desserts</a></h3>
+				<h3><a href="#">Starters</a></h3>
 				<a href="#" class="img-box">
-					<%= image_tag(@products_all.select{|x| x.category_id ==1}.sample.photo , alt: "Recipe Collections") %></a>
+					<%= image_tag(@products_all.select{|x| x.category_id ==4}.sample.photo, alt: "Recipe Collections") %></a>
 					<h4><a href="#">Some Heading text goes here //</a></h4>
 					<p>For every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
 				</li>
@@ -76,14 +76,15 @@
 							<%= image_tag(@products_all.select{|x| x.category_id ==3}.sample.photo, alt: "Recipe Collections") %></a>
 							<h4><a href="#">Some Heading text goes here //</a></h4>
 							<p>For every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
-						</li>
+						</li> 
 						<li>
-							<h3><a href="#">Starters</a></h3>
+							<h3><a href="#">Desserts</a></h3>
 							<a href="#" class="img-box">
-								<%= image_tag(@products_all.select{|x| x.category_id ==4}.sample.photo, alt: "Recipe Collections") %></a>
+								<%= image_tag(@products_all.select{|x| x.category_id ==1}.sample.photo , alt: "Recipe Collections") %></a>
 								<h4><a href="#">Some Heading text goes here //</a></h4>
 								<p>For every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
-							</li>
+							</li>				
+
 						</ul>
 
 					</div><!-- end of whats-hot div -->

@@ -19,7 +19,6 @@ group :development, :test do
   gem 'koala'
   gem 'devise'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
-  gem 'friendly_id'
 end
 
 group :production do
@@ -34,7 +33,7 @@ group :production do
   gem 'koala'
   gem 'devise'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
-  gem 'friendly_id'
+
 end
 
 
@@ -50,7 +49,7 @@ end
 
  gem 'jquery-rails'
  gem 'jquery-ui-rails'
- 
+  gem 'friendly_id' 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -24,9 +24,9 @@ class ProductsController < ApplicationController
 
   def prods_by_category
     gon.projects=session[:projects]
-
-    @products = Product.where(category_id: params[:id])	   
-    @category_name= @products.first.category.name       
+    
+    category = Category.find(params[:id])
+    @products = Product.where(category_id: category.id , is_active: 1)	       
 
     respond_to do |format|
       format.html # new.html.erb
