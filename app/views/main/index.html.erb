@@ -26,7 +26,7 @@
 			<ul>
 			<%@products_slider.each do |product| %>
 				<li>
-					<a href="#" class="img-box">
+					<a href="/products/<%=product.slug%>" class="img-box">
 						<%= image_tag(product.photo, alt: "Hotest") %>
 					</a>
 					<div class="slide-info">
