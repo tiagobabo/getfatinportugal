@@ -49,9 +49,9 @@
 					</li>
 					<li><a href="recipes.html">Deliciously you</a>	
 						<ul>
-							<li><a href="blog.html">Advertise here</a></li>
-							<li><a href="services.html">Donation</a></li>
-							<li><a href="blog.html">You food here</a></li>
+							<li><a href="/main/donate">Donate</a></li>
+							<li><a href="blog.html">Your ad here</a></li>
+							<li><a href="blog.html">Your food here</a></li>
 							<li><a href="services.html">Your restaurant here</a></li>						
 						</ul>
 					</li>
@@ -86,7 +86,7 @@
 	<div id="container">
 		<!-- WEBSITE SEARCH STARTS HERE -->    	
 		<div class="top-search clearfix">
-			<h3 class="head-pet"><span>Search for delicious portuguese food</span></h3>
+			<h3 class="head-pet"><span>Search delicious portuguese food</span></h3>
 			<form action="#" id="searchform" method="post">
 				<p>
 					<input type="text" name="2" id="s" class="field" value="Search for" />
@@ -111,7 +111,9 @@
 					<%= image_tag("footer-logo.png", alt: "Footer Logo", class: "footer-logo") %>
 				</a>
 				<p>For every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center. For every fine wine, there’s the For every fine wine...</p>
-				<a href="#" class="readmore">Read more About Us</a>
+				
+				<%= render :partial => 'layouts/paypal'%>
+				
 			</div>
 		</li>
 		<li>

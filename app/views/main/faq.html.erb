@@ -45,46 +45,10 @@
         
         <!-- ========== START OF SIDEBAR AREA ========== -->
 		<div id="sidebar">
-				<h2 class="w-bot-border">Recent <span>Posts</span></h2>
+				<h2 class="w-bot-border">Delicious <span>food</span></h2>
 				<div class="widget fav-recipes nostylewt">
 				
-						<div class="tabed">
-								<ul class="tabs clearfix">										
-										<li class="current">Recent</li>
-										<li>Random</li>
-								</ul>
-								
-								<div class="block current">
-										<ul class="recent">
-											<% @products_recent.each do |product| %>
-												<li>
-													<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					
-														<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
-														<p class="rate">
-																<%=product.region%>
-														</p>
-												</li>
-												<%end%>
-												
-										</ul>
-								</div><!-- end of block div -->
-								
-								<div class="block">
-									<ul class="recent">
-										<% @products_random.each do |product| %>
-											<li>
-												<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					
-													<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
-													<p class="rate">
-															<%=product.region%>
-													</p>
-											</li>
-											<%end%>
-											
-									</ul>
-								</div><!-- end of block div -->
-                                <div class="bot-border"></div>
-						</div><!-- end of tabed div -->
+				<%=render :partial => 'delicious_food_tabs'%>
 				</div><!-- end of fav-recipes widget -->
 				
 			

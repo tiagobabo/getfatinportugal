@@ -41,6 +41,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   get 'contacts/interest'
   post 'contacts/send_client_interest'
   get 'main/faq'
+  get 'main/donate'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

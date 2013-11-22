@@ -1,7 +1,8 @@
+<% title 'Deliciously Portugal - Contact us' %>
 <!-- ============= CONTENT AREA STARTS HERE ============== -->
 <div id="content" class="clearfix">
 	<div id="left-area" class="clearfix">
-		<h2 class="title">Contact Us</h2>
+		<h2 class="title">Contact us</h2>
 		<p>Do you want to partner with us?<br/>
 			Was this website useful to you?<br/>
 			Do you have anything to tell us? Anything at all?<br/>
@@ -10,8 +11,6 @@
 			<div id="map_canvas"></div>			        
 			</div>
 			-->
-			<h3>Quick Contact</h3>
-			<span class="w-pet-border"></span>
 			 <%= form_tag ("/contacts/sendemail"), {:id => 'contact-form', remote: true } do %>
 			
 				<p><input type="text" name="name" class="required" id="cname" value="Name here" /></p>
