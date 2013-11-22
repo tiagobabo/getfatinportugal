@@ -48,7 +48,7 @@ class ContactsController < ApplicationController
   end
 
   def interest
-    @products = Product.where(is_active: 1)
+    @products = Product.active
     gon.projects=session[:projects]
   end
 end

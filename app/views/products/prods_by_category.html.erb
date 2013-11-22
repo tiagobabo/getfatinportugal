@@ -1,212 +1,98 @@
-	<div id="content" class="clearfix">
-			<div id="left-area" class="clearfix">
-					<h1>Recent <span><Recipes><%=@products.first.category.name%></span></h1>
-                    <span class="w-pet-border"></span><br />
-					
-					<% @products.each do |product| %>
-					
-					<div class="post recipe-listing-item">
-					
-							<div class="post-thumb single-img-box">
-								<%= link_to  image_tag(product.photo, alt:'Image'), product_path(product) %>
-									
-							</div>										
-							
-							<div class="recipe-info">
-									
-									<h2><a href="#"><%=product.name%></a></h2>												
-									
-									<div class="recipe-tags">
-										<span class="type">Region: <a href="#"><%=product.region%></a></span>
-										
-									</div>																																						
-									
-									<p><%= product.description.length>100 ? product.description[0..99] +" (...)" : product.description%></p>												
-									<%= link_to 'Read more', product_path(product), :class=>'readmore'%>
-									
-							</div>
-							
-					</div><!-- end of recipe-listing-item div -->
+<%= stylesheet_link_tag "twitter-styles.css" %>
+<%= javascript_include_tag "twitterfeed-search.js" %>
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+		<h1>Recent <span><Recipes><%=@products.first.category.name%></span></h1>
+			<span class="w-pet-border"></span><br />
+
+			<% @products.each do |product| %>
+
+			<div class="post recipe-listing-item">					
+				<div class="post-thumb single-img-box">
+					<%= link_to  image_tag(product.photo, alt:'Image'), product_path(product) %>									
+				</div>										
+
+				<div class="recipe-info">									
+					<h2><%link_to product.name, product_path(product)%></h2>																					
+					<div class="recipe-tags">
+						<span class="type">Region: <a href="#"><%=product.region%></a></span>										
+					</div>																																															
+					<p><%= product.description.length>100 ? product.description[0..99] +" (...)" : product.description%></p>												
+					<%= link_to 'Read more', product_path(product), :class=>'readmore'%>									
+				</div>
+
+			</div><!-- end of recipe-listing-item div -->
 			<%end%>
-				
-            
-			</div><!-- end of left-area -->
-	        <!-- LEFT AREA ENDS HERE -->
-            
-            
-            <!-- ========== START OF SIDEBAR AREA ========== -->
-			<div id="sidebar">
-					<h2 class="w-bot-border">Recent <span>Posts</span></h2>
-					<div class="widget fav-recipes nostylewt">
-					
-							<div class="tabed">
-									<ul class="tabs clearfix">
-											<li class="current">Popular</li>
-											<li>Recent</li>
-											<li>Random</li>
-									</ul>
-									<div class="block current">
-											<ul class="highest">
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_1.jpg" alt="Hotest" /></a>
-															<h5><a href="#">Best Indian Green Pepper Recipe</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_2.jpg" alt="Hotest" /></a>
-															<h5><a href="#">Contest Winner Chinees Soup</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_3.jpg" alt="Hotest" /></a>
-															<h5><a href="#">Best Vegitable Recipe</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-											</ul>
-									</div><!-- end of block div -->
-									
-									<div class="block">
-											<ul class="recent">
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_4.jpg" alt="Hotest" /></a>
-															<h5><a href="#">Lorem Ipsum World's Best Recipe</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="off"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_5.jpg" alt="Hotest" /></a>
-															<h5><a href="#">Dolar It Somit Dolar Li Recipe</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="off"></span>
-																	<span class="off"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_6.jpg" alt="Hotest" /></a>
-															<h5><a href="#">The World's Best Winning Recipe</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-											</ul>
-									</div><!-- end of block div -->
-									
-									<div class="block">
-											<ul class="recent">
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_7.jpg" alt="Hotest" /></a>
-															<h5><a href="#">The World's Best Sndwich Recipes here</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="off"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_8.jpg" alt="Hotest" /></a>
-															<h5><a href="#">The World's Best Bakery Recipes here</a></h5>
-															<p class="rate">
-                                                                    <span class="on"></span>
-                                                                    <span class="on"></span>
-                                                                    <span class="on"></span>
-                                                                    <span class="off"></span>
-                                                                    <span class="off"></span>
-                                                                    (4.0 / 5)
-															</p>
-													</li>
-													<li>
-															<a href="#" class="img-box"><img src="images/tiny-images/tiny_9.jpg" alt="Hotest" /></a>
-															<h5><a href="#">The World's Best Sandwich</a></h5>
-															<p class="rate">
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	<span class="on"></span>
-																	(4.0 / 5)
-															</p>
-													</li>
-											</ul>
-									</div><!-- end of block div -->
-                                    <div class="bot-border"></div>
-							</div><!-- end of tabed div -->
-					</div><!-- end of fav-recipes widget -->
-					
-					<h2 class="w-bot-border bmarginless">Archives</h2>
-					<div class="widget archives clearfix nostylewt">
-							<ul>
-									<li><a href="#">August 2011 </a>(23)</li>
-									<li><a href="#">July 2011 </a>(12)</li>
-									<li><a href="#">June 2011 </a>(52)</li>
-									<li><a href="#">May 2011 </a>(10)</li>
-									<li><a href="#">April 2011 </a>(2)</li>
-							</ul>
-					</div>
-					
-					<h2 class="w-bot-border">News <span>&amp; Events</span></h2>
-					<div class="widget newsEvent nostylewt">
-							<ul class="list">
+
+
+		</div><!-- end of left-area -->
+		<!-- LEFT AREA ENDS HERE -->
+
+
+		<!-- ========== START OF SIDEBAR AREA ========== -->
+		<div id="sidebar">
+			<h2 class="w-bot-border">More <span>delicious food</span></h2>
+			<div class="widget fav-recipes nostylewt">
+
+				<div class="tabed">
+					<ul class="tabs clearfix">
+						<% (0..@other_categories.count-1).each  do |category| %>
+						<%if category == 0 %>
+						<li class="current"><%= @other_categories[category].name.split(' ')[0]%></li>
+						<% else%>
+						<li><%= @other_categories[category].name.split(' ')[0]%></li>
+						<%end%>
+
+						<%end%>
+					</ul>
+					<div class="block current">
+						<ul class="highest">
+							<% @products_others.where(category_id: @other_categories[0]).sample(4).each do |product|%>							
 								<li>
-										<h5><a href="#">Heading will be appear here</a></h5>
-										<p>For every fine wine, there’s the perfect pairing of oli ves and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
+									<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>																			
+										<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
+										<p class="rate">
+												<%=product.region%>
+										</p>
 								</li>
-								
+							<%end%>						
+						</ul>
+					</div><!-- end of block div -->
+
+					<div class="block">
+						<ul class="recent">
+							<% @products_others.where(category_id: @other_categories[1]).sample(4).each do |product|%>							
 								<li>
-										<h5><a href="#">Heading will be appear here</a></h5>
-										<p>For every fine wine, there’s the perfect pairing of oli ves and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
+										<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					
+										<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
+										<p class="rate">
+												<%=product.region%>
+										</p>
 								</li>
-							</ul>
-					</div><!-- end of news div -->
-					
-					<h2 class="w-bot-border">Twitter <span>Feeds</span></h2>
-					<div class="widget twitter nostylewt">
-							<ul>
-									<li><a href="#">@theCHERIEmint</a> Sounds interesting. Could you send us your ideas/suggestions via the contact form? 2011/06/22</li>
-									<li>Thank you for participating and retweeting the free themes &amp; hosting contest: <a href="#">http://t.co/bM7SjAY</a> 2011/06/22</li>
-									<li>Thank you for participating and retweeting the free themes &amp; hosting contest: <a href="#">http://t.co/bM7SjAY</a> 2011/06/22</li>
-							</ul>
-					</div>
-			</div><!-- end of sidebar -->
-            
-            <!-- ========== END OF SIDEBAR AREA ========== -->
-            
+							<%end%>
+						</ul>
+					</div><!-- end of block div -->
+
+					<div class="block">
+						<ul class="recent">
+							<% @products_others.where(category_id: @other_categories[2]).sample(4).each do |product|%>							
+								<li>
+									<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					
+										<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
+										<p class="rate">
+												<%=product.region%>
+										</p>
+								</li>
+							<%end%>
+						</ul>
+					</div><!-- end of block div -->
+					<div class="bot-border"></div>
+				</div><!-- end of tabed div -->
+			</div><!-- end of fav-recipes widget -->
+
+			<div id="twitter-feed"></div>
+		</div><!-- end of sidebar -->
+
+		<!-- ========== END OF SIDEBAR AREA ========== -->
+
 	</div>

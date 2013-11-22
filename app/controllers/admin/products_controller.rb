@@ -10,10 +10,10 @@ class Admin::ProductsController < ApplicationController
   def index
     @categories = Category.all	
     if request.xhr?
-      @products = Product.where(category_id: params[:id], is_active: 1);		
+      @products = Product.active.where(category_id: params[:id]);		
       render :partial => "/admin/products/list_products", :object => @products
     else
-      @products = Product.where(is_active: 1)		
+      @products = Product.active		
     end
 
 
@@ -88,9 +88,9 @@ class Admin::ProductsController < ApplicationController
   def prods_category
     if request.xhr?
       if params[:id].to_s == -1.to_s
-        @products = Product.where(is_active: 1)            
+        @products = Product.active
       else 
-        @products = Product.where(category_id: params[:id], is_active: 1);	          
+        @products = Product.active.where(category_id: params[:id]);	          
       end	
       render :partial => "/admin/products/list_products", :object => @products	
     end
@@ -100,13 +100,13 @@ class Admin::ProductsController < ApplicationController
    @categories = Category.all	
     if request.xhr?
        if params[:id].to_s == -1.to_s
-        @products = Product.where(is_active: 0)            
+        @products = Product.inactive            
       else 
-        @products = Product.where(category_id: params[:id], is_active: 0);	          
+        @products = Product.inactive.where(category_id: params[:id]);	          
       end		
     render :partial => "/admin/products/list_products", :object => @products
     else
-      @products = Product.where(is_active: 0)		
+      @products = Product.inactive
     end
   end
   
@@ -123,7 +123,7 @@ class Admin::ProductsController < ApplicationController
   
   def list_all_products
    if request.xhr?
-    @products = Product.where(is_active: 1)  
+    @products = Product.active
 	if params[:id].to_s == 1.to_s
 	 render :partial => "/admin/products/list_prod_checkboxes", :object => @products
 	 end

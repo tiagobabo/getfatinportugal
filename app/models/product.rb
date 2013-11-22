@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  scope :active , -> { where is_active: 1}
+  scope :inactive , -> { where is_active: 0}
   belongs_to :category
   has_many :client_product
   has_many :clients, :through => :client_product
@@ -7,8 +9,7 @@ class Product < ActiveRecord::Base
   validates :name, :presence => true
   validates :photo, :presence => true
   validates :region, :presence => true 
-validates  :category_id, :presence=>true  
-
+  validates  :category_id, :presence=>true  
 extend FriendlyId
 friendly_id :name, use: [:slugged, :history]
 

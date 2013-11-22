@@ -25,9 +25,20 @@ class ProductsController < ApplicationController
   def prods_by_category
     gon.projects=session[:projects]
     
-    category = Category.find(params[:id])
-    @products = Product.where(category_id: category.id , is_active: 1)	       
+    @category = Category.find(params[:id])
+   
+    @other_categories = Category.where("categories.id != ?",@category.id)    
+    
+    products_list = Product.active	       
+    @products = products_list.where(category_id: @category.id)
+    @products_others = products_list.where("products.category_id != ?", @category.id)
+    
+     @twitter = Twitter::Client.new
+      @twitter = @twitter.search(@category.slug, :include_entities=>"t", :count => 6, :result_type => "recent")
 
+      gon.twitter=@twitter
+      gon.hashtag='#'+@category.slug
+      
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @products }

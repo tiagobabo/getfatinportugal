@@ -58,9 +58,7 @@
 										<ul class="recent">
 											<% @products_recent.each do |product| %>
 												<li>
-														<a href="#" class="img-box">
-																<%= image_tag(product.photo, alt: "Hotest")%>
-														</a>
+													<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					
 														<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
 														<p class="rate">
 																<%=product.region%>
@@ -75,9 +73,7 @@
 									<ul class="recent">
 										<% @products_random.each do |product| %>
 											<li>
-													<a href="#" class="img-box">
-															<%= image_tag(product.photo, alt: "Hotest")%>
-													</a>
+												<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					
 													<h5><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>
 													<p class="rate">
 															<%=product.region%>
