@@ -40,8 +40,8 @@ DeliciouslyPortugalV2::Application.routes.draw do
   get 'main/terms_conditions'
   get 'contacts/interest'
   post 'contacts/send_client_interest'
-  get 'main/faq'
-  get 'main/donate'
+  match 'faq' => 'main#faq'
+  match 'donate' => 'main#donate'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

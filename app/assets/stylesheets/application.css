@@ -11,4 +11,9 @@
  *= require_self
  *= require style
  *= require instagram
+*= require jquery.ui.all
  */
+ul.ui-autocomplete
+{
+    z-index:999 !important;
+}

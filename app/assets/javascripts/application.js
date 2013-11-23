@@ -14,13 +14,29 @@
 //= require jquery_ujs
 //= require script
 //= require google.maps
-$(function() {
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/pt_PT/all.js#xfbml=1&appId=544436338959490";
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
+//= require jquery.ui.all
+var projects = gon.projects;
 
-	});
+$(document).ready(function() {
+	$(function() {
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/pt_PT/all.js#xfbml=1&appId=544436338959490";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+			$("#searchMain").autocomplete({
+				source: projects,
+				select: function( event, ui ) {
+					window.location = "/products/" + ui.item.slug;
+					return false;
+				}
+			}).data("autocomplete" )._renderItem = function( ul, item ) {
+				return $( "<li style='z-index:999'>" )
+				.append("<a href='/products/" + item.slug + "'>" + "<img style='width:25px;height:25px' src='" + item.icon + "' />" + "<span class='field'>" + item.value + "</span></a>")
+				.appendTo( ul );
+			};
+		});
+	});	
