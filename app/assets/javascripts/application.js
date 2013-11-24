@@ -34,7 +34,8 @@ $(document).ready(function() {
 					return false;
 				}
 			}).data("autocomplete" )._renderItem = function( ul, item ) {
-				return $( "<li style='z-index:999'>" )
+				return $("<li></li>")
+				            .data("item.autocomplete", item)
 				.append("<a href='/products/" + item.slug + "'>" + "<img style='width:25px;height:25px' src='" + item.icon + "' />" + "<span class='field'>" + item.value + "</span></a>")
 				.appendTo( ul );
 			};
