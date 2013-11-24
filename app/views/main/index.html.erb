@@ -62,7 +62,7 @@
 				<%= link_to image_tag(@product_starter.photo, alt: "Recipe Collections"),'/products/prods_by_category/starters', :class=>'img-box'  %>
 			
 					<h4> <%= link_to @product_starter.name+ ' //', '/products/prods_by_category/starters'%></h4>
-					<p><%= @product_starter.description.length>200 ? @product_starter.description[0..199] +" (...)" : @product_starter.description%> <%=link_to '...more' , product_path(@product_starter)%> </p>
+					<p><%= @product_starter.description.length>200 ? @product_starter.description[0..199] : @product_starter.description%> <%=link_to '...more' , product_path(@product_starter)%> </p>
 				
 				</li>
 				<li>
@@ -70,21 +70,21 @@
 					<%@product_main =@products_all.select{|x| x.category_id ==2}.sample  %>				
 						<%= link_to image_tag(@product_main.photo, alt: "Recipe Collections"),'/products/prods_by_category/main-course', :class=>'img-box'  %>
 						<h4><%= link_to @product_main.name+' //', '/products/prods_by_category/main-course'%></h4>
-						<p><%= @product_main.description.length>200 ? @product_main.description[0..199] +" (...)" : @product_main.description%> <%=link_to '...more' , product_path(@product_main)%> </p>
+						<p><%= @product_main.description.length>200 ? @product_main.description[0..199]  : @product_main.description%> <%=link_to '...more' , product_path(@product_main)%> </p>
 					</li>
 					<li>
 						<h3><a href="/products/prods_by_category/drinks">Drinks</a></h3>
 							<%@product_drinks =@products_all.select{|x| x.category_id ==3}.sample  %>				
 								<%= link_to image_tag(@product_drinks.photo, alt: "Recipe Collections"),'/products/prods_by_category/drinks', :class=>'img-box'  %>						
 							<h4><%= link_to @product_drinks.name+' //', '/products/prods_by_category/drinks'%></h4>
-							<p><%= @product_drinks.description.length>200 ? @product_drinks.description[0..199] +" (...)" : @product_drinks.description%> <%=link_to '...more' , product_path(@product_drinks)%> </p>
+							<p><%= @product_drinks.description.length>200 ? @product_drinks.description[0..199]  : @product_drinks.description%> <%=link_to '...more' , product_path(@product_drinks)%> </p>
 						</li> 
 						<li>
 							<h3><a href="/products/prods_by_category/desserts">Desserts</a></h3>
 							<%@product_desserts =@products_all.select{|x| x.category_id ==1}.sample  %>				
 								<%= link_to image_tag(@product_desserts.photo, alt: "Recipe Collections"),'/products/prods_by_category/desserts', :class=>'img-box'  %>
 								<h4><%= link_to @product_desserts.name+' //', '/products/prods_by_category/desserts'%></h4>
-							<p><%= @product_desserts.description.length>200 ? @product_desserts.description[0..199] +" (...)" : @product_desserts.description%> <%=link_to '...more' , product_path(@product_desserts)%> </p>
+							<p><%= @product_desserts.description.length>200 ? @product_desserts.description[0..199]  : @product_desserts.description%> <%=link_to '...more' , product_path(@product_desserts)%> </p>
 							</li>				
 
 						</ul>

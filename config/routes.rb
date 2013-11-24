@@ -36,7 +36,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   get 'contacts/suggest_food'
   post 'contacts/sendemail'
   post 'contacts/suggest'
-  get 'main/about_us'
+  match 'about' => 'main#about_us'
   get 'main/terms_conditions'
   get 'contacts/interest'
   post 'contacts/send_client_interest'
