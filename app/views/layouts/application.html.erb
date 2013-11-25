@@ -110,27 +110,25 @@
 				<a href="index.html">
 					<%= image_tag("footer-logo.png", alt: "Footer Logo", class: "footer-logo") %>
 				</a>
-				<p>For every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center. For every fine wine, there’s the For every fine wine...</p>
+				<p>	In deliciouslyportugal.com you can find a description in English of the top portuguese food, as well as the places and restaurants in Portugal where you can taste the time of your life.
+							<br/><br/>
+							<em>		Deliciously Portugal - Portugal. Food. Yumi.</em>
+						</p>
 				
 				<%= render :partial => 'layouts/paypal'%>
 				
 			</div>
 		</li>
 		<li>
-			<h2>Recent <span>Recipes</span></h2>
+			<h2>Recent <span>Food</span></h2>
 			<ul class="recent-posts">
+				<%@products_recent.each do |product|%>
 				<li>
-					<a href="#" class="img-box"><%= image_tag("tiny-images/tiny_16.jpg", alt: "Image") %></a>
-					<h5><a href="#">The World's Best</a></h5>
-					<p>Sandwich Recipes here once there will be chnace of going to go</p>
+					<%=link_to image_tag(product.photo, alt:'Image'), product_path(product), class: 'img-box'%>
+					<h5> <%= link_to product.name, product_path(product)%></h5>
+						<p><%= product.description.length>200 ? product.description[0..199] +" (...)" : product.description%></p>
 				</li>
-
-				<li>
-
-					<a href="#" class="img-box"><%= image_tag("tiny-images/tiny_17.jpg", alt: "Image") %></a>
-					<h5><a href="#">The World's Best</a></h5>
-					<p>Sandwich Recipes here once there will be chnace of going to go</p>
-				</li>
+				<%end%>								
 			</ul>
 		</li>
 

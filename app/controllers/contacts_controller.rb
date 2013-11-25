@@ -1,10 +1,5 @@
 class ContactsController < ApplicationController
-  before_filter :set_gon_projects
-  
-  def set_gon_projects
-   gon.projects=session[:projects]
-  end
-  
+ 
   def index
   end
 
