@@ -42,6 +42,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   post 'contacts/send_client_interest'
   match 'faq' => 'main#faq'
   match 'donate' => 'main#donate'
+  match 'newsletter'=>'main#newsletter'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

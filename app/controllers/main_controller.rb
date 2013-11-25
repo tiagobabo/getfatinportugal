@@ -24,4 +24,7 @@ class MainController < ApplicationController
   def donate 
   end
 
+  def newsletter
+  end
+
 end

@@ -57,7 +57,7 @@
 					</li>
 					<li><a href="single.html">News</a></li>										
 					<li>
-						<a href="features.html">Newsletter</a>
+						<a href="/newsletter">Newsletter</a>
 
 					</li>										
 					<li><a href="/faq">FAQ</a></li>					
@@ -126,7 +126,7 @@
 				<li>
 					<%=link_to image_tag(product.photo, alt:'Image'), product_path(product), class: 'img-box'%>
 					<h5> <%= link_to product.name, product_path(product)%></h5>
-						<p><%= product.description.length>200 ? product.description[0..199] +" (...)" : product.description%></p>
+						<p><%= product.description.length>100 ? product.description[0..99] +" (...)" : product.description%></p>
 				</li>
 				<%end%>								
 			</ul>
