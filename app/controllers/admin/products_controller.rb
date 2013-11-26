@@ -136,6 +136,9 @@ def product_month
 end
 
 def set_prod_month
+  Product.active.each do |product|
+    product.update_attributes(:is_special_product=> -1)  
+  end
    @product = Product.find(params[:product])
 	  respond_to do |format|
        if @product.update_attributes(:is_special_product=> 1)  
