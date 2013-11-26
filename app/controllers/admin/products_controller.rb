@@ -130,5 +130,23 @@ class Admin::ProductsController < ApplicationController
    end
   end
 
+def product_month
+@products = Product.active.order("name asc")  
+@product_of_the_month = @products.where(is_special_product: 1).first
+end
+
+def set_prod_month
+   @product = Product.find(params[:product])
+	  respond_to do |format|
+       if @product.update_attributes(:is_special_product=> 1)  
+         format.html { redirect_to  [:admin, :products], notice: 'Product was successfully updated.' }
+         format.json { head :no_content }
+       else
+         format.html { render action: "edit" }
+         format.json { render json: @product.errors, status: :unprocessable_entity }
+       end
+     end
+end
+
 
 end

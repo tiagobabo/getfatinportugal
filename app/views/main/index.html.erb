@@ -98,13 +98,12 @@
 						<div class="wk-special clearfix">
 							<h2 class="w-bot-border">Food of the <span>month</span></h2>
 							<div class="img-box">
-								<%= image_tag("hot-recipes/special.jpg", alt: "Weekly Special") %>
+								<%= image_tag(@product_of_month.photo, alt: "Weekly Special", class:'special_food') %>
 
 							</div>
-							<h4><a href="#">Heading text goes here //</a></h4>
-							<p>or every fine wine, there’s the perfect pairing of olives and cheese. Discover oodles of great tips and pairings in our idea center. Mouth water recipes and <a href="#">...more</a></p>
-							<span class="clearfix"></span><br />
-							<a href="#" class="readmore">Recent Weekly Specials</a>
+							<h4>
+								<%=link_to @product_of_month.name+ " //", product_path(@product_of_month)%>							
+							<p><%= @product_of_month.description.length>200 ? @product_of_month.description[0..199]  : @product_of_month.description%> <%=link_to '...more' , product_path(@product_of_month)%> </p>						
 						</div>
 
 						<div class="newsEvent">

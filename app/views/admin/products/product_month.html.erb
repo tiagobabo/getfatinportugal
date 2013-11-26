@@ -1,0 +1,21 @@
+<div class="row">
+<!-- Contact Details -->
+<div class="large-9 columns">
+<%= form_tag ("/admin/products/set_prod_month"), {:class => 'custom', "data-abide" => ''} do %>  
+<div class="row collapse">
+	<div class="large-2 columns">
+		<%= label_tag 'product', 'Product of the month', :class=>'inline' %>                   
+	</div>
+	<div class="large-10 columns">
+		<%if @product_of_the_month.nil? %>
+		<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name",@products.first.id), :class => 'medium' %>
+		<%else%>
+		<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name",@product_of_the_month.id), :class => 'medium' %>
+		<%end%>
+	</div>
+</div>			 
+
+<button type="submit" class="radius button">Submit</button>
+<%end%>
+</div>
+</div>

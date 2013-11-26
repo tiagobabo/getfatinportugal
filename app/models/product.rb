@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
 extend FriendlyId
 friendly_id :name, use: [:slugged, :history]
 
-  attr_accessible :description, :hashtag, :name, :photo, :region, :category_id, :category, :latitude, :longitude, :is_active
+  attr_accessible :description, :hashtag, :name, :photo, :region, :category_id, :category, :latitude, :longitude, :is_active, :is_special_product
 
   def next
     Product.where("products.id > ?", self.id).order("products.id ASC").limit(1)

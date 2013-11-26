@@ -35,7 +35,7 @@ jQuery(document).ready(function(){
 
 	// example code to attach the events
 	addFocusAndBlur($('#csubject'),'Subject here');
-	addFocusAndBlur($('#s'),'Search for');
+	addFocusAndBlur($('#searchMain'),'Search for');
 	addFocusAndBlur($('#cname'),'Name here');
 	addFocusAndBlur($('#cemail'),'Email here');
 	addFocusAndBlur($('#cmessage'),'Message');

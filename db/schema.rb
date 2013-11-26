@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121221845) do
+ActiveRecord::Schema.define(:version => 20131125234220) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -87,15 +87,17 @@ ActiveRecord::Schema.define(:version => 20131121221845) do
     t.string   "photo"
     t.string   "hashtag"
     t.integer  "category_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "latitude"
     t.string   "longitude"
-    t.integer  "is_active",   :default => 1
+    t.integer  "is_active",          :default => 1
     t.string   "slug"
+    t.integer  "is_special_product"
   end
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
+  add_index "products", ["is_special_product"], :name => "index_products_on_is_special_product"
   add_index "products", ["slug"], :name => "index_products_on_slug"
 
   create_table "service_modalities", :force => true do |t|

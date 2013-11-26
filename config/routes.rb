@@ -8,6 +8,8 @@ DeliciouslyPortugalV2::Application.routes.draw do
     get 'payments/show_payment_plan' => 'payments#show_payment_plan'
     match 'products/list_suggestions/:id' => "products#list_suggestions"
     match 'products/activate/:id' => "products#activate"
+    get 'products/product_month' => "products#product_month"
+    post 'products/set_prod_month' => 'products#set_prod_month'
 
     resources :products  
     resources :categories	

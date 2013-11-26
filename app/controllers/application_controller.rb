@@ -3,7 +3,16 @@ class ApplicationController < ActionController::Base
   before_filter :set_gon_projects
 
   def set_gon_projects
-    gon.projects=session[:projects]   
-    @products_recent = session[:recent_products]
+    
+    if session[:projects].nil?
+      session[:projects]= Product.active.order("created_at DESC").map{|x| {"value" => x.name, "slug" => x.slug, "icon" => x.photo, "category_id"=>x.category_id}} 
+    end
+    
+    gon.projects=session[:projects] 
+    
+    if session[:recent_products].nil?
+      @products_recent =  Product.active.order('created_at DESC').limit(3)
+    else @products_recent = session[:recent_products]
+    end
   end
 end
