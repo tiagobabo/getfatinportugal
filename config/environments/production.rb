@@ -61,7 +61,6 @@ DeliciouslyPortugalV2::Application.configure do
 
 config.assets.precompile = [ method(:compile_asset?).to_proc ]
 
-  config.assets.precompile += %w( favicon.ico. )
   #config.assets.precompile += %w( product.js )
   #config.assets.precompile += %w( twitterfeed-search.js )
   #config.assets.precompile += %w( jquery.instagram.js )
