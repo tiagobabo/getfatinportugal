@@ -279,8 +279,10 @@ jQuery(document).ready(function(){
 
 
 	// Twitter Fetcher Target Code
-	twitterFetcher.fetch('353252568291504128', 'twitter_update_list', 2, true, false, true, dateFormatter, false);
-
+	twitterFetcher.fetch('405475717917310977', 'twitter_update_list', 5, true, false, true, dateFormatter, false);
+	function dateFormatter(date) {
+	    return (date.getDate() + '/' + (date.getMonth() + 1) + '/' +  date.getFullYear());
+	}
 	// FAQ Toggle Effect for FAQ Page
 
 	$('.faq-list li').children('p').slideUp();

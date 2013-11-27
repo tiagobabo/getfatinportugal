@@ -618,8 +618,12 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 #bottom li .recent-posts li .img-box img { width: 63px; height: 53px; }
 #bottom .readmore { color: #fff; }
 
-#twitter_update_list li .timePosted { display: none; }
+/*#twitter_update_list li .timePosted { display:; }*/
 #twitter_update_list li:last-child { background: none; }
+
+/*Ads from google */
+.googleAds-products-show { width: 642px; height: 79px; margin: 5px; }
+.googleAds-products-mainpage { width: 371px; height: 59px;}
 
 
 /* Footer Area Styles */

@@ -15,6 +15,8 @@
 //= require script
 //= require google.maps
 //= require jquery.ui.all
+
+document.write("<script async src='http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' type='text/javascript'></script>");
 var projects = gon.projects;
 
 $(document).ready(function() {
@@ -39,5 +41,5 @@ $(document).ready(function() {
 				.append("<a href='/products/" + item.slug + "'>" + "<img style='width:25px;height:25px' src='" + item.icon + "' />" + "<span class='field'>" + item.value + "</span></a>")
 				.appendTo( ul );
 			};
-		});
+		});	
 	});	
