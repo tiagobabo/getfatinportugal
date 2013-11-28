@@ -13,7 +13,7 @@ group :development, :test do
   #gem 'pg'
   #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
-  gem 'twitter'
+gem "twitter", "~> 4.8.1"
   gem 'instagram'
   gem 'gon'
   gem 'koala'
@@ -27,7 +27,7 @@ group :production do
   gem 'rack-google_analytics', :require => "rack/google_analytics"
   #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
-  gem 'twitter'
+gem "twitter", "~> 4.8.1 "
   gem 'instagram'
   gem 'gon'
   gem 'koala'
