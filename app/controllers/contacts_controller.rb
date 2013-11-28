@@ -43,9 +43,10 @@ class ContactsController < ApplicationController
     @product = Product.find(params[:product])
     Emailer.new_interest(params[:name], params[:address], params[:locality],params[:person_in_charge],params[:email],params[:phone],  @product.name).deliver
     flash[:notice] = "Email was successfully sent."
-    respond_to do |format|
-      format.html { redirect_to :action=> 'interest' }     
-    end
+     respond_to do |format|
+        format.html { render :text => 'Email was successfully sent. Thanks for Your Message!<br /> We will get in touch shortly.'}
+        format.js   { render :nothing => true }
+      end
   end
 
   def interest

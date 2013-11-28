@@ -1,0 +1,32 @@
+<% title 'Deliciously Portugal - Your restaurant here' %>
+<!-- ============= CONTENT AREA STARTS HERE ============== -->
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+		<h2 class="title">Put your restaurant here!</h2>
+		<p>Do you want to promote your restaurant as the best place to eat a delicious portuguese food?<br/>
+			Then contact us and we will get in touch with you!</p>
+			<%= form_tag ("/contacts/send_client_interest"), {:id => 'contact-form', remote: true }  do %>
+
+			<p><input type="text" name="name" class="required" id="cname" value="Restaurant name here" /></p>
+			<p><input type="text" name="address" class="required" id="caddress" value="Restaurant address here" /></p>
+			<p><input type="text" name="locality" id="clocality" class="required" value="Restaurant locality here"></input></p>
+
+			<p><input type="text" name="person_in_charge" class="required" id="cperson_in_charge" value="Person in charge here" /></p>
+			<p><input type="text" name="email" class="email required" id="cemail" value="Email here" /></p>
+			<p><input type="text" name="phone" id="cphone" class="required" value="Phone number here" /></p>
+			<p>
+				<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name")%>
+				<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
+				<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
+
+			</p>
+			<p id="message-sent"></p>
+			<p>
+				<span class="w-pet-border"></span>
+			</p>
+
+			<%end%>
+
+		</div><!-- end of left-area -->
+
+	</div><!-- end of content div -->

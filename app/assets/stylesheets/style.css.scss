@@ -552,6 +552,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 /** Contact Page Styles **/
 
 #contact-form input[type="text"] { width: 406px; background-color: #f3f7f8; }
+#contact-form select { width: 406px; background-color: #f3f7f8; }
 #contact-form p { margin: 0 0 20px; position: relative; }
 #contact-form textarea { width: 570px; background-color: #f3f7f8; }
 #contact-form input[type="submit"] { height: 27px; padding: 0 13px; background: image-url("button-bg-pink.png") repeat-x; cursor: pointer; }
@@ -624,6 +625,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 /*Ads from google */
 .googleAds-products-show { width: 642px; height: 79px; margin: 5px; }
 .googleAds-products-mainpage { width: 371px; height: 59px;}
+.googleAds-products-categories { width: 220px; height: 165px;}
 
 
 /* Footer Area Styles */
