@@ -18,14 +18,15 @@ group :development, :test do
   gem 'gon'
   gem 'koala'
   gem 'devise'
+  gem 'heroku-deflater'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 end
 
 group :production do
   # gems specifically for Heroku go here
+  gem 'heroku-deflater'
   gem "pg"
   gem 'rack-google_analytics', :require => "rack/google_analytics"
-  gem 'heroku-deflater'
   #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
   gem 'twitter'
