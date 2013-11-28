@@ -15,18 +15,19 @@
 			<p><input type="text" name="email" class="email required" id="cemail" value="Email here" /></p>
 			<p><input type="text" name="phone" id="cphone" class="required" value="Phone number here" /></p>
 			<p>
-				<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name")%>
-				<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
-				<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
+				<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name")%></p>
+				<p>
+					<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
+					<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
 
-			</p>
-			<p id="message-sent"></p>
-			<p>
-				<span class="w-pet-border"></span>
-			</p>
+				</p>
+				<p id="message-sent"></p>
+				<p>
+					<span class="w-pet-border"></span>
+				</p>
 
-			<%end%>
+				<%end%>
 
-		</div><!-- end of left-area -->
+			</div><!-- end of left-area -->
 
-	</div><!-- end of content div -->
+		</div><!-- end of content div -->

@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
       session[:projects]= Product.active.order("created_at DESC").map{|x| {"value" => x.name, "slug" => x.slug, "icon" => x.photo, "category_id"=>x.category_id}} 
     end
     
+    if @product_of_month.nil?
+      @product_of_month= Product.active.where(is_special_product:1).first
+    end
+    
     gon.projects=session[:projects] 
     
     if session[:recent_products].nil?

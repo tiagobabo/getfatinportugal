@@ -1,10 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    @products_all = Product.active.order('created_at DESC')
-    #1 - product_month
-    #2 - ..... (thing of possible things, like week special, season special, etc...)
-    @product_of_month = @products_all.where(is_special_product: 1).first
+    @products_all = Product.active.order('created_at DESC')    
     @products_slider = @products_all.sample(3)
 
     #for the tabbed
