@@ -26,5 +26,8 @@ class MainController < ApplicationController
 
   def newsletter
   end
+  
+  def sponsors
+  end
 
 end

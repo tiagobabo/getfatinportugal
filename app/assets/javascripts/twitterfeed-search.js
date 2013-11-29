@@ -2,7 +2,7 @@
 //UPDATED TO AUTHENTICATE TO API 1.1
 (function($) {	
 	$(document).ready(function () {
-		var displaylimit = 10;
+		var displaylimit = 3;
 		var twittersearchtitle = gon.hashtag +" on Twitter";
 		var showretweets = false;
 		var showtweetlinks = true;
