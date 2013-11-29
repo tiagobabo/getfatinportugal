@@ -11,7 +11,12 @@ class ProductsController < ApplicationController
     @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent")
 
     gon.twitter=@twitter
-    gon.hashtag=@product.hashtag
+    
+    #hack to assure that every product has the # symbol.
+    if @product.hashtag[0].to_s == "#"
+      gon.hashtag=@product.hashtag
+    else gon.hashtag="#"+@product.hashtag
+    end
     gon.region = @product.region
     gon.latitude  = @product.latitude
     gon.longitude = @product.longitude
