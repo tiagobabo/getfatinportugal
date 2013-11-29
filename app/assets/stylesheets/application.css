@@ -13,6 +13,7 @@
  *= require instagram
 *= require jquery.ui.all
 *=require main
+*=require products
  */
 ul.ui-autocomplete
 {
