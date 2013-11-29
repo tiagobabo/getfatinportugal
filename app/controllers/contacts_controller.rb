@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
- 
+
   def index
   end
 
@@ -21,25 +21,28 @@ class ContactsController < ApplicationController
       format.js   { render :nothing => true }
     end
   end
+  
+  def send_advertise	
+    Emailer.advertise(params[:name], params[:email], params[:phone], params[:message]).deliver
+    flash[:notice]= 'Email was successfully sent. Thanks for Your Message!'
+    respond_to do |format|
+      format.html { render :text => 'Email was successfully sent. Thanks for Your Message!<br /> We will get in touch shortly.'}
+      format.js   { render :nothing => true }
+    end
+  end
 
   def send_suggest	
     @product = Product.new(params[:product])
 
     Emailer.suggest_us(params[:name_user], params[:email_user], params[:phone_user], @product.name).deliver
-
-
     respond_to do |format|
-      if @product.save
-        respond_to do |format|
-            flash[:notice] = "Your suggetion was sent with success.<br /> We will get in touch shortly."
-            format.html { render :text => 'Your suggetion was sent with success.<br /> We will get in touch shortly.'}
-            format.js   { render :nothing => true }
-          end
-      else
-        respond_to do |format|
-            format.html { render :text => 'Email was <strong> not</strong> successfully sent. Try again later!<br /> We will get in touch shortly.'}
-            format.js   { render :nothing => true }
-          end
+      if @product.save       
+          format.html { render :text => 'Your suggetion was sent with success.<br /> We will get in touch shortly.'}
+          format.js   { render :nothing => true }       
+      else       
+          format.html { render :text => 'Email was not successfully sent. Try again later!<br /> We will get in touch shortly.'}
+          format.js   { render :nothing => true }
+        
       end
     end
   end 
@@ -48,10 +51,10 @@ class ContactsController < ApplicationController
     @product = Product.find(params[:product])
     Emailer.new_interest(params[:name], params[:address], params[:locality],params[:person_in_charge],params[:email],params[:phone],  @product.name).deliver
     flash[:notice] = "Email was successfully sent."
-     respond_to do |format|
-        format.html { render :text => 'Email was successfully sent. Thanks for Your Message!<br /> We will get in touch shortly.'}
-        format.js   { render :nothing => true }
-      end
+    respond_to do |format|
+      format.html { render :text => 'Email was successfully sent. Thanks for Your Message!<br /> We will get in touch shortly.'}
+      format.js   { render :nothing => true }
+    end
   end
 
   def interest

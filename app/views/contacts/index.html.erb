@@ -12,20 +12,7 @@
 			</div>
 			-->
 			 <%= form_tag ("/contacts/sendemail"), {:id => 'contact-form', remote: true } do %>
-			
-				<p><input type="text" name="name" class="required" id="cname" placeholder="Name here" /></p>
-				<p><input type="text" name="email" class="email required" id="cemail" placeholder="Email here" /></p>
-				<p><input type="text" name="subject" class="required" id="csubject" placeholder="Subject here" /></p>
-				<p><textarea name="message" id="cmessage" class="required" cols="30" rows="6" placeholder ="Message"></textarea></p>
-				<p>
-					<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
-					<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
-					
-				</p>
-				<p id="message-sent"></p>
-				<p>
-					<span class="w-pet-border"></span>
-				</p>
+			<%=render 'form_contact' %>
 			
 			<%end%>
 

@@ -1,0 +1,32 @@
+<% title 'Deliciously Portugal - Contact us' %>
+<!-- ============= CONTENT AREA STARTS HERE ============== -->
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+		<h2 class="title">Advertise here</h2>
+		<p>Do you want to partner with us?<br/>	
+			Send us a message and we will get in touch with you soon!</p>
+			<!-- <div class="single-img-box">
+			<div id="map_canvas"></div>			        
+			</div>
+			-->
+			 <%= form_tag ("/contacts/send_advertise"), {:id => 'contact-form', remote: true } do %>
+		
+			<p><input type="text" name="name" class="required" id="cname" placeholder="Name here" /></p>
+			<p><input type="text" name="email" class="email required" id="cemail" placeholder="Email here" /></p>
+			<p><input type="text" name="phone" class="required" id="csubject" placeholder="Phone number here" /></p>
+			<p><textarea name="message" id="cmessage" cols="30" rows="6" placeholder ="Message"></textarea></p>
+			<p>
+				<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
+				<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
+
+			</p>
+			<p id="message-sent"></p>
+			<p>
+				<span class="w-pet-border"></span>
+			</p>
+			
+			<%end%>
+
+		</div><!-- end of left-area -->
+
+</div><!-- end of content div -->
