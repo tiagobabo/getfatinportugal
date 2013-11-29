@@ -1,4 +1,4 @@
-<% title 'Deliciously Portugal - Contact us' %>
+<% title 'Deliciously Portugal - Advertise with us' %>
 <!-- ============= CONTENT AREA STARTS HERE ============== -->
 <div id="content" class="clearfix">
 	<div id="left-area" class="clearfix">
@@ -9,8 +9,8 @@
 			<div id="map_canvas"></div>			        
 			</div>
 			-->
-			 <%= form_tag ("/contacts/send_advertise"), {:id => 'contact-form', remote: true } do %>
-		
+			<%= form_tag ("/contacts/send_advertise"), {:id => 'contact-form', remote: true } do %>
+
 			<p><input type="text" name="name" class="required" id="cname" placeholder="Name here" /></p>
 			<p><input type="text" name="email" class="email required" id="cemail" placeholder="Email here" /></p>
 			<p><input type="text" name="phone" class="required" id="csubject" placeholder="Phone number here" /></p>
@@ -24,9 +24,23 @@
 			<p>
 				<span class="w-pet-border"></span>
 			</p>
-			
+
 			<%end%>
 
 		</div><!-- end of left-area -->
+		<div id="sidebar">
 
-</div><!-- end of content div -->
+			<ins class="adsbygoogle googleAds-products-categories"
+			style="display: inline-block"
+			data-ad-client="ca-pub-5281126661789169"
+			data-ad-slot="3622614122"></ins>
+
+		</div><!-- end of sidebar -->
+
+	</div><!-- end of content div -->
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	});
+	</script>
