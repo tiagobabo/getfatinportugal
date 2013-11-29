@@ -1,0 +1,85 @@
+
+<%= form_for @product, :url => url_for(:controller => 'contacts', :action => 'send_suggest'), :html=>{:id => 'contact-form', remote: true } do |f| %>
+
+
+
+<div class="toggle-box">
+	
+		<ul>
+				<li>
+						<h5>Food information</h5>
+						<p> <%= f.text_field :name,  :class=>'required', :placeholder=>"Name of the food here"%>	</p>
+						<p>
+							<%= f.url_field :photo, :class=>'required', :placeholder=>"web url to an image representing the food..."%>              
+						</p>
+
+						<p>
+							<%= f.text_field :region, :class=>'required', :placeholder=>"typical region for the food..."%>  
+						</p>
+
+						<p>
+							<%= f.text_field :hashtag,:class=>'required',:placeholder=>"hashtag for Twitter and Instagram..."%>  
+						</p>
+
+						<p>
+							<%= f.select(:category_id, options_for_select(@categories, @product.category_id),{},{ :class => 'medium' } ) %>
+						</p>
+
+						<p>
+							<%= f.text_area :description, :class=>'required', :placeholder=>"Insert a short description of the Portuguese delicious food..."%>
+						</p>
+
+<p class="map-canvas" id="map-canvas">
+						
+							
+						
+</p>
+						<p>
+							<input type="text" id="map_search" placeholder="find city in the map..." />
+							<a onclick="findByAddress();" class="readmore">Search</a>
+						</p>
+						
+				</li>
+				
+				<li>
+						<h5>Personal information</h5>
+						<p>
+							<%=text_field_tag 'name_user',nil, :placeholder => 'Jane Smith', :class=>'required' %>
+						</p>
+
+						<p>
+							<%=text_field_tag 'email_user',nil, :placeholder => 'jane@smithco.com', :class=>'required email' %>                
+						</p>
+
+						<p>
+							<%=text_field_tag 'phone_user',nil, :placeholder => 'ex: +351 123 123 123...' %>                
+						</p>
+
+						<span class="w-pet-border"></span>
+				</li>
+			
+		</ul>
+</div><!-- end of toggle-box -->
+
+<p>
+	<input type="submit" name="contact-submit" id="contact-submit" value="Send Now" class="readmore" />
+	<%= image_tag("loading.gif", id: "contact-loader", alt: "Loader") %>
+
+</p>
+
+
+<p id="message-sent"></p>
+<p>
+	<span class="w-pet-border"></span>
+</p>
+<div style="visibility: hidden">
+	<p>
+		<%= f.text_field :latitude, :placeholder=>"latitude for the product region..."%>
+		<%= f.text_field :longitude, :placeholder=>"longitude for the product region..."%>
+		<%= f.text_field :is_active,  :value =>0%>
+
+	</p>
+</div>
+
+<%end%>
+

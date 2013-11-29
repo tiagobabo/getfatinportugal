@@ -92,8 +92,10 @@ textarea { padding: 6px 5px; font:13px "DroidSans", Arial, Helvetica, "Trebuchet
 textarea:focus { color: #5b5b5b; border-color: #dfdfdf; }
 a.readmore, .readmore { display: inline-block; border: none; height: 29px; padding: 0 17px; cursor: pointer; background: image-url("button-bg-h29.png") repeat-x; font:12px "DroidSans", Arial, Helvetica, "Trebuchet MS", sans-serif; text-align: center; color: #fff; line-height: 28px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
 input[type="text"] { display: inline-block; height: 18px; padding: 8px; margin: 0 0 0; border: 1px solid #d5d5d5; font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif; color: #c0c0c0; color: #c0c0c0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+input[type="url"] { display: inline-block; height: 18px; padding: 8px; margin: 0 0 0; border: 1px solid #d5d5d5; font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif; color: #c0c0c0; color: #c0c0c0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
 textarea { display: inline-block; padding: 8px; border: 1px solid #d5d5d5; font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif; color: #c0c0c0; color: #c0c0c0; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
 input[type="text"]:focus, textarea:focus { color: #9e9e9e; }
+input[type="url"]:focus, textarea:focus { color: #9e9e9e; }
 #pagination { text-align: center; }
 #pagination a { display: inline-block; border: none; height: 29px; padding: 0 17px; background: image-url("button-bg-h29.png") repeat-x; font:12px "DroidSans", Arial, Helvetica, "Trebuchet MS", sans-serif; color: #fff; text-align: center; color: #fff; line-height: 28px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
 #pagination a.current { font-weight: bold; text-decoration: underline; }
@@ -376,7 +378,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 #left-area .toggle-box ul { }
 #left-area .toggle-box ul li { padding: 0 0 5px 30px; margin: 0 0 0; background: image-url("toggle-box-icon.png") -30px 3px no-repeat; overflow: hidden; line-height: 26px; }
 #left-area .toggle-box ul li h5 { cursor: pointer; font-weight: normal; }
-#left-area .toggle-box ul li p { margin: 0; }
+#left-area .toggle-box ul li p { margin: 2; }
 #left-area .toggle-box ul li.active { background-position: 0 -47px; overflow: hidden; line-height: 26px; }
 
 #left-area .menu-list { margin: 0 0 25px; }
@@ -552,6 +554,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 /** Contact Page Styles **/
 
 #contact-form input[type="text"] { width: 406px; background-color: #f3f7f8; }
+#contact-form input[type="url"] { width: 406px; background-color: #f3f7f8; }
 #contact-form select { width: 406px; background-color: #f3f7f8; }
 #contact-form p { margin: 0 0 20px; position: relative; }
 #contact-form textarea { width: 570px; background-color: #f3f7f8; }

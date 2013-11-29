@@ -5,15 +5,16 @@
 		<h2 class="title">Put your restaurant here!</h2>
 		<p>Do you want to promote your restaurant as the best place to eat a delicious portuguese food?<br/>
 			Then contact us and we will get in touch with you!</p>
+			
 			<%= form_tag ("/contacts/send_client_interest"), {:id => 'contact-form', remote: true }  do %>
 
-			<p><input type="text" name="name" class="required" id="cname" value="Restaurant name here" /></p>
-			<p><input type="text" name="address" class="required" id="caddress" value="Restaurant address here" /></p>
-			<p><input type="text" name="locality" id="clocality" class="required" value="Restaurant locality here"></input></p>
+			<p><input type="text" name="name" class="required" id="cname" placeholder="Restaurant name here" /></p>
+			<p><input type="text" name="address" class="required" id="caddress" placeholder="Restaurant address here" /></p>
+			<p><input type="text" name="locality" id="clocality" class="required" placeholder="Restaurant locality here"></input></p>
 
-			<p><input type="text" name="person_in_charge" class="required" id="cperson_in_charge" value="Person in charge here" /></p>
-			<p><input type="text" name="email" class="email required" id="cemail" value="Email here" /></p>
-			<p><input type="text" name="phone" id="cphone" class="required" value="Phone number here" /></p>
+			<p><input type="text" name="person_in_charge" class="required" id="cperson_in_charge" placeholder="Person in charge here" /></p>
+			<p><input type="text" name="email" class="email required" id="cemail" placeholder="Email here" /></p>
+			<p><input type="text" name="phone" id="cphone"  placeholder="Phone number here" /></p>
 			<p>
 				<%=	select_tag "product", options_from_collection_for_select(@products, "id", "name")%></p>
 				<p>

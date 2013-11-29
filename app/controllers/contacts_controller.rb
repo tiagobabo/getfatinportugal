@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  def suggest	
+  def send_suggest	
     @product = Product.new(params[:product])
 
     Emailer.suggest_us(params[:name_user], params[:email_user], params[:phone_user], @product.name).deliver
@@ -30,11 +30,16 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to main_index_path, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+        respond_to do |format|
+            flash[:notice] = "Your suggetion was sent with success.<br /> We will get in touch shortly."
+            format.html { render :text => 'Your suggetion was sent with success.<br /> We will get in touch shortly.'}
+            format.js   { render :nothing => true }
+          end
       else
-        format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        respond_to do |format|
+            format.html { render :text => 'Email was <strong> not</strong> successfully sent. Try again later!<br /> We will get in touch shortly.'}
+            format.js   { render :nothing => true }
+          end
       end
     end
   end 

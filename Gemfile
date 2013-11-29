@@ -13,7 +13,7 @@ group :development, :test do
   #gem 'pg'
   #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
-gem "twitter", "~> 4.8.1"
+  gem "twitter", "~> 4.8.1"
   gem 'instagram'
   gem 'gon'
   gem 'koala'
@@ -27,7 +27,7 @@ group :production do
   gem 'rack-google_analytics', :require => "rack/google_analytics"
   #gem "unicorn", "~> 4.6.2"
   gem 'figaro'
-gem "twitter", "~> 4.8.1 "
+  gem "twitter", "~> 4.8.1 "
   gem 'instagram'
   gem 'gon'
   gem 'koala'
@@ -45,12 +45,12 @@ group :assets do
   # Add Foundation Here
   gem 'compass-rails' # you need this or you get an err
   gem 'zurb-foundation'
- 
+
 end
 
- gem 'jquery-rails'
- gem 'jquery-ui-rails'
-  gem 'friendly_id' 
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'friendly_id' 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

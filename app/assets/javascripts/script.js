@@ -33,19 +33,6 @@ jQuery(document).ready(function(){
 		});
 	}
 
-	// example code to attach the events
-	addFocusAndBlur($('#csubject'),'Subject here');
-	addFocusAndBlur($('#searchMain'),'Search for');
-	addFocusAndBlur($('#cname'),'Name here');
-	addFocusAndBlur($('#cname'),'Restaurant name here');
-	addFocusAndBlur($('#caddress'),'Restaurant address here');
-	addFocusAndBlur($('#cperson_in_charge'),'Person in charge here');
-	addFocusAndBlur($('#cphone'),'Phone number here');
-	addFocusAndBlur($('#clocality'),'Restaurant locality here');
-	addFocusAndBlur($('#cemail'),'Email here');
-	addFocusAndBlur($('#cmessage'),'Message');
-	addFocusAndBlur($('#message'), 'Type your comments here');
-
 	//==================================
 
 
