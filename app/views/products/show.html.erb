@@ -1,9 +1,6 @@
 <% title 'Deliciously Portugal - '+@product.name %>
 <%= stylesheet_link_tag "twitter-styles.css" %>
-<%= javascript_include_tag params[:controller]  %>
-<%= javascript_include_tag "jquery.instagram.js" %>
-<%= javascript_include_tag "jquery.slimbox2.js" %>
-<%= javascript_include_tag "twitterfeed-search.js" %>
+
 <!-- ============= CONTENT AREA STARTS HERE ============== -->
 <div id="content" class="clearfix">
 	<div id="left-area" class="clearfix full-wide">
@@ -68,23 +65,22 @@
 
 				<div class="info-right">
 					<a href="/contacts/interest">
-						<div class="square_adv"><br/><br/><h3> You restaurante here.</h3> 
-							<p>Location, Portugal</p>
-							<p>If your restaurant isn't it, just click here to enter it on our website!
-							</p>
-						</div>
+						<div class="square_adv"><br/><br/><h3> Your restaurante here.</h3> 
+							<p>Your restaurant's location</p>
+							<p>If your restaurant isn't here, then it should be! Click here to show it on deliciouslyportugal.com
+							</p> </div>
 					</a>
 					<a href="/contacts/interest">
-						<div class="square_adv"><br/><br/><h3> You restaurante here.</h3> 
-							<p>Location, Portugal</p>
-							<p>If your restaurant isn't it, just click here to enter it on our website!
+						<div class="square_adv"><br/><br/><h3> Your restaurante here.</h3> 
+							<p>Your restaurant's location</p>
+							<p>If your restaurant isn't here, then it should be! Click here to show it on deliciouslyportugal.com
 							</p> </div>
 						</a>
 						<a href="/contacts/interest">
-							<div class="square_adv"><br/><br/><h3> You restaurante here.</h3> 
-								<p>Location, Portugal</p>
-								<p>If your restaurant isn't it, just click here to enter it on our website!
-								</p></div>
+							<div class="square_adv"><br/><br/><h3> Your restaurante here.</h3> 
+								<p>Your restaurant's location</p>
+								<p>If your restaurant isn't here, then it should be! Click here to show it on deliciouslyportugal.com
+								</p> </div>
 							</a>
 
 							<div id="twitter-feed"></div>
@@ -97,3 +93,8 @@
 
 					</div><!-- end of left-area -->
 				</div><!-- end of content div -->
+				
+				<%= javascript_include_tag params[:controller]  %>
+				<%= javascript_include_tag "jquery.instagram.js" %>
+				<%= javascript_include_tag "jquery.slimbox2.js" %>
+				<%= javascript_include_tag "twitterfeed-search.js" %>
