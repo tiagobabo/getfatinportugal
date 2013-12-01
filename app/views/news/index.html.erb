@@ -10,7 +10,7 @@
 			<h2 class="post-title">
 				<%=link_to new.title, news_path(new)%>
 
-			<p class="meta"> On : <%=new.created_at%> </p>
+			<p class="meta"> On : <%=new.created_at.to_formatted_s(:long_ordinal)%> </p>
 			<div class="post-thumb single-img-box">
 				<%=image_tag(new.image, alt:'Image')%>
 			
