@@ -108,7 +108,7 @@
 						<% @news_recent.each do |new| %>
 
 						<li>
-							<h5><a href="/news/<%=new.title%>"><%=new.title%></a></h5>
+							<h5><a href="/news/<%=new.slug%>"><%=new.title%></a></h5>
 							<p><%=new.news_text[0..100]%> <%=link_to '...more', news_path(new)%></p>
 						</li>
 						<%end%>
