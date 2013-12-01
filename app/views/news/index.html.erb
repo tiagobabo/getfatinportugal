@@ -1,0 +1,48 @@
+<!-- ============= CONTENT AREA STARTS HERE ============== -->
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+		<%if @news.count<=0%>
+		<h3>No news inserted</h3>
+		<%else%>
+		
+		<%@news.each do |new|%>
+		<div class="post">
+			<h2 class="post-title">
+				<%=link_to new.title, news_path(new)%>
+
+			<p class="meta"> On : <%=new.created_at%> </p>
+			<div class="post-thumb single-img-box">
+				<%=image_tag(new.image, alt:'Image')%>
+			
+			</div>
+			<p><%=new.news_text[0..300] + ' (...)'%></p>
+			<%=link_to 'Read more', news_path(new), :class=>'readmore rightbtn'%>		
+		</div><!-- end of post div -->
+		<%end%>
+		<%end%>
+
+		<!--<p id="pagination">
+		<a href="#">Next</a>
+		<a href="#">1</a>
+		<a href="#" class="current">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<a href="#">Previous</a>
+		</p>-->                
+	</div><!-- end of left-area -->
+	<!-- LEFT AREA ENDS HERE -->
+
+	<div id="sidebar">
+		<h2 class="w-bot-border">Delicious <span>food</span></h2>
+		<div class="widget fav-recipes nostylewt">
+
+			<%=render 'main/delicious_food_tabs'%>
+			<ins class="adsbygoogle googleAds-products-categories"
+			style="display: inline-block"
+			data-ad-client="ca-pub-5281126661789169"
+			data-ad-slot="3622614122"></ins>     				
+		</div>
+
+
+	</div>
+</div>

@@ -1,0 +1,71 @@
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+
+		<div class="post">
+			<h1 class="single-post-title"><%=@new.title%></h1>
+			<p><%=@new.subtitle%></p>
+			<!--	<p class="meta">By : <a href="#">John Doe</a> <span>|</span> <a class="comments" href="#">21 Comments</a> <span>|</span> On : 1st Sept 2011 <span>|</span> Category : <span class="cats"><a href="#">Bunglows</a>, <a href="#">Crispy</a></span></p>-->
+			<div class="single-img-box">
+				<%=image_tag(@new.image, :alt=>'Image')%>									
+			</div>
+
+			<p><%=@new.news_text%></p>
+
+			<b/>
+			<em><%=@new.source%></em>
+
+
+			<!-- end columns -->
+		</div><!-- end of post div -->
+
+		<center>                                
+			<!-- Redes externas -->
+			<!-- <center> -->
+				<p class="postmetadata alt">
+					<!-- <ul style="overflow: auto; list-style-type: none;"> -->
+					</p><ul style="list-style-type: none; margin-left: 15px;margin-top: 15px;">
+						<!-- Twitter -->
+						<li style="height: 20px; float: left; margin-right: 0px; padding: 0 0px; margin-left: -15px;"> 	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%=request.original_url%>" data-via="DeliciouslyPT" data-hashtags="DeliciouslyPT">Tweeter</a>
+						</li>
+
+						<li style="height: 20px; float: left; margin-right: 0px; padding: 0 0px;">
+							<div class="fb-like" data-href="<%=request.original_url%>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+
+							&nbsp;&nbsp;
+						</li>
+					</ul>
+					<!-- </center> -->
+				</center><br/><br/>	
+
+				<div class="comments">
+					<h2>Comments</h2>
+					<span class="w-pet-border"></span>
+					<div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="5" data-width="600"></div>
+				</div><!-- end of comments div -->
+
+
+
+			</div><!-- end of left-area -->
+			<!-- LEFT AREA ENDS HERE -->
+
+			<div id="sidebar">
+				<h2 class="w-bot-border">Recent <span>Posts</span></h2>
+				<div class="widget fav-recipes nostylewt">
+
+					<%=render 'news_tabs'%>
+						<ins class="adsbygoogle googleAds-products-categories"
+						style="display: inline-block"
+						data-ad-client="ca-pub-5281126661789169"
+						data-ad-slot="3622614122"></ins>     
+					
+				</div>
+
+
+			</div>
+			</div>
+
+
+
+
+			<%= javascript_include_tag params[:controller]  %>
+			<%= javascript_include_tag 'ads.js' %>

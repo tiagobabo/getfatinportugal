@@ -1,0 +1,61 @@
+  <%= form_for [:admin, @new], url: {action: @action_to}, :html => {:class => 'custom',"data-abide" => ''} do |f| %>
+	 <% if @new.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@new.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+	      <ul>
+	      <% @new.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+  <fieldset>
+    <legend class="contact legend">New new...</legend>
+
+    <div class="row">
+      <div class="large-12 columns">
+		 <%= f.label :title %><br />
+		<%= f.text_field :title, :required => true, :placeholder=>"Title of the new..."%>		
+		<small class="error">Title is required.</small>       
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+		 <%= f.label :subtitle %><br />
+		<%= f.text_field :subtitle, :placeholder=>"Subtitle of the new..."%>			
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+		 <%= f.label :news_text %><br />
+		<%= f.text_area :news_text, :required => true, :placeholder=>"News text of the new..."%>		
+		<small class="error">News text is required.</small>       
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+		 <%= f.label :image %><br />
+		<%= f.url_field :image,  :placeholder=>"Image (url) of the new..."%>	
+		<small class="error"> Insert a valid url</small>		
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+		 <%= f.label :source %><br />
+		<%= f.text_field :source, :placeholder=>"Source of the new..."%>		
+	
+      </div>
+    </div>
+	
+
+<%= f.submit 'submit', :class => 'small button' %>
+   
+  </fieldset>
+</form>
+<%end%>

@@ -6,6 +6,7 @@
 //= require admin/configuration/service_modalities
 //= require admin/configuration/client_types
 //= require admin/clients
+//= require admin/news
 
 $(function() {
    $(document).foundation();

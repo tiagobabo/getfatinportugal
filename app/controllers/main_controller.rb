@@ -7,6 +7,7 @@ class MainController < ApplicationController
     #for the tabbed
     @products_recent = @products_all.limit(3)
     @products_random = @products_all.sample(3)
+    @news_recent = New.active.limit(2)
 
     gon.projects=@products_all.map{|x| {"value" => x.name, "slug" => x.slug, "icon" => x.photo, "category_id"=>x.category_id}} 
     session[:projects] = gon.projects

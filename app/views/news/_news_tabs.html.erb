@@ -1,0 +1,32 @@
+<div class="tabed">
+	<ul class="tabs clearfix">
+		<li class="current">Recent</li>
+		<li>Random</li>
+	</ul>
+	<div class="block current">
+		<ul class="Recent">
+			<%@news_recent.each do |new| %>
+			<li>
+				<%=link_to image_tag(new.image,alt:'Hotest'), news_path(new),:class=>'img-box'%>
+
+				<h5> <%=link_to new.title, news_path(new)%></h5>
+
+			</li>
+			<%end%>
+
+		</ul>
+	</div><!-- end of block div -->
+	<div class="block">
+		<ul class="Recent">
+			<%@news_random.each do |new| %>
+			<li>
+				<%=link_to image_tag(new.image,alt:'Hotest'), news_path(new),:class=>'img-box'%>
+
+				<h5> <%=link_to new.title, news_path(new)%></h5>
+
+			</li>
+			<%end%>
+
+		</ul>
+	</div><!-- end of block div -->
+</div>

@@ -1,11 +1,5 @@
 <% title 'Deliciously Portugal - '+@products.first.category.name %>
 <%= stylesheet_link_tag "twitter-styles.css" %>
-<%= javascript_include_tag "twitterfeed-search.js" %>
-<script type="text/javascript">
-$(document).ready(function() {
-(adsbygoogle = window.adsbygoogle || []).push({});
-});
-</script>
 <div id="content" class="clearfix">
 	<div id="left-area" class="clearfix">
 		<h1>Delicious <span><%=@products.first.category.name%></span></h1>
@@ -109,3 +103,5 @@ $(document).ready(function() {
 		<!-- ========== END OF SIDEBAR AREA ========== -->
 
 	</div>
+	<%= javascript_include_tag "twitterfeed-search.js" %>
+	<%= javascript_include_tag 'ads.js' %>

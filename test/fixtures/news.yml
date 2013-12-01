@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  subtitle: MyString
+  news_text: MyString
+  source: MyString
+  image: MyString
+  is_active: false
+
+two:
+  title: MyString
+  subtitle: MyString
+  news_text: MyString
+  source: MyString
+  image: MyString
+  is_active: false

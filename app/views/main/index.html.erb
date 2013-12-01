@@ -51,91 +51,92 @@
 		<ul class="cat-list clearfix">
 			<li>
 				<h3><a href="/products/prods_by_category/starters">Starters</a></h3>
-					<%@product_starter =@products_all.select{|x| x.category_id ==4}.sample  %>
+				<%@product_starter =@products_all.select{|x| x.category_id ==4}.sample  %>
 				<%= link_to image_tag(@product_starter.photo, alt: "Recipe Collections"),'/products/prods_by_category/starters', :class=>'img-box'  %>
-			
-					<h4> <%= link_to @product_starter.name+ ' //', '/products/prods_by_category/starters'%></h4>
-					<p><%= @product_starter.description.length>200 ? @product_starter.description[0..199] : @product_starter.description%> <%=link_to '...more' , product_path(@product_starter)%> </p>
-				
-				</li>
-				<li>
-					<h3><a href="/products/prods_by_category/main-course">Main course</a></h3>
-					<%@product_main =@products_all.select{|x| x.category_id ==2}.sample  %>				
-						<%= link_to image_tag(@product_main.photo, alt: "Recipe Collections"),'/products/prods_by_category/main-course', :class=>'img-box'  %>
-						<h4><%= link_to @product_main.name+' //', '/products/prods_by_category/main-course'%></h4>
-						<p><%= @product_main.description.length>200 ? @product_main.description[0..199]  : @product_main.description%> <%=link_to '...more' , product_path(@product_main)%> </p>
-					</li>
-					<li>
-						<h3><a href="/products/prods_by_category/drinks">Drinks</a></h3>
-							<%@product_drinks =@products_all.select{|x| x.category_id ==3}.sample  %>				
-								<%= link_to image_tag(@product_drinks.photo, alt: "Recipe Collections"),'/products/prods_by_category/drinks', :class=>'img-box'  %>						
-							<h4><%= link_to @product_drinks.name+' //', '/products/prods_by_category/drinks'%></h4>
-							<p><%= @product_drinks.description.length>200 ? @product_drinks.description[0..199]  : @product_drinks.description%> <%=link_to '...more' , product_path(@product_drinks)%> </p>
-						</li> 
+
+				<h4> <%= link_to @product_starter.name+ ' //', '/products/prods_by_category/starters'%></h4>
+				<p><%= @product_starter.description.length>200 ? @product_starter.description[0..199] : @product_starter.description%> <%=link_to '...more' , product_path(@product_starter)%> </p>
+
+			</li>
+			<li>
+				<h3><a href="/products/prods_by_category/main-course">Main course</a></h3>
+				<%@product_main =@products_all.select{|x| x.category_id ==2}.sample  %>				
+				<%= link_to image_tag(@product_main.photo, alt: "Recipe Collections"),'/products/prods_by_category/main-course', :class=>'img-box'  %>
+				<h4><%= link_to @product_main.name+' //', '/products/prods_by_category/main-course'%></h4>
+				<p><%= @product_main.description.length>200 ? @product_main.description[0..199]  : @product_main.description%> <%=link_to '...more' , product_path(@product_main)%> </p>
+			</li>
+			<li>
+				<h3><a href="/products/prods_by_category/drinks">Drinks</a></h3>
+				<%@product_drinks =@products_all.select{|x| x.category_id ==3}.sample  %>				
+				<%= link_to image_tag(@product_drinks.photo, alt: "Recipe Collections"),'/products/prods_by_category/drinks', :class=>'img-box'  %>						
+				<h4><%= link_to @product_drinks.name+' //', '/products/prods_by_category/drinks'%></h4>
+				<p><%= @product_drinks.description.length>200 ? @product_drinks.description[0..199]  : @product_drinks.description%> <%=link_to '...more' , product_path(@product_drinks)%> </p>
+			</li> 
+			<li>
+				<h3><a href="/products/prods_by_category/desserts">Desserts</a></h3>
+				<%@product_desserts =@products_all.select{|x| x.category_id ==1}.sample  %>				
+				<%= link_to image_tag(@product_desserts.photo, alt: "Recipe Collections"),'/products/prods_by_category/desserts', :class=>'img-box'  %>
+				<h4><%= link_to @product_desserts.name+' //', '/products/prods_by_category/desserts'%></h4>
+				<p><%= @product_desserts.description.length>200 ? @product_desserts.description[0..199]  : @product_desserts.description%> <%=link_to '...more' , product_path(@product_desserts)%> </p>
+			</li>				
+
+		</ul>
+
+	</div><!-- end of whats-hot div -->
+
+	<span class="w-pet-border"></span>
+
+	<div id="home-infos" class="clearfix">
+
+		<div class="wk-special clearfix">
+			<h2 class="w-bot-border">Food of the <span>month</span></h2>
+			<div class="img-box">
+				<%= image_tag(@product_of_month.photo, alt: "Weekly Special", class:'special_food') %>
+
+			</div>
+			<h4>
+				<%=link_to @product_of_month.name+ " //", product_path(@product_of_month)%>							
+				<p><%= @product_of_month.description.length>200 ? @product_of_month.description[0..199]  : @product_of_month.description%> <%=link_to '...more' , product_path(@product_of_month)%> </p>						
+			</div>
+
+			<div class="newsEvent">
+				<h2 class="w-bot-border">News</h2>
+				<ul class="list">
+					<%if @news_recent.count<=0%>
+					<li><h5>no news inserted yet.</h5>
+						<%else%>
+						<% @news_recent.each do |new| %>
+
 						<li>
-							<h3><a href="/products/prods_by_category/desserts">Desserts</a></h3>
-							<%@product_desserts =@products_all.select{|x| x.category_id ==1}.sample  %>				
-								<%= link_to image_tag(@product_desserts.photo, alt: "Recipe Collections"),'/products/prods_by_category/desserts', :class=>'img-box'  %>
-								<h4><%= link_to @product_desserts.name+' //', '/products/prods_by_category/desserts'%></h4>
-							<p><%= @product_desserts.description.length>200 ? @product_desserts.description[0..199]  : @product_desserts.description%> <%=link_to '...more' , product_path(@product_desserts)%> </p>
-							</li>				
+							<h5><a href="/news/<%=new.title%>"><%=new.title%></a></h5>
+							<p><%=new.news_text[0..100]%> <%=link_to '...more', news_path(new)%></p>
+						</li>
+						<%end%>
+						<%end%>
 
-						</ul>
+					</ul>
+				</div><!-- end of news div -->
 
-					</div><!-- end of whats-hot div -->
+				<div class="fav-recipes">
+					<h2 class="w-bot-border">Favourite <span>food</span></h2>
+					<div class="bot-border">&nbsp;</div>
+					<%= render :partial => 'delicious_food_tabs'%>
+				</div><!-- end of fav-recipes  div -->
 
-					<span class="w-pet-border"></span>
+				<div class="ads-642x79">
+					<script type="text/javascript">
+					var uri = 'http://imppt.tradedoubler.com/imp?type(js)pool(509594)a(2349691)' + new String (Math.random()).substring (2, 11);
+					document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
+					</script>
+				</div>
 
-					<div id="home-infos" class="clearfix">
+			</div><!-- end of home-infos div -->
 
-						<div class="wk-special clearfix">
-							<h2 class="w-bot-border">Food of the <span>month</span></h2>
-							<div class="img-box">
-								<%= image_tag(@product_of_month.photo, alt: "Weekly Special", class:'special_food') %>
 
-							</div>
-							<h4>
-								<%=link_to @product_of_month.name+ " //", product_path(@product_of_month)%>							
-							<p><%= @product_of_month.description.length>200 ? @product_of_month.description[0..199]  : @product_of_month.description%> <%=link_to '...more' , product_path(@product_of_month)%> </p>						
-						</div>
 
-						<div class="newsEvent">
-							<h2 class="w-bot-border">News</h2>
-							<ul class="list">
 
-								<li>
-									<h5><a href="#">Heading will be appear here</a></h5>
-									<p>For every fine wine, there’s the perfect pairing of oli ves and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
-								</li>
 
-								<li>
-									<h5><a href="#">Heading will be appear here</a></h5>
-									<p>For every fine wine, there’s the perfect pairing of oli ves and cheese. Discover oodles of great tips and pairings in our idea center<a href="#">...more</a></p>
-								</li>
-
-							</ul>
-						</div><!-- end of news div -->
-
-						<div class="fav-recipes">
-							<h2 class="w-bot-border">Favourite <span>food</span></h2>
-							<div class="bot-border">&nbsp;</div>
-							<%= render :partial => 'delicious_food_tabs'%>
-															</div><!-- end of fav-recipes  div -->
-
-															<div class="ads-642x79">
-																		<script type="text/javascript">
-																		var uri = 'http://imppt.tradedoubler.com/imp?type(js)pool(509594)a(2349691)' + new String (Math.random()).substring (2, 11);
-																		document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
-																		</script>
-															</div>
-
-														</div><!-- end of home-infos div -->
-													
-												
-														
-														
-
-													</div><!-- end of content div -->
+		</div><!-- end of content div -->
 
 <!-- CONTENT ENDS HERE -->
 <%= javascript_include_tag "main.js" %>

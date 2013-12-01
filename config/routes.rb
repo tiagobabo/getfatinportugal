@@ -14,6 +14,8 @@ DeliciouslyPortugalV2::Application.routes.draw do
     resources :products  
     resources :categories	
     resources :clients
+    resources :news
+    
     match 'products/prods_category/:id' => "products#prods_category"
     match 'products/list_all_products/:id' => "products#list_all_products"
 
@@ -25,6 +27,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   end
   
   resources :products
+  resources :news 
 
   match 'main/index' => 'main#index'
 
