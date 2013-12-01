@@ -6,7 +6,7 @@ class CreateNews < ActiveRecord::Migration
       t.string :news_text
       t.string :source
       t.string :image
-      t.boolean :is_active, :default => 1
+      t.boolean :is_active, :default => true
 
       t.timestamps
     end
