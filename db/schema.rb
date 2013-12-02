@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131130211434) do
+ActiveRecord::Schema.define(:version => 20131202221258) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -70,12 +70,12 @@ ActiveRecord::Schema.define(:version => 20131130211434) do
   create_table "news", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"
-    t.string   "news_text"
+    t.text     "news_text",  :limit => 4294967295
     t.string   "source"
     t.string   "image"
-    t.boolean  "is_active",  :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.boolean  "is_active",                        :default => true
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
     t.string   "slug"
   end
 
