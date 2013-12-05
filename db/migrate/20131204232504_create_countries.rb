@@ -68,7 +68,7 @@ class CreateCountries < ActiveRecord::Migration
     Country.create(:name => 'Cuba', :iso3 => 'CUB', :iso2 => 'CU', :numcode => 192)
     Country.create(:name => 'Cyprus', :iso3 => 'CYP', :iso2 => 'CY', :numcode => 196)
     Country.create(:name => 'Czech Republic', :iso3 => 'CZE', :iso2 => 'CZ', :numcode => 203)
-#    Country.create(:name => 'Côte d\'Ivoire', :iso3 => 'CIV', :iso2 => 'CI', :numcode => 384)
+    Country.create(:name => 'Côte d\'Ivoire', :iso3 => 'CIV', :iso2 => 'CI', :numcode => 384)
     Country.create(:name => 'Denmark', :iso3 => 'DNK', :iso2 => 'DK', :numcode => 208)
     Country.create(:name => 'Djibouti', :iso3 => 'DJI', :iso2 => 'DJ', :numcode => 262)
     Country.create(:name => 'Dominica', :iso3 => 'DMA', :iso2 => 'DM', :numcode => 212)
