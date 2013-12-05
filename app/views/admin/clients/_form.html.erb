@@ -30,6 +30,13 @@
           </div>
       </div>
 
+	<div class="row">
+          <div class="large-12 columns">
+              <%= f.label :motto %><br />
+              <%= f.text_field :motto, :placeholder=>"Ex: Just do it (Nike)"%>		
+          </div>
+      </div>
+
       <div class="row">
           <div class="large-12 columns">
               <%= f.label :address %><br />
@@ -53,10 +60,11 @@
               <%= f.text_field :postal_code, :placeholder=>"Ex: 3000-123"%>  
           </div>
 		  <div class="large-4 columns">
+			  <%= f.label :country_id %><br />
+              <%= f.select(:country_id, options_for_select(@countries, @client.country_id),{},{ :class => 'medium' } ) %>
 		  </div>
       </div>
-	  
-	  
+
 
       <div class="row">
           <div class="large-4 columns">

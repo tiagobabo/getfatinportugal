@@ -20,6 +20,10 @@ class ProductsController < ApplicationController
     gon.region = @product.region
     gon.latitude  = @product.latitude
     gon.longitude = @product.longitude
+    
+    client=Client.new
+    @clients = client.get_clients_for_product_with_active_plan(@product.id)
+    
   end
 
   def index

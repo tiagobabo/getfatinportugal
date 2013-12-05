@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131202221258) do
+ActiveRecord::Schema.define(:version => 20131204233736) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -52,9 +52,21 @@ ActiveRecord::Schema.define(:version => 20131202221258) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.integer  "client_type_id"
+    t.integer  "country_id"
+    t.string   "motto"
   end
 
   add_index "clients", ["client_type_id"], :name => "index_clients_on_client_type_id"
+  add_index "clients", ["country_id"], :name => "index_clients_on_country_id"
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "iso2"
+    t.string   "iso3"
+    t.integer  "numcode"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false

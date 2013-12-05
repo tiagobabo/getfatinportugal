@@ -19,3 +19,14 @@ ul.ui-autocomplete
 {
     z-index:999 !important;
 }
+.user img
+{
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+height: 24px;
+width:24px;
+}

@@ -33,6 +33,8 @@ jQuery(document).ready(function(){
 		});
 	}
 
+	addFocusAndBlur($('#searchMain'),"Search for...");
+
 	//==================================
 
 
@@ -271,7 +273,7 @@ jQuery(document).ready(function(){
 
 
 	// Twitter Fetcher Target Code
-	twitterFetcher.fetch('405475717917310977', 'twitter_update_list', 5, true, false, true, dateFormatter, false);
+	twitterFetcher.fetch('405475717917310977', 'twitter_update_list', 3, true, true, true, dateFormatter, false);
 	function dateFormatter(date) {
 	    return (date.getDate() + '/' + (date.getMonth() + 1) + '/' +  date.getFullYear());
 	}

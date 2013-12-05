@@ -1,9 +1,10 @@
 class Client < ActiveRecord::Base
   belongs_to :client_type
+  belongs_to :country
   has_many :client_product
   has_many :products, :through => :client_product
 
-  attr_accessible :address, :email, :location, :mobile_phone, :name, :nif, :person_in_charge, :phone, :postal_code, :client_type_id
+  attr_accessible :address, :email, :location, :mobile_phone, :name, :nif, :person_in_charge, :phone, :postal_code, :client_type_id, :country_id, :motto
 
 
   def create_client_with_products_and_payment_plan (params, client)
@@ -26,4 +27,12 @@ class Client < ActiveRecord::Base
 
     end
   end
+  
+  def get_clients_for_product_with_active_plan(product_id)
+    @clients = Client.joins("inner join payment_plans as pp on pp.client_id=clients.id
+                             inner join client_products as cp on cp.client_id=clients.id")
+                             .where("cp.product_id = ?",product_id)
+    
+  end
+  
 end

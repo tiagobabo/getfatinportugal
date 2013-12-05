@@ -22,6 +22,8 @@ class Admin::ClientsController < ApplicationController
   def new
     @client = Client.new
 	@client_types = ClientType.all.map{|x| [x.name, x.id]}
+	@countries = Country.all.map{|x| [x.name, x.id]}
+	
 	
 	respond_to do |format|
       format.html 
