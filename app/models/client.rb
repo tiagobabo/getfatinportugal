@@ -31,7 +31,7 @@ class Client < ActiveRecord::Base
   def get_clients_for_product_with_active_plan(product_id)
     @clients = Client.joins("inner join payment_plans as pp on pp.client_id=clients.id
                              inner join client_products as cp on cp.client_id=clients.id")
-                             .where("cp.product_id = ?",product_id)
+                             .where("cp.product_id = ? and pp.balance >0 and pp.initial_date >= ?",product_id, Time.now)
     
   end
   
