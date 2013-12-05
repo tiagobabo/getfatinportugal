@@ -12,7 +12,7 @@ class CreateCountries < ActiveRecord::Migration
     end
 
     Country.create(:name => 'Afghanistan', :iso3 => 'AFG', :iso2 => 'AF', :numcode => 4)
-    Country.create(:name => 'Åland Islands', :iso3 => 'ALA', :iso2 => 'AX', :numcode => 248)
+    Country.create(:name => 'Aland Islands', :iso3 => 'ALA', :iso2 => 'AX', :numcode => 248)
     Country.create(:name => 'Albania', :iso3 => 'ALB', :iso2 => 'AL', :numcode => 8)
     Country.create(:name => 'Algeria', :iso3 => 'DZA', :iso2 => 'DZ', :numcode => 12)
     Country.create(:name => 'American Samoa', :iso3 => 'ASM', :iso2 => 'AS', :numcode => 16)
