@@ -58,7 +58,7 @@ class ContactsController < ApplicationController
   end
 
   def interest
-    @products = Product.active
+    @products = Product.active.order('name asc')    
     gon.projects=session[:projects]
   end
 end
