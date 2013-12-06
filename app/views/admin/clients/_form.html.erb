@@ -97,6 +97,21 @@
               <%= f.text_field :person_in_charge, :placeholder=>"Ex: Sr. João"%>        
           </div>
       </div>     
+	 <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :client_site_url %><br />
+              <%= f.url_field :client_site_url, :placeholder=>"http://www.deliciouslyportugal.com"%> 
+<small class="error">insert a valid url.</small>       
+          </div>
+      </div>
+	 <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :tripadvisor_url %><br />
+              <%= f.url_field :tripadvisor_url, :placeholder=>"http://www.deliciouslyportugal.com"%>  
+<small class="error">insert a valid url.</small>      
+          </div>
+      </div>
+<br/>
    
     <div class="row">
 	<ul class="inline-list">
