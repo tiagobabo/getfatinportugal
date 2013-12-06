@@ -100,6 +100,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.5.0)
+      actionpack
     meta_request (0.2.8)
       callsite
       rack-contrib
@@ -188,6 +190,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   koala
+  meta-tags
   meta_request
   pg
   rack-google_analytics

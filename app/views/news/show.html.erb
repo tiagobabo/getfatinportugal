@@ -1,4 +1,9 @@
 <% title 'Deliciously Portugal - ' + @new.title %>
+<% content_for :head do %>
+  <meta property="og:url"    content="<%=request.original_url%>" /> 
+  <meta property="og:title"  content="<%=@new.title%>" /> 
+  <meta property="og:image"  content="<%=@new.image%>" /> 
+<% end %>
 <div id="content" class="clearfix">
 	<div id="left-area" class="clearfix">
 
