@@ -44,9 +44,9 @@ GoogleMaps.prototype.initializeWithRegion = function (region) {
             }
             _this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
 			
-			var myLatlng = new google.maps.LatLng(results[0].geometry.location.ob, results[0].geometry.location.pb);
-			_this.latitude= results[0].geometry.location.ob;
-			_this.longitude = results[0].geometry.location.pb;			
+			var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+			_this.latitude= results[0].geometry.location.lat();
+			_this.longitude = results[0].geometry.location.lng();			
 			_this.placeMarker(myLatlng, true);
         }
     });
@@ -103,9 +103,9 @@ GoogleMaps.prototype.showMapByAddress = function(address, longitude, latitude)
             }
            _this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);      
 			
-			var myLatlng = new google.maps.LatLng(results[0].geometry.location.ob, results[0].geometry.location.pb);
-			_this.latitude= results[0].geometry.location.ob;
-			_this.longitude = results[0].geometry.location.pb;
+			var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+			_this.latitude= results[0].geometry.location.lat();
+			_this.longitude = results[0].geometry.location.lng();
 			latitude.val(_this.latitude);
 			longitude.val(_this.longitude);
 			_this.placeMarker(myLatlng, true);
