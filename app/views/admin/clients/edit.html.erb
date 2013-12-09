@@ -1,0 +1,122 @@
+<div class="row">
+<!-- Contact Details -->
+    <div class="large-9 columns">
+<%= form_for [:admin, @client], :html => {:class => 'custom',"data-abide" => ''} do |f| %>
+	 <% if @client.errors.any? %>
+	    <div id="error_explanation">
+            <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+            <ul>
+                <% @client.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+<% end %>
+
+  <fieldset>
+      <legend class="contact legend">Client information...</legend>
+
+	  <div class="row">
+          <div class="large-12 columns">
+               <%= f.label :client_type_id %><br />
+              <%= f.select(:client_type_id, options_for_select(@client_types, @client.client_type_id),{},{ :class => 'medium' } ) %>         
+          </div>
+      </div>
+
+	  
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :name %><br />
+              <%= f.text_field :name, :required => true, :placeholder=>"Ex: Restaurante da Esquina"%>		
+		<small class="error">Name is required.</small>
+          </div>
+      </div>
+
+	<div class="row">
+          <div class="large-12 columns">
+              <%= f.label :motto %><br />
+              <%= f.text_field :motto, :placeholder=>"Ex: Just do it (Nike)"%>		
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :address %><br />
+              <%= f.text_field :address, :placeholder=>"Ex: Rua da Esquina, 1ºdto"%>			
+          </div>
+      </div>
+	  
+	   <div class="row">        
+          <div class="large-4 columns">
+              <div class="row collapse">
+                  <%= f.label :location %><br />                
+                  <div class="small-9 columns">
+                      <%= f.text_field :location, :placeholder=>"Ex: Coimbra"%>  				    
+                  </div>
+              </div>
+          </div>
+          <div class="large-4 columns">
+              <%= f.label :postal_code %><br />
+              <%= f.text_field :postal_code, :placeholder=>"Ex: 3000-123"%>  
+          </div>
+		  <div class="large-4 columns">
+			  <%= f.label :country_id %><br />
+              <%= f.select(:country_id, options_for_select(@countries, @client.country_id),{},{ :class => 'medium' } ) %>
+		  </div>
+      </div>
+
+
+      <div class="row">
+          <div class="large-4 columns">
+              <%= f.label :nif %><br />
+              <%= f.text_field :nif, :placeholder=>"Ex: 123123123"%>  		
+          </div>
+          <div class="large-4 columns">
+              <div class="row collapse">
+                  <%= f.label :mobile_phone %><br />                
+                  <div class="small-9 columns">
+                      <%= f.text_field :mobile_phone, :placeholder=>"Ex: +351 911 123 123"%>  				      
+                  </div>
+              </div>
+          </div>
+          <div class="large-4 columns">
+              <%= f.label :phone %><br />
+              <%= f.text_field :phone, :placeholder=>"Ex: 239 123 123"%>  
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, :placeholder=>"Ex: deliciouslyportugal@gmail.com"%>        
+          </div>
+      </div>     
+
+     
+      <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :person_in_charge %><br />
+              <%= f.text_field :person_in_charge, :placeholder=>"Ex: Sr. João"%>        
+          </div>
+      </div>     
+	 <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :client_site_url %><br />
+              <%= f.url_field :client_site_url, :placeholder=>"http://www.deliciouslyportugal.com"%> 
+<small class="error">insert a valid url.</small>       
+          </div>
+      </div>
+	 <div class="row">
+          <div class="large-12 columns">
+              <%= f.label :tripadvisor_url %><br />
+              <%= f.url_field :tripadvisor_url, :placeholder=>"http://www.deliciouslyportugal.com"%>  
+<small class="error">insert a valid url.</small>      
+          </div>
+      </div>
+<br/>
+  <%= f.submit 'submit', :class => 'radius button' %>
+</form>
+<%end%>
+</div>
+</div>
