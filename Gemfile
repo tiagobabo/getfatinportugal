@@ -34,6 +34,7 @@ group :production do
   gem 'koala'
   gem 'devise'
   gem 'heroku-deflater'
+      gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 
 end
