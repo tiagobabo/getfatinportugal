@@ -30,5 +30,11 @@ class MainController < ApplicationController
   
   def sponsors
   end
+  
+  def portuguese
+
+    @clients =  Client.order("country_id asc")
+        
+  end
 
 end

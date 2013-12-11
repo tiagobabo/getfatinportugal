@@ -18,6 +18,7 @@ group :development, :test do
   gem 'gon'
   gem 'koala'
   gem 'devise'
+    gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 end
 

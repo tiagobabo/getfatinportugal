@@ -1,0 +1,35 @@
+<%country = "" %>  
+<!-- ============= CONTENT AREA STARTS HERE ============== -->
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+		<h2 class="title">Portuguese near you</h2>
+		<p>Find some delicious portuguese food near you.</p>
+		<%@clients.each do |client|%>
+		<%if country!= client.country.name
+			country=client.country.name
+			%>
+
+
+			<h3 class="blue"><%=country%></h3>
+			<%end%>
+			
+			 <h4 class="red"><%=client.name%></h4>
+			<p><%= client.location%> </p>
+			<p><%= client.address%></p>
+			
+			<%end%>
+			<span class="w-pet-border"></span>
+
+
+		</div><!-- end of left-area -->
+
+
+
+	</div><!-- end of content div -->
+	<!-- ========== CONTENT AREA ENDS HERE ========== -->
+
+</div><!-- end of container div -->
+<div class="w-pet-border"></div>
+<div class="f32">
+	<div class="flag pt"></div>
+</div>

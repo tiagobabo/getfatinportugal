@@ -14,6 +14,7 @@
 *= require jquery.ui.all
 *=require main
 *=require products
+*= require world_flags/flags32
  */
 ul.ui-autocomplete
 {
@@ -29,4 +30,10 @@ font-family: inherit;
 vertical-align: baseline;
 height: 24px;
 width:24px;
+}
+.f32 .flag 
+{
+	width: 32px;
+	height: 32px;
+	
 }

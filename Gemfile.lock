@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/djonasson/world_flags.git
+  revision: 732e7807e7a463113378e62f879f36858af00697
+  specs:
+    world_flags (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -196,4 +202,5 @@ DEPENDENCIES
   sqlite3
   twitter (~> 4.8.1)
   uglifier (>= 1.0.3)
+  world_flags!
   zurb-foundation

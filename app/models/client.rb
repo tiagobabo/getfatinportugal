@@ -1,4 +1,5 @@
-class Client < ActiveRecord::Base
+class Client < ActiveRecord::Base  
+  scope :categorized, group(:country_id)
   belongs_to :client_type
   belongs_to :country
   has_many :client_product
