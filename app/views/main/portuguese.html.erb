@@ -9,8 +9,10 @@
 			country=client.country.name
 			%>
 
-
+			<div class="f32">
+				<div class="flag <%= client.country.iso2.downcase%>"></div>
 			<h3 class="blue"><%=country%></h3>
+			</div>
 			<%end%>
 			
 			 <h4 class="red"><%=client.name%></h4>
@@ -30,6 +32,3 @@
 
 </div><!-- end of container div -->
 <div class="w-pet-border"></div>
-<div class="f32">
-	<div class="flag pt"></div>
-</div>
