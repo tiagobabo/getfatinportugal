@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require script
 //= require google.maps
+//= require markerwithlabel
 //= require jquery.ui.all
 
 document.write("<script async src='http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' type='text/javascript'></script>");

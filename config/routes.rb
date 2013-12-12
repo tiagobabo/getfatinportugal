@@ -52,6 +52,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   match 'newsletter'=>'main#newsletter'
   match 'sponsors' => 'main#sponsors'
   match 'portuguese'=> 'main#portuguese'
+    match 'portuguese-map'=> 'main#portuguese_map'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

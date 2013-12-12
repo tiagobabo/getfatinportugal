@@ -36,5 +36,16 @@ class MainController < ApplicationController
     @clients =  Client.order("country_id asc")
         
   end
+  
+  def portuguese_map
+    @countries = Country.joins("inner join clients as c on c.country_id=countries.id").group(:id)
+    gon.countries = @countries
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @countries }
+    end
+
+    
+  end
 
 end
