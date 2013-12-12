@@ -1,11 +1,10 @@
-<%=@countries.inspect%>
 <!-- ============= CONTENT AREA STARTS HERE ============== -->
 <div id="content" class="clearfix">
 	<div id="left-area" class="clearfix full-wide">
 		<h2 class="title">Portuguese near you</h2>
-		<p>Find some delicious portuguese food near you.</p>
+		<p>Find some delicious portuguese food near you. If you want your restaurant here, <%=link_to 'let us know', :controller=>'contacts', :action=>'interest' %> </p>
 
-			<div id="map-canvas-world"></div>			        
+		<div id="map-canvas-world"></div>			        
 
 		<span class="w-pet-border"></span>
 
@@ -19,4 +18,4 @@
 
 </div><!-- end of container div -->
 <div class="w-pet-border"></div>
-	<%= javascript_include_tag "portuguese.js"  %>
+<%= javascript_include_tag "portuguese.js"  %>
