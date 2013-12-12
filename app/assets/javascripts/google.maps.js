@@ -117,27 +117,36 @@ GoogleMaps.prototype.showCountries = function(countries)
 {	
 	var _this = this;	
 	geocoder = new google.maps.Geocoder();
-	
+
 	var myOptions = {
 		zoom: _this.zoom,
 		center: new google.maps.LatLng(38.571431,-7.913501999999994),
 		mapTypeId:_this.mapType
 	}
 	_this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
-	
+	var counter=0;
 	countries.forEach(function(entry) 
-	{
+	{ 
+		
 		geocoder.geocode({
 			'address': entry.name
 		}, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				
+
 				var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 				_this.latitude= results[0].geometry.location.lat();
 				_this.longitude = results[0].geometry.location.lng();
 
-				_this.placeMarkerWithLabel(entry.name, myLatlng );   
-
+			
+				var counter = 0,
+				timer = setInterval(function () {
+				_this.placeMarkerWithLabel(entry.name, myLatlng );
+				    counter++
+				    if (counter === postcodes.length) {
+				        clearInterval(timer);
+				    }
+				}, 1000);
+						
 			}
 		});
 	});
@@ -145,16 +154,16 @@ GoogleMaps.prototype.showCountries = function(countries)
 GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng)
 {
 	var _this = this;
-var marker = new MarkerWithLabel({
-      position: latlng,
-      draggable: true,
-      map: _this.map,      
-    });
+	var marker = new MarkerWithLabel({
+		position: latlng,
+		draggable: true,
+		map: _this.map,      
+	});
 
-    var iw = new google.maps.InfoWindow({
-      content: countryName
-    });
+	var iw = new google.maps.InfoWindow({
+		content: countryName
+	});
 
 	this.markersArray.push(marker);
-    google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
+	google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
 }
