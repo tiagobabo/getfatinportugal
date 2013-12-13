@@ -116,7 +116,7 @@ GoogleMaps.prototype.showMapByAddress = function(address, longitude, latitude)
 GoogleMaps.prototype.showCountries = function(countries)
 {	
 	var _this = this;	
-
+	geocoder = new google.maps.Geocoder();
 
 	var myOptions = {
 		zoom: _this.zoom,
@@ -127,29 +127,23 @@ GoogleMaps.prototype.showCountries = function(countries)
 var counter=0;
 	countries.forEach(function(entry) 
 	{
+		geocoder.geocode({
+			'address': entry.name
+		}, function (results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+
+				var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+				_this.latitude= results[0].geometry.location.lat();
+				_this.longitude = results[0].geometry.location.lng();
+
+				_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );   
+			}
+		});
 		counter++;
-		setTimeout(_this.getAddress(entry),150*counter)
+		sleep(150*counter);
 	});
 }
-GoogleMaps.prototype.getAddress = function (entry)
-{
-	var _this = this;	
-	var geocoder = new google.maps.Geocoder();
-	geocoder.geocode({
-		'address': entry.name
-	}, function (results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
 
-			var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
-			_this.latitude= results[0].geometry.location.lat();
-			_this.longitude = results[0].geometry.location.lng();
-
-			_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );   
-
-		}
-	});
-	
-}
 GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng,linkCountry)
 {
 	var _this = this;
@@ -165,4 +159,9 @@ GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng,linkCoun
 
 	this.markersArray.push(marker);
 	google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
+}
+
+function sleep(milliSeconds) {
+	var startTime = new Date().getTime();
+	while (new Date().getTime() < startTime + milliSeconds);
 }
