@@ -32,8 +32,8 @@ class MainController < ApplicationController
   end
   
   def portuguese
-
-    @clients =  Client.order("country_id asc")
+    country = Country.find(params[:id])
+    @clients =  Client.where(country_id: country.id).order("name asc")
         
   end
   
