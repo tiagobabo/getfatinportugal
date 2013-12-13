@@ -130,8 +130,8 @@ GoogleMaps.prototype.showCountries = function(countries)
 		if(entry.latitude && entry.longitude)
 		{
 			var myLatlng = new google.maps.LatLng(entry.latitude, entry.longitude);
-			_this.latitude= results[0].geometry.location.lat();
-			_this.longitude = results[0].geometry.location.lng();
+			_this.latitude= entry.latitude;
+			_this.longitude = entry.longitude;
 
 			_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );
 
