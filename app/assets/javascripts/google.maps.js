@@ -124,7 +124,7 @@ GoogleMaps.prototype.showCountries = function(countries)
 		mapTypeId:_this.mapType
 	}
 	_this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
-var counter=0;
+	
 	countries.forEach(function(entry) 
 	{
 		geocoder.geocode({
@@ -139,8 +139,6 @@ var counter=0;
 				_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );   
 			}
 		});
-		counter++;
-		sleep(150*counter);
 	});
 }
 
