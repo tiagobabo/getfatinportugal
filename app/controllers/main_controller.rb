@@ -43,9 +43,20 @@ class MainController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @countries }
+    end    
+  end
+  
+  def set_country_coordinates
+    @country = Country.find(params[:id]) 
+    respond_to do |format|
+      if @country.update_attributes(params[:country])
+        format.html 
+        format.json { head :no_content }
+      else
+        format.html 
+        format.json { render json: @country.errors, status: :unprocessable_entity }
+      end
     end
-
-    
   end
 
 end

@@ -124,21 +124,43 @@ GoogleMaps.prototype.showCountries = function(countries)
 		mapTypeId:_this.mapType
 	}
 	_this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
-	
+
 	countries.forEach(function(entry) 
 	{
-		geocoder.geocode({
-			'address': entry.name
-		}, function (results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
+		if(entry.latitude && entry.longitude)
+		{
+			var myLatlng = new google.maps.LatLng(entry.latitude, entry.longitude);
+			_this.latitude= results[0].geometry.location.lat();
+			_this.longitude = results[0].geometry.location.lng();
 
-				var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
-				_this.latitude= results[0].geometry.location.lat();
-				_this.longitude = results[0].geometry.location.lng();
+			_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );
 
-				_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );   
-			}
-		});
+		}else{
+
+			geocoder.geocode({
+				'address': entry.name
+			}, function (results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+
+					var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+					_this.latitude= results[0].geometry.location.lat();
+					_this.longitude = results[0].geometry.location.lng();
+
+					_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );  
+					
+					$.ajax({
+					    url: "/main/set_country_coordinates",
+					    type: "POST",
+					    data: { id: entry.id, 
+								country: {
+								 	id: entry.id,
+					             	latitude: _this.latitude, 
+					             	longitude: _this.longitude}},
+					    success: function(resp){ }
+					});
+				}
+			});
+		}
 	});
 }
 
@@ -157,9 +179,4 @@ GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng,linkCoun
 
 	this.markersArray.push(marker);
 	google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
-}
-
-function sleep(milliSeconds) {
-	var startTime = new Date().getTime();
-	while (new Date().getTime() < startTime + milliSeconds);
 }

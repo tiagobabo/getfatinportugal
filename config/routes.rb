@@ -53,6 +53,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   match 'sponsors' => 'main#sponsors'
   match 'portuguese/:id'=> 'main#portuguese'
   match 'portuguese-map'=> 'main#portuguese_map'
+  post 'main/set_country_coordinates'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
