@@ -106,8 +106,10 @@ GoogleMaps.prototype.showMapByAddress = function(address, longitude, latitude)
 			var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 			_this.latitude= results[0].geometry.location.lat();
 			_this.longitude = results[0].geometry.location.lng();
-			latitude.val(_this.latitude);
-			longitude.val(_this.longitude);
+			if(latitude!=null && longitude!=null){
+				latitude.val(_this.latitude);
+				longitude.val(_this.longitude);
+			}
 			_this.placeMarker(myLatlng, true);
 		}
 	});
@@ -147,36 +149,36 @@ GoogleMaps.prototype.showCountries = function(countries)
 					_this.longitude = results[0].geometry.location.lng();
 
 					_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );  
-					
+
 					$.ajax({
-					    url: "/main/set_country_coordinates",
-					    type: "POST",
-					    data: { id: entry.id, 
-								country: {
-								 	id: entry.id,
-					             	latitude: _this.latitude, 
-					             	longitude: _this.longitude}},
-					    success: function(resp){ }
+						url: "/main/set_country_coordinates",
+						type: "POST",
+						data: { id: entry.id, 
+							country: {
+								id: entry.id,
+								latitude: _this.latitude, 
+								longitude: _this.longitude}},
+								success: function(resp){ }
+							});
+						}
 					});
 				}
 			});
 		}
-	});
-}
 
-GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng,linkCountry)
-{
-	var _this = this;
-	var marker = new MarkerWithLabel({
-		position: latlng,
-		draggable: false,
-		map: _this.map,      
-	});
+		GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng,linkCountry)
+		{
+			var _this = this;
+			var marker = new MarkerWithLabel({
+				position: latlng,
+				draggable: false,
+				map: _this.map,      
+			});
 
-	var iw = new google.maps.InfoWindow({
-		content: '<a href="/portuguese/'+linkCountry+'">Portuguese restaurants in '+countryName+'</a>'
-	});
+			var iw = new google.maps.InfoWindow({
+				content: '<a href="/portuguese/'+linkCountry+'">Portuguese restaurants in '+countryName+'</a>'
+			});
 
-	this.markersArray.push(marker);
-	google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
-}
+			this.markersArray.push(marker);
+			google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
+		}
