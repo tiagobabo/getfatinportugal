@@ -1,0 +1,52 @@
+<% title 'Deliciously Portugal - '+@client.name %>
+<div id="content" class="clearfix">
+	<div id="left-area" class="clearfix">
+		<h2 class="title"><%=@client.name%></h2>		
+		<div class="single-img-box">
+			<div id="map-canvas"></div>			        
+		</div>
+		<h3><%=@client.motto%></h3>
+		<span class="w-pet-border"></span>
+
+		<div class="info-left">
+			<h3 class="blue">Address</h3>
+			<%if !@client.address.blank?%>
+			<p><%=@client.address%></p>
+			<%end%>
+			<%if !@client.location.blank?%>
+			<p><%=@client.location%></p>
+			<%end%>
+			<%if !@client.address.blank?%>
+			<p><%=@client.country.name%></p>
+			<%end%>
+
+			<h3 class="blue">Contacts</h3>
+			<%if !@client.mobile_phone.blank?%>
+			<p><strong>Mobile - </strong><%=@client.mobile_phone%></p>
+			<%end%>
+
+			<%if !@client.phone.blank?%>
+			<p><strong>Phone - </strong><%=@client.phone%></p>
+			<%end%>
+			<%if !@client.email.blank?%>
+			<p><strong>Email - </strong><%=@client.email%></p>
+			<%end%>
+			<%if !@client.client_site_url.blank?%>
+			<p><strong>Website - </strong><%=@client.client_site_url%></p>
+			<%end%>
+
+			
+		</div><!-- end of info-left div -->
+
+		
+	</div><!-- end of left-area -->
+	<!-- LEFT AREA ENDS HERE -->
+
+	<!-- ========== END OF SIDEBAR AREA ========== -->
+
+</div><!-- end of content div -->
+
+</div><!-- end of container div -->
+<div class="w-pet-border"></div>
+<!-- ============= CONTAINER AREA ENDS HERE ============== -->
+<%= javascript_include_tag params[:controller]  %>

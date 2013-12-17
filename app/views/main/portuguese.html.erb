@@ -15,7 +15,7 @@
 			</div>
 			<%end%>
 			
-			 <h4 class="red"><%=client.name%></h4>
+			 <h4 class="red"><%=link_to client.name, client_path(client) %></h4>
 			<p><%= client.location%> </p>
 			<p><%= client.address%></p>
 			

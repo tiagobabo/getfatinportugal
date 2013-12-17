@@ -28,6 +28,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   
   resources :products
   resources :news 
+  resources :client
 
   match 'main/index' => 'main#index'
 

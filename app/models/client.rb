@@ -1,4 +1,6 @@
 class Client < ActiveRecord::Base  
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
   belongs_to :client_type
   belongs_to :country
   has_many :client_product
