@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  caches_action :show, :index, :prods_by_category
   def show
     @product = Product.find(params[:id])    
 
@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     @twitter = @twitter.search(@product.hashtag, :include_entities=>"t", :count => 6, :result_type => "recent")
 
     gon.twitter=@twitter
-    
+
     #hack to assure that every product has the # symbol.
     if @product.hashtag[0].to_s == "#"
       gon.hashtag=@product.hashtag
@@ -20,10 +20,10 @@ class ProductsController < ApplicationController
     gon.region = @product.region
     gon.latitude  = @product.latitude
     gon.longitude = @product.longitude
-    
+
     client=Client.new
     @clients = client.get_clients_for_product_with_active_plan(@product.id)
-    
+
   end
 
   def index

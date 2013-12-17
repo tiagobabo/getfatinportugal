@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-
+  caches_action :index, :portuguese_map,:portuguese,:donate,:newsletter,:sponsors
   def index
     @products_all = Product.active.order('created_at DESC')    
     @products_slider = @products_all.sample(3)
@@ -7,11 +7,11 @@ class MainController < ApplicationController
     #for the tabbed
     @products_recent = @products_all.limit(3)
     @products_random = @products_all.sample(3)
-    @news_recent = New.active.limit(2)
+    @news_recent = New.active.order("created_at desc").limit(2)
 
     gon.projects=@products_all.map{|x| {"value" => x.name, "slug" => x.slug, "icon" => x.photo, "category_id"=>x.category_id}} 
     session[:projects] = gon.projects
-    
+
     session[:recent_products] = @products_recent
 
   end
@@ -27,16 +27,16 @@ class MainController < ApplicationController
 
   def newsletter
   end
-  
+
   def sponsors
   end
-  
+
   def portuguese
     country = Country.find(params[:id])
     @clients =  Client.where(country_id: country.id).order("name asc")
-        
+
   end
-  
+
   def portuguese_map
     @countries = Country.joins("inner join clients as c on c.country_id=countries.id").group("countries.id").order("name desc")
     gon.countries = @countries
@@ -45,7 +45,7 @@ class MainController < ApplicationController
       format.json { render json: @countries }
     end    
   end
-  
+
   def set_country_coordinates
     @country = Country.find(params[:id]) 
     respond_to do |format|
