@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  caches_action :index, :portuguese_map,:portuguese,:donate,:newsletter,:sponsors
+  caches_action :donate,:newsletter,:sponsors
   def index
     @products_all = Product.active.order('created_at DESC')    
     @products_slider = @products_all.sample(3)

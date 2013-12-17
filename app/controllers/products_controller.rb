@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  caches_action :show, :index, :prods_by_category
+  caches_action :show
   def show
     @product = Product.find(params[:id])    
 
