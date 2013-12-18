@@ -15,8 +15,8 @@
 			</div>
 			<%end%>
 			
-			 <h4 class="red"><%=link_to (client.name + " - "+client.location), client_path(client) %></h4>
-			 <p><%=link_to 'details', client_path(client), :class=>"readmore"%></p>
+			 <h4 class="red"><%=link_to (client.name + " - "+client.location) ,   client_path(client) %></h4>
+			<p><%=client.address%> (<%=link_to 'more details', client_path(client)%>)</p>
 			
 			<%end%>
 			<span class="w-pet-border"></span>
