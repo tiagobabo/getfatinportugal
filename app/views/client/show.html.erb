@@ -8,7 +8,7 @@
 		<h3><%=@client.motto%></h3>
 		<span class="w-pet-border"></span>
 
-		<div class="info-left">
+	
 			<h3 class="blue">Address</h3>
 			<%if !@client.address.blank?%>
 			<p><%=@client.address%></p>
@@ -29,15 +29,36 @@
 			<p><strong>Phone - </strong><%=@client.phone%></p>
 			<%end%>
 			<%if !@client.email.blank?%>
-			<p><strong>Email - </strong><%=@client.email%></p>
+			<p><strong>Email - </strong><%=mail_to(@client.email)%></p>
 			<%end%>
 			<%if !@client.client_site_url.blank?%>
-			<p><strong>Website - </strong><%=@client.client_site_url%></p>
+			<p><strong>Website - </strong><%=link_to @client.client_site_url, @client.client_site_url %></p>
 			<%end%>
 
-			
-		</div><!-- end of info-left div -->
+			<center>                                
+				<!-- Redes externas -->
+				<!-- <center> -->
+					<p class="postmetadata alt">
+						<!-- <ul style="overflow: auto; list-style-type: none;"> -->
+						</p><ul style="list-style-type: none; margin-left: 15px;margin-top: 15px;">
+							<!-- Twitter -->
+							<li style="height: 20px; float: left; margin-right: 0px; padding: 0 0px; margin-left: -15px;"> 	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%=request.original_url%>" data-via="DeliciouslyPT" data-hashtags="DeliciouslyPT">Tweeter</a>
+							</li>
 
+							<li style="height: 20px; float: left; margin-right: 0px; padding: 0 0px;">
+								<div class="fb-like" data-href="<%=request.original_url%>" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+
+								&nbsp;&nbsp;
+							</li>
+						</ul>
+						<!-- </center> -->
+					</center><br/>
+					<span class="w-pet-border"></span>
+
+
+					<h4 class="red">Comments</h4>
+					<div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="5" data-width="640"></div>
+		
 		
 	</div><!-- end of left-area -->
 	<!-- LEFT AREA ENDS HERE -->
