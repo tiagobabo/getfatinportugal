@@ -127,6 +127,9 @@ GoogleMaps.prototype.showCountries = function(countries)
 	}
 	_this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
 
+	var myLatlng = new google.maps.LatLng(38.69714979357789 , -9.205266237258911);
+	_this.placeMarkerWithLabel(myLatlng,"<a href=\"/portuguese/portugal\">There's no place like home</a>" );  
+
 	countries.forEach(function(entry) 
 	{
 		if(entry.latitude && entry.longitude)
@@ -135,7 +138,7 @@ GoogleMaps.prototype.showCountries = function(countries)
 			_this.latitude= entry.latitude;
 			_this.longitude = entry.longitude;
 
-			_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );
+			_this.placeMarkerWithLabel(myLatlng,'<a href="/portuguese/'+entry.slug+'">Portuguese restaurants in '+entry.name+'</a>' );  
 
 		}else{
 
@@ -148,7 +151,7 @@ GoogleMaps.prototype.showCountries = function(countries)
 					_this.latitude= results[0].geometry.location.lat();
 					_this.longitude = results[0].geometry.location.lng();
 
-					_this.placeMarkerWithLabel(entry.name, myLatlng,entry.slug );  
+					_this.placeMarkerWithLabel(myLatlng,'<a href="/portuguese/'+entry.slug+'">Portuguese restaurants in '+entry.name+'</a>' );  
 
 					$.ajax({
 						url: "/main/set_country_coordinates",
@@ -166,7 +169,7 @@ GoogleMaps.prototype.showCountries = function(countries)
 			});
 		}
 
-		GoogleMaps.prototype.placeMarkerWithLabel = function(countryName,latlng,linkCountry)
+		GoogleMaps.prototype.placeMarkerWithLabel = function(latlng,content)
 		{
 			var _this = this;
 			var marker = new MarkerWithLabel({
@@ -176,7 +179,7 @@ GoogleMaps.prototype.showCountries = function(countries)
 			});
 
 			var iw = new google.maps.InfoWindow({
-				content: '<a href="/portuguese/'+linkCountry+'">Portuguese restaurants in '+countryName+'</a>'
+				content: content
 			});
 
 			this.markersArray.push(marker);
