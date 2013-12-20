@@ -128,7 +128,7 @@ GoogleMaps.prototype.showCountries = function(countries)
 	_this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
 
 	var myLatlng = new google.maps.LatLng(38.69714979357789 , -9.205266237258911);
-	_this.placeMarkerWithLabel(myLatlng,"<a href=\"/portuguese/portugal\">There's no place like home</a>" );  
+	_this.placeMarkerWithLabel(myLatlng,"There's no place like home :)" );  
 
 	countries.forEach(function(entry) 
 	{
