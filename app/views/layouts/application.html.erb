@@ -10,13 +10,13 @@
 	<link rel="stylesheet" media="all" type="text/css" href="/assets/prettyPhoto.css" />
 
 	<!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
-	
+
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<%= include_gon %>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
-	 <%= content_for?(:head) ? yield(:head) : '' %>
+	<%= content_for?(:head) ? yield(:head) : '' %>
 	<!-- TradeDoubler site verification 2349691 -->
 	<meta name="google-site-verification" content="jAojdZ36N4aT9mpI-KlE06vuAJc7sK9rgNXPiqieIIU" />
 </head>
@@ -36,39 +36,37 @@
 
 				<!-- MAIN NAVIGATION STARTS HERE -->
 				<ul class="nav">
-					<li class="active"><a href="/">Home</a></li>				
-					<li><a>Delicious food</a>						
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/news">News</a></li>					
+					<li><a>Delicious food</a>
 						<ul>
 							<li><a href="/products/prods_by_category/starters">Starters</a></li>
 							<li><a href="/products/prods_by_category/main-course">Main courses</a></li>
 							<li><a href="/products/prods_by_category/drinks">Drinks</a></li>
 							<li><a href="/products/prods_by_category/desserts">Desserts</a></li>
+							<li><%=link_to 'Food of the month', product_path(@product_of_month)%></li>
 						</ul>
 					</li>
 
-					<li><a href="/portuguese-map">Restaurants near you</a></li>			
-						
-					</li>
-					<li><a>Deliciously you</a>	
+					<li><a href="/restaurants-portuguese-food">Restaurants around the world</a></li>			
+
+					<li><a>Deliciously and you</a>	
 						<ul>
 							<li><a href="/donate">Donate</a></li>
 							<li><a href="/contacts/advertise">Your ad here</a></li>
 							<li><a href="/contacts/suggest">Your food here</a></li>
 							<li><a href="/contacts/interest">Your restaurant here</a></li>
-							<li><%=link_to 'Food of the month', product_path(@product_of_month)%>
-							<li><a href="/sponsors">Our sponsors</a></li>
-							
-				
 						</ul>
 					</li>
-					<li><a href="/news">News</a></li>										
-					<li>
-						<a href="/newsletter">Newsletter</a>
-
-					</li>										
-					<li><a href="/faq">FAQ</a></li>					
-					<li><a href="/contacts/">Contacts</a></li>
-					<li><a href="/about">About</a></li>					
+					<li><a>About us</a>
+						<ul>
+							<li><a href="/about">About us</a></li>
+							<li><a href="/contacts/">Contacts</a></li>
+							<li><a href="/faq">FAQ</a></li>	
+							<li><a href="/sponsors">Our sponsors</a></li>
+							<li><a href="/newsletter">Newsletter</a></li>																			
+						</ul>
+					</li>
 				</ul><!-- end of nav ul -->
 				<!-- MAIN NAVIGATION ENDS HERE -->
 
@@ -78,11 +76,7 @@
 					<li class="facebook"><a href="https://www.facebook.com/DeliciouslyPortugal"></a></li>
 					<li class="instagram"><a href="http://instagram.com/deliciouslypt"></a></li>
 					<li class="pinterest"><a href="http://www.pinterest.com/deliciouslypt/boards"></a></li>
-					<!-- <li class="flickr"><a href="#"></a></li>
-					
-					<li class="rss"><a href="#"></a></li>
-					-->
-				</ul><!-- end of social-nav ul -->
+				</ul>
 			</div>
 		</div><!-- end of nav-wrap -->
 		<!-- NAVIGATION BAR ENDS HERE -->
@@ -91,23 +85,23 @@
 
 	</div><!-- end of header-wrapper div -->
 
-	<!-- ============= HEADER ENDS HERE ============== -->
-	<div id="container">
-		<!-- WEBSITE SEARCH STARTS HERE -->    	
-		<div class="top-search clearfix">
-			<h3 class="head-pet"><span>Search delicious portuguese food</span></h3>
-			<form action="#" id="searchform" method="post">
-				<p>
-					<input type="text" name="2" id="searchMain"  style="z-index:999;" class="field" value="Search for..." />
-					<input type="submit" name="s_submit" id="s-submit" value="" />
-				</p>
-			</form>
-			<p class="statement"><span class="fireRed">Popular searches :</span> <a href="/products/pastel-de-nata">Pastel de nata</a>, <a href="/products/bacalhau-a-bras">Bacalhau à brás</a>, <a href="/products/vinho-do-porto">Vinho do Porto</a>, <a href="/products/alheira-de-mirandela"> Alheira de Mirandela</a></p>
-		</div><!-- end of top-search div-->
-		<%= yield %>
-	</div>
-	<div class="w-pet-border"></div>
-	<!-- ============= CONTAINER AREA ENDS HERE ============== -->
+<!-- ============= HEADER ENDS HERE ============== -->
+<div id="container">
+	<!-- WEBSITE SEARCH STARTS HERE -->    	
+	<div class="top-search clearfix">
+		<h3 class="head-pet"><span>Search delicious portuguese food</span></h3>
+		<form action="#" id="searchform" method="post">
+			<p>
+				<input type="text" name="2" id="searchMain"  style="z-index:999;" class="field" value="Search for..." />
+				<input type="submit" name="s_submit" id="s-submit" value="" />
+			</p>
+		</form>
+		<p class="statement"><span class="fireRed">Popular searches :</span> <a href="/products/pastel-de-nata">Pastel de nata</a>, <a href="/products/bacalhau-a-bras">Bacalhau à brás</a>, <a href="/products/vinho-do-porto">Vinho do Porto</a>, <a href="/products/alheira-de-mirandela"> Alheira de Mirandela</a></p>
+	</div><!-- end of top-search div-->
+	<%= yield %>
+</div>
+<div class="w-pet-border"></div>
+<!-- ============= CONTAINER AREA ENDS HERE ============== -->
 
 
 
@@ -120,12 +114,12 @@
 					<%= image_tag("footer-logo.png", alt: "Footer Logo", class: "footer-logo") %>
 				</a>
 				<p>	In deliciouslyportugal.com you can find a description in English of the top portuguese food, as well as the places and restaurants in Portugal where you can taste the time of your life.
-							<br/><br/>
-							<em>		Deliciously Portugal - Portugal. Food. Yumi.</em>
-						</p>
-				
+					<br/><br/>
+					<em>		Deliciously Portugal - Portugal. Food. Yumi.</em>
+				</p>
+
 				<%= render :partial => 'layouts/paypal'%>
-				
+
 			</div>
 		</li>
 		<li>
@@ -135,12 +129,11 @@
 				<li>
 					<%=link_to image_tag(product.photo, alt:'Image'), product_path(product), class: 'img-box'%>
 					<h5> <%= link_to product.name, product_path(product)%></h5>
-						<p><%= product.description.length>100 ? product.description[0..99] +" (...)" : product.description%></p>
+					<p><%= product.description.length>100 ? product.description[0..99] +" (...)" : product.description%></p>
 				</li>
 				<%end%>								
 			</ul>
 		</li>
-
 		<li>
 			<h2>#deliciouslyPT on <span>Twitter</span></h2>
 			<div id="twitter_update_list" class="twitter">
@@ -157,7 +150,7 @@
 <div id="footer-wrap">
 	<div id="footer">
 		<p class="copyright">Copyright © 2013, Deliciously Portugal - Portugal. Food. Yummi</p>
-	<!--	<p class="dnd">Designed <a href="http://themedesigner.in/">Sunil Joshi</a> and Developed by <a href="http://960development.com/">960Development</a></p>-->
+		<!--	<p class="dnd">Designed <a href="http://themedesigner.in/">Sunil Joshi</a> and Developed by <a href="http://960development.com/">960Development</a></p>-->
 	</div><!-- end of footer div -->
 </div><!-- end of footer-wrapper div -->
 
