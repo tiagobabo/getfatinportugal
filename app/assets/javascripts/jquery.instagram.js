@@ -26,7 +26,7 @@
 				// .attr('target', '_blank')
 				.attr('href', photo.images.standard_resolution.url).attr('class','th radius')
 				.attr('rel', 'lightbox-instagram')
-				.attr('title', photo.caption.text + "&nbsp;&nbsp;/&nbsp;&nbsp;" + "<span>&hearts;</span>&nbsp;" + photo.likes.count + "&nbsp;likes")  
+				.attr('title', photo.caption.text + "&nbsp;&nbsp;/&nbsp;&nbsp;" + "<span>&hearts;</span>&nbsp;" + photo.likes.count + "&nbsp;likes" + "<br/><span> <a href = '"+photo.link+"'>view post on instagram</a></span>")  
 				.append(
 					$('<img>')
 					.addClass('instagram-image')
