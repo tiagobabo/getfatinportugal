@@ -55,6 +55,7 @@ DeliciouslyPortugalV2::Application.routes.draw do
   match 'portuguese/:id'=> 'main#portuguese'
   match 'restaurants-portuguese-food'=> 'main#portuguese_map'
   post 'main/set_country_coordinates'
+  get 'badge' => 'main#badge'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

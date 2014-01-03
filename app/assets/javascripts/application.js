@@ -15,11 +15,13 @@
 //= require script
 //= require google.maps
 //= require jquery.ui.all
+//= require prettify
 
 document.write("<script async src='http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' type='text/javascript'></script>");
 var projects = gon.projects;
 
 $(document).ready(function() {
+	prettyPrint();
 	$(function() {
 		(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];

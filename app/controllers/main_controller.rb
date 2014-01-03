@@ -30,6 +30,9 @@ class MainController < ApplicationController
 
   def sponsors
   end
+  
+  def badge
+  end
 
   def portuguese
     country = Country.find(params[:id])

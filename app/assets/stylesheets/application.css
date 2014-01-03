@@ -11,10 +11,11 @@
  *= require_self
  *= require style
  *= require instagram
-*= require jquery.ui.all
-*=require main
-*=require products
-*= require world_flags/flags32
+ *= require jquery.ui.all
+ *= require main
+ *= require products
+ *= require world_flags/flags32
+ *= require prettify
  */
 ul.ui-autocomplete
 {
