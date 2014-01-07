@@ -4,7 +4,6 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -18,7 +17,7 @@ group :development, :test do
   gem 'gon'
   gem 'koala'
   gem 'devise'
-    gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
+  gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 end
 
@@ -34,7 +33,7 @@ group :production do
   gem 'koala'
   gem 'devise'
   gem 'heroku-deflater'
-      gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
+  gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
   #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 
 end
