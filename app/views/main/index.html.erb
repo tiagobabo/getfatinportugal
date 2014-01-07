@@ -108,7 +108,7 @@
 
 				<%=link_to @product_of_month.name+ " //", product_path(@product_of_month)%>							
 				<p><%= @product_of_month.description.length>200 ? @product_of_month.description[0..199]  : @product_of_month.description%> <%=link_to '...more' , product_path(@product_of_month)%> </p>						
-
+			</div>
 
 			<div class="newsEvent">
 				<h2 class="w-bot-border">News</h2>
