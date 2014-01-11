@@ -141,7 +141,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 #nav-wrap .nav-more ul li:last-child a { border: none; }
 #nav-wrap .nav-more ul li a:hover, #nav-wrap .nav li ul li a:focus { color: #fff; }
 
-#nav-wrap .social-nav { width: 130px; height: 22px; padding: 10px 0; float: right; }
+#nav-wrap .social-nav { width: 160px; height: 22px; padding: 10px 0; float: right; }
 #nav-wrap .social-nav li { float: left; margin: 0 0 0 9px; }
 #nav-wrap .social-nav li a { display: block; width: 22px; height: 22px; font-size: 0;  }
 #nav-wrap .social-nav li.twitter a { background: image-url("social-twitter.png") 0 0 no-repeat; }
@@ -149,6 +149,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 #nav-wrap .social-nav li.flickr a { background:image-url("social-flickr.png") 0 0 no-repeat; }
 #nav-wrap .social-nav li.instagram a { background:image-url("social-instagram.png") 0 0 no-repeat; }
 #nav-wrap .social-nav li.pinterest a { background:image-url("social-pinterest.png") 0 0 no-repeat; }
+#nav-wrap .social-nav li.googleplus a { background:image-url("social-google.png") 0 0 no-repeat; }
 #nav-wrap .social-nav li.rss a { background:image-url("social-rss.png") 0 0 no-repeat; }
 
 
