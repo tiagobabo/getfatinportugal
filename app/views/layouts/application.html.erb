@@ -124,7 +124,7 @@
 				<%= form_tag ("/main/subscribe"), {:id => 'subscribe-form', remote: true }  do %>
 				<br/>
 				Subscribe newsletter
-				<p><input type="text" id="email" name="email" placeholder="Email here" style="height: 10px;" />
+				<p><input type="text" id="email_subscriber" name="email_subscriber" placeholder="Email here" style="height: 10px;" />
 				<input type="submit" name="contact-submit" id="contact-submit" value="subscribe" class="readmore" />
 				<%= image_tag("loading.gif", id: "contact-subscriber-loader", alt: "Loader") %>
 			</p>
