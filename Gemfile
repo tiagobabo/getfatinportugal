@@ -1,24 +1,23 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem "galetahub-simple_captcha", :require => "simple_captcha"
+gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
+gem "twitter", "~> 4.8.1"
+gem 'instagram'
+gem 'gon'
+gem 'koala'
+gem 'devise'
+gem 'figaro'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'meta_request'
   gem 'sqlite3'
   #gem 'pg'
   #gem "unicorn", "~> 4.6.2"
-  gem 'figaro'
-  gem "twitter", "~> 4.8.1"
-  gem 'instagram'
-  gem 'gon'
-  gem 'koala'
-  gem 'devise'
-  gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
-  #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
 end
 
 group :production do
@@ -26,16 +25,7 @@ group :production do
   gem "pg"
   gem 'rack-google_analytics', :require => "rack/google_analytics"
   #gem "unicorn", "~> 4.6.2"
-  gem 'figaro'
-  gem "twitter", "~> 4.8.1 "
-  gem 'instagram'
-  gem 'gon'
-  gem 'koala'
-  gem 'devise'
   gem 'heroku-deflater'
-  gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
-  #gem 'foundation-social-web-icons-rails', git: "git://github.com/jclusso/foundation-social-web-icons-rails.git"
-
 end
 
 

@@ -14,12 +14,20 @@ class ContactsController < ApplicationController
   end
 
   def sendemail	
-    Emailer.contact_us(params[:name], params[:email], params[:subject], params[:message]).deliver
-    flash[:notice]= 'Email was successfully sent. Thanks for Your Message!'
-    respond_to do |format|
-      format.html { render :text => 'Email was successfully sent. Thanks for Your Message!<br /> We will get in touch shortly.'}
-      format.js   { render :nothing => true }
+    if simple_captcha_valid?
+        Emailer.contact_us(params[:name], params[:email], params[:subject], params[:message]).deliver
+        flash[:notice]= 'Email was successfully sent. Thanks for Your Message!'
+        respond_to do |format|
+          format.html { render :text => '<p style="color:green">Email was successfully sent. Thanks for Your Message!<br /> We will get in touch shortly.</p>'}
+          format.js   { render :nothing => true }
+        end
+    else
+       respond_to do |format|
+          format.html { render :text => '<p style="color:red">Wrong value in captcha...Try again.</p>'}
+          format.js   { render :nothing => true }
+        end
     end
+  
   end
   
   def send_advertise	
