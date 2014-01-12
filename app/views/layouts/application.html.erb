@@ -120,8 +120,17 @@
 					<em>		Deliciously Portugal - Portugal. Food. Yumi.</em>
 				</p>
 
-				<%= render :partial => 'layouts/paypal'%>
-
+				<%= render :partial => 'layouts/paypal'%>				
+				<%= form_tag ("/main/subscribe"), {:id => 'subscribe-form', remote: true }  do %>
+				<br/>
+				Subscribe newsletter
+				<p><input type="text" id="email" placeholder="Email here" style="height: 10px;" />
+				<input type="submit" name="contact-submit" id="contact-submit" value="subscribe" class="readmore" />
+				<%= image_tag("loading.gif", id: "contact-subscriber-loader", alt: "Loader") %>
+			</p>
+			<p id="message-subscribe-sent"></p>
+			<p>
+				<%end%>
 			</div>
 		</li>
 		<li>

@@ -365,6 +365,19 @@ jQuery(document).ready(function(){
 			$('#contact-form').resetForm();
 		}
 	}; 
+	
+	var subscribe_options = { 
+		target: '#message-subscribe-sent',
+		beforeSubmit: function(){
+			$('#contact-subscriber-loader').fadeIn('fast');
+			$('#message-subscribe-sent').fadeOut('fast');
+		}, 
+		success: function(){
+			$('#contact-subscriber-loader').fadeOut('fast');
+			$('#message-subscribe-sent').fadeIn('fast');
+			$('#subscribe-form').resetForm();
+		}
+	};
 
 	//==================================
 
@@ -375,6 +388,13 @@ jQuery(document).ready(function(){
 		submitHandler: function(form) {
 			//$.rails.handleRemote( $(form) );
 			$(form).ajaxSubmit(contact_options);			
+		}
+	});
+	
+	$('#subscribe-form').validate({
+		submitHandler: function(form) {
+			//$.rails.handleRemote( $(form) );
+			$(form).ajaxSubmit(subscribe_options);			
 		}
 	});
 

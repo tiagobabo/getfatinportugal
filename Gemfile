@@ -9,6 +9,7 @@ gem 'gon'
 gem 'koala'
 gem 'devise'
 gem 'figaro'
+gem 'gibbon'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
