@@ -64,9 +64,9 @@ class MainController < ApplicationController
   
   def subscribe
     gb = Gibbon::API.new
-    if gb.lists.subscribe({:id => 1609106378, :email => 'sergiomonteiro.it@gmail.com', :double_optin => true})
+    if gb.lists.subscribe({:id => 1609106378, :email => {:email => params[:email]}, :double_optin => true})
     respond_to do |format|
-      format.html { render :text => 'Subscription was successfully. Thanks for your subscription!'}
+      format.html { render :text => 'Subscription was successfully. Check your email and thanks for your subscription!'}
       format.js   { render :nothing => true }      
     end
   end
