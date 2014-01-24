@@ -9,7 +9,7 @@ $(document).ready(function() {
 		
 		$( "#country_combo" ).change(function() {
 			var id =$( "select option:selected" ).val();
-		  googleMaps.zoom=7; 
+		  googleMaps.zoom=5; 
 		  googleMaps.clearOverlays();
 			 
 			$.get('/portuguese/'+id+".json", function (data) {

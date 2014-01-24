@@ -208,7 +208,7 @@ GoogleMaps.prototype.showRestaurant = function(clients, lat,lng)
 			_this.latitude= entry.latitude;
 			_this.longitude = entry.longitude;
 
-			_this.placeMarkerWithLabel(myLatlng,'<a href="/portuguese/'+entry.slug+'">Portuguese restaurants in '+entry.name+'</a>' );  
+			_this.placeMarkerWithLabel(myLatlng,'<a href="/client/'+entry.slug+'">'+entry.name+'</a>' );  
 
 		}else{
 		
