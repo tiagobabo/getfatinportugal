@@ -64,7 +64,7 @@ class MainController < ApplicationController
       end
     end
   end
-  
+
   def set_client_coordinates
     @client = Client.find(params[:id]) 
     respond_to do |format|
