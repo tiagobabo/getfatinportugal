@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3' 
+#ruby '1.9.3' 
 gem 'rails', '3.2.13'
 gem "galetahub-simple_captcha", :require => "simple_captcha"
 gem 'world_flags', :git => 'git://github.com/djonasson/world_flags.git'
@@ -11,6 +11,8 @@ gem 'koala'
 gem 'devise'
 gem 'figaro'
 gem 'gibbon'
+gem "cancan"
+gem 'role_model'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

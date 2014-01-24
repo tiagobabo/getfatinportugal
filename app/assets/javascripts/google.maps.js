@@ -169,8 +169,8 @@ GoogleMaps.prototype.showCountries = function(countries)
 			});
 		}
 
-		GoogleMaps.prototype.placeMarkerWithLabel = function(latlng,content)
-		{
+GoogleMaps.prototype.placeMarkerWithLabel = function(latlng,content)
+{
 			var _this = this;
 			var marker = new MarkerWithLabel({
 				position: latlng,
@@ -184,4 +184,58 @@ GoogleMaps.prototype.showCountries = function(countries)
 
 			this.markersArray.push(marker);
 			google.maps.event.addListener(marker, "click", function (e) { iw.open(_this.map, marker); });
-		}
+}
+
+GoogleMaps.prototype.showRestaurant = function(clients, lat,lng)
+{	
+	var _this = this;	
+	geocoder = new google.maps.Geocoder();
+
+	var myOptions = {
+		zoom: _this.zoom,
+		center: new google.maps.LatLng(lat,lng),
+		mapTypeId:_this.mapType
+	}
+	_this.map = new google.maps.Map(document.getElementById(_this.mapCanvas), myOptions);
+
+	//var myLatlng = new google.maps.LatLng(38.69714979357789 , -9.205266237258911);
+
+	clients.forEach(function(entry) 
+	{
+		if(entry.latitude && entry.longitude)
+		{
+			var myLatlng = new google.maps.LatLng(entry.latitude, entry.longitude);
+			_this.latitude= entry.latitude;
+			_this.longitude = entry.longitude;
+
+			_this.placeMarkerWithLabel(myLatlng,'<a href="/portuguese/'+entry.slug+'">Portuguese restaurants in '+entry.name+'</a>' );  
+
+		}else{
+		
+			geocoder.geocode({
+				'address': entry.address
+			}, function (results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+
+					var myLatlng = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+					_this.latitude= results[0].geometry.location.lat();
+					_this.longitude = results[0].geometry.location.lng();
+
+					_this.placeMarkerWithLabel(myLatlng,entry.name );  
+					
+						$.ajax({
+							url: "/main/set_client_coordinates",
+							type: "POST",
+							data: { id: entry.id, 
+								client: {
+									id: entry.id,
+									latitude: _this.latitude, 
+									longitude: _this.longitude}},
+									success: function(resp){ }
+								});
+				}
+				
+			});
+		  }
+		});
+	}

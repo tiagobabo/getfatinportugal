@@ -6,7 +6,7 @@ class Client < ActiveRecord::Base
   has_many :client_product
   has_many :products, :through => :client_product
 
-  attr_accessible :address, :email, :location, :mobile_phone, :name, :nif, :person_in_charge, :phone, :postal_code, :client_type_id, :country_id, :motto, :tripadvisor_url,:client_site_url
+  attr_accessible :latitude, :longitude, :address, :email, :location, :mobile_phone, :name, :nif, :person_in_charge, :phone, :postal_code, :client_type_id, :country_id, :motto, :tripadvisor_url,:client_site_url
 
 
   def create_client_with_products_and_payment_plan (params, client)

@@ -36,8 +36,11 @@ class MainController < ApplicationController
 
   def portuguese
     country = Country.find(params[:id])
-    @clients =  Client.where(country_id: country.id).order("name asc")
-
+    @clients =  Client.where(country_id: country.id).order("name asc")    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @clients }
+    end
   end
 
   def portuguese_map
@@ -58,6 +61,19 @@ class MainController < ApplicationController
       else
         format.html 
         format.json { render json: @country.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def set_client_coordinates
+    @client = Client.find(params[:id]) 
+    respond_to do |format|
+      if @client.update_attributes(params[:client])
+        format.html 
+        format.json { head :no_content }
+      else
+        format.html 
+        format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140112131008) do
+ActiveRecord::Schema.define(:version => 20140124010000) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20140112131008) do
     t.string   "tripadvisor_url"
     t.string   "client_site_url"
     t.string   "slug"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
   add_index "clients", ["client_type_id"], :name => "index_clients_on_client_type_id"
@@ -178,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20140112131008) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "nickname"
+    t.integer  "roles_mask"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
