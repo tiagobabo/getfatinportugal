@@ -4,7 +4,7 @@
 		<h2 class="title">Portuguese food around the world</h2>
 		<p>Find some delicious portuguese food near you. If you want your restaurant here, <%=link_to 'let us know', :controller=>'contacts', :action=>'interest' %> </p>
   <%= select_tag("country_combo", options_from_collection_for_select(@countries, "slug","name"),{ :class => 'medium', :prompt => 'Select country' } ) %>
-<a id="showCountry"> Show list </a>
+<a id="showCountry" style="display:none"> Show list </a>
 		<div id="map-canvas-world"></div>			        
 
 		<span class="w-pet-border"></span>
