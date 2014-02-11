@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < Admin::AdminController
   layout 'admin'
   before_filter :authenticate_user!
   # GET /products/1

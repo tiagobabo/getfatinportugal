@@ -1,4 +1,4 @@
-class Admin::ClientsController < ApplicationController
+class Admin::ClientsController < Admin::AdminController
   layout 'admin'
   before_filter :authenticate_user!
   

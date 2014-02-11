@@ -44,7 +44,7 @@ class MainController < ApplicationController
   end
 
   def portuguese_map
-    @countries = Country.joins("inner join clients as c on c.country_id=countries.id").group("countries.id").order("name desc")
+    @countries = Country.joins("inner join clients as c on c.country_id=countries.id").group("countries.id").order("name asc")
     gon.countries = @countries
     respond_to do |format|
       format.html # new.html.erb

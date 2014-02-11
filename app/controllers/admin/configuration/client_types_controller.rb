@@ -1,4 +1,4 @@
-class Admin::Configuration::ClientTypesController < ApplicationController
+class Admin::Configuration::ClientTypesController < Admin::AdminController
 layout 'admin'
 def index
 @client_types = ClientType.all

@@ -1,4 +1,4 @@
-class Admin::PaymentsController < ApplicationController
+class Admin::PaymentsController < Admin::AdminController
 
 def show_payment_plan
 	if request.xhr?

@@ -1,4 +1,4 @@
-class Admin::Configuration::ServiceModalitiesController < ApplicationController
+class Admin::Configuration::ServiceModalitiesController < Admin::AdminController
 layout 'admin'
 
 def index
