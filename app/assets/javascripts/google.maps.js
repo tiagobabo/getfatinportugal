@@ -130,8 +130,6 @@ GoogleMaps.prototype.showCountries = function(countries)
 	var myLatlng = new google.maps.LatLng(38.69714979357789 , -9.205266237258911);
 	_this.placeMarkerWithLabel(myLatlng,"There's no place like home :)" );  
 
-	
-
 	countries.forEach(function(entry) 
 	{
 		if(entry.latitude && entry.longitude)
@@ -169,16 +167,16 @@ GoogleMaps.prototype.showCountries = function(countries)
 					});
 				}
 			});
-	
 		}
 
 GoogleMaps.prototype.placeMarkerWithLabel = function(latlng,content)
 {
 			var _this = this;
-			var marker = new google.maps.Marker({
-		position: latlng,
-		map: _this.map,
-	});
+			var marker = new MarkerWithLabel({
+				position: latlng,
+				draggable: false,
+				map: _this.map,      
+			});
 
 			var iw = new google.maps.InfoWindow({
 				content: content
