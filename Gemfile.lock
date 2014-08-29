@@ -117,6 +117,7 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    newrelic_rpm (3.9.3.241)
     orm_adapter (0.5.0)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -200,6 +201,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   koala
+  newrelic_rpm
   pg
   rack-google_analytics
   rails (= 3.2.13)
