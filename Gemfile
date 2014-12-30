@@ -29,7 +29,12 @@ end
 group :production do
   # gems specifically for Heroku go here
   gem "pg"
-  gem 'rack-google_analytics', :require => "rack/google_analytics"
+  
+  #For Google Tag Manager
+  gem 'google-tag-manager-rails'
+  #Replaced by google tag manager
+  #gem 'rack-google_analytics', :require => "rack/google_analytics"
+  
   #gem "unicorn", "~> 4.6.2"
   gem 'heroku-deflater'
 end

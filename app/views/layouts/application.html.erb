@@ -21,6 +21,9 @@
 	<meta name="google-site-verification" content="jAojdZ36N4aT9mpI-KlE06vuAJc7sK9rgNXPiqieIIU" />
 </head>
 <body>
+  <!-- ============= GOOGLE TAG MANAGER ============== -->
+  <%= google_tag_manager %>
+  <!-- ============= END GOOGLE TAG MANAGER ============== -->
 	 <div id="user_nav" style="position:absolute; z-index: 999; right:0">
 	  <% if user_signed_in? %>
 	    Signed in as <%= link_to current_user.nickname, edit_user_registration_path(current_user.nickname) %>. Not you?

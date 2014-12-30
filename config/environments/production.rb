@@ -92,4 +92,7 @@ config.assets.precompile = [ method(:compile_asset?).to_proc ]
     :authentication => :plain,
     :enable_starttls_auto => true
   }
+  
+  #Google Tag Manager config
+  GoogleTagManager.gtm_id = "GTM-K47DHF" # Where GTM-XXXX is your container ID from Google Tag Manager
 end
