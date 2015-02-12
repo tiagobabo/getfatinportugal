@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
 
     client=Client.new
     @clients = client.get_clients_for_product_with_active_plan(@product.id)
+    @relatedProducts = Product.active.joins("inner join related_contents as rc on rc.id_related_to=products.id").where("rc.id_parent="+@product.id.to_s).order('created_at DESC') 
 
   end
 

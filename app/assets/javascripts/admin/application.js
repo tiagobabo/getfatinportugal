@@ -7,6 +7,7 @@
 //= require admin/configuration/client_types
 //= require admin/clients
 //= require admin/news
+//= require admin/related_content.js
 
 $(function() {
    $(document).foundation();

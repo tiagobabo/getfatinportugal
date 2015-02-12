@@ -22,6 +22,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'sqlite3'
+  gem 'meta_request'
   #gem 'pg'
   #gem "unicorn", "~> 4.6.2"
 end

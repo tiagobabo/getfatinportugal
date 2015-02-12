@@ -39,6 +39,14 @@ class Admin::ProductsController < Admin::AdminController
     @categories = Category.all.map{|x| [x.name, x.id]}
     respond_to do |format|
       if @product.save
+        if !params[:products].nil?
+          if params[:products].count>0
+              params[:products].each do |product_id|
+                related_product = RelatedContent.create(:id_parent => @product.id, :id_related_to => product_id, :is_active=>1, :type_relation=>1)
+                related_product.save
+              end 
+           end
+         end
         format.html { redirect_to [:admin, :products], notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else

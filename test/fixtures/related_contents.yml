@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_relation: 1
+  id_parent: 1
+  id_related_to: 1
+  is_active: 1
+
+two:
+  type_relation: 1
+  id_parent: 1
+  id_related_to: 1
+  is_active: 1

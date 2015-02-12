@@ -63,27 +63,37 @@
     </div>
 	
 	<div class="row">
-		<div class="large-4 columns">
-		<input type="text" id="map_search" placeholder="enter city to find..."/>
-		<input type = "button" class="radius button" onclick="findByAddress()" value="search"/> 
-		<div id="map-canvas"/>
+		<div class="large-6 columns">
+			<ul class="inline-list">
+				<li><input type="text" id="map_search" placeholder="enter city to find..."/></li>
+				<li><input type = "button" class="small button" onclick="findByAddress()" value="search"/> </li>
+			</ul>
+			<div id="map-canvas"/>
 		</div>
 	</div>	
 	
 <div class="row" style="visibility:hidden">
-	<div class="large-4 columns">
+		<div class="large-4 columns">
 			<%= f.label :latitude %><br />
 			 <%= f.text_field :latitude, :placeholder=>"latitude for the product region..."%>
 		</div>
 		<div class="large-4 columns">
 				<%= f.label :longitude %><br />
 				 <%= f.text_field :longitude, :placeholder=>"longitude for the product region..."%>
-			</div>
-			 <div class="large-4 columns">
+		</div>
+		<div class="large-4 columns">
               <%= f.text_field :is_active%>
-          </div>
+  	 	</div>
 				
-	</div>
+</div>	
+<div class="row">
+		<div class="large-4 columns">
+      <input type="button" id="btn_related_products" value="Related products" class="small button"/>	
+</div>	  	  
+	  <div class="large-12 columns">
+	  	<div id="list_related_products" style="display:none"></div>
+	  </div>
+  </div>
 <%= f.submit 'submit', :class => 'radius button' %>
    
   </fieldset>

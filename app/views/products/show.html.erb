@@ -38,6 +38,20 @@
 			<div class="single-img-box">
 				<div id="map-canvas"></div>			        
 			</div>
+			<br/>
+			<h4 class="red">Related products</h4>
+			
+
+				<ul>
+					<% @relatedProducts.sample(4).each do |product|%>							
+						<li>
+							<div style="float:left">
+							<%= link_to image_tag(product.photo, alt: "Hotest"), product_path(product), :class=>'img-box'%>					</div>
+								<h5 style="margin-left:55px"><a href="/products/<%=product.slug%>"><%=product.name %></a></h5>							
+						</li>
+					<%end%>
+				</ul>
+
 
 
 			<center>                                
@@ -98,7 +112,7 @@
 
 					</div><!-- end of left-area -->
 				</div><!-- end of content div -->
-				
+				<%=@relatedProducts.inspect%>
 				<%= javascript_include_tag params[:controller]  %>
 				<%= javascript_include_tag "jquery.instagram.js" %>
 				<%= javascript_include_tag "jquery.slimbox2.js" %>
