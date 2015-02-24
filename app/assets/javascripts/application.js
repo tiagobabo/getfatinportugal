@@ -44,5 +44,28 @@ $(document).ready(function() {
 				.appendTo( ul );
 			};
 		});	
+	
+	
+		var c = $("#socialBar");
+		    if (c.length) {
+		        var n = $(window),
+		            l = $("#footer"),
+		            p = c.offset().top,
+		            m = l.offset(),
+		            d = m.top - c.height(),
+		            g = 55;
+		        c.fadeIn(400), n.scroll(function() {
+		            n.scrollTop() > d ? c.stop().animate({
+		                marginTop: d
+		            }) : n.scrollTop() > p ? c.stop().animate({
+		                marginTop: n.scrollTop() - p + g
+		            }, 1e3) : c.stop().animate({
+		                marginTop: 0
+		            })
+		        })
+		    }
 	});
+	
+	
+	
 	

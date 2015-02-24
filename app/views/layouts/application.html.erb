@@ -22,9 +22,9 @@
 </head>
 <body>
   <!-- ============= GOOGLE TAG MANAGER ============== -->
-<% if Rails.env.production?  %>
+
   <%= google_tag_manager %>
-<% end %>
+
   <!-- ============= END GOOGLE TAG MANAGER ============== -->
 	 <div id="user_nav" style="position:absolute; z-index: 999; right:0">
 	  <% if user_signed_in? %>
@@ -102,6 +102,27 @@
 	</div><!-- end of header-wrapper div -->
 
 <!-- ============= HEADER ENDS HERE ============== -->
+<div id="socialBar" style="opacity: 0.9639; display: block; margin-top: 0px;">
+   <ul>
+        <li>
+           <div class="fb-like" style="margin:5px" data-href="https://www.facebook.com/DeliciouslyPortugal" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
+        </li>
+
+        <li>
+           	<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-url="https://twitter.com/DeliciouslyPT" data-via="DeliciouslyPT">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <li>
+            <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
+			<script src="https://apis.google.com/js/platform.js" async defer>
+			  {lang: 'pt-BR'}
+			</script>
+
+			<!-- Posicione esta tag onde você deseja que o botão +1 apareça. -->
+			<div class="g-plusone" data-size="tall" data-href="https://plus.google.com/+Deliciouslyportugal"></div>
+        </li>        
+   </ul>
+</div>
+
 <div id="container">
 	<!-- WEBSITE SEARCH STARTS HERE -->    	
 	<div class="top-search clearfix">

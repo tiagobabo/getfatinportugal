@@ -32,7 +32,7 @@ group :production do
   gem "pg"
   
   #For Google Tag Manager
-  gem 'google-tag-manager-rails'
+
   #Replaced by google tag manager
   #gem 'rack-google_analytics', :require => "rack/google_analytics"
   
@@ -54,6 +54,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'friendly_id' 
+gem 'google-tag-manager-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
