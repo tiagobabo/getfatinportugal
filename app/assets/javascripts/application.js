@@ -53,7 +53,7 @@ $(document).ready(function() {
 		            p = c.offset().top,
 		            m = l.offset(),
 		            d = m.top - c.height(),
-		            g = -200;
+		            g = 90;
 		        c.fadeIn(400), n.scroll(function() {
 		            n.scrollTop() > d ? c.stop().animate({
 		                marginTop: d

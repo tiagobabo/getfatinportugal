@@ -45,7 +45,7 @@ width:24px;
     top: 340px;
     float: left;
     /*left: -80px;*/
-    z-index: 2;
+    z-index: -1;
     text-align: center;
     padding-bottom: 10px;
     background: rgba(243, 245, 244, .9);
