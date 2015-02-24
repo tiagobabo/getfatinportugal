@@ -49,11 +49,11 @@ $(document).ready(function() {
 		var c = $("#socialBar");
 		    if (c.length) {
 		        var n = $(window),
-		            l = $("#footer"),
+		            l = $("#footer-wrap"),
 		            p = c.offset().top,
 		            m = l.offset(),
 		            d = m.top - c.height(),
-		            g = 55;
+		            g = -200;
 		        c.fadeIn(400), n.scroll(function() {
 		            n.scrollTop() > d ? c.stop().animate({
 		                marginTop: d
