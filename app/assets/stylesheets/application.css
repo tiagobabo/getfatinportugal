@@ -40,18 +40,26 @@ width:24px;
 }
 
 #socialBar {
-width: 75px;
-position: absolute;
-top: 180px;
-z-index: 2;
-text-align: center;
-padding-bottom: 10px;
-/*background: rgba(243,245,244,.9);*/
-transition: background .4s ease-in-out;
--moz-transition: background .4s ease-in-out;
--webkit-transition: background .4s ease-in-out;
-display: none;
--ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6f3f5f4, endColorstr=#E6f3f5f4);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6f3f5f4, endColorstr=#E6f3f5f4);
-zoom: 1;
+    width: 75px;
+    position: absolute;
+    top: 340px;
+    float: left;
+    /*left: -80px;*/
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 10px;
+    background: rgba(243, 245, 244, .9);
+    transition: background .4s ease-in-out;
+    -moz-transition: background .4s ease-in-out;
+    -webkit-transition: background .4s ease-in-out;
+    display: none;
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6f3f5f4,  endColorstr=#E6f3f5f4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6f3f5f4,  endColorstr=#E6f3f5f4);
+    zoom: 1;
+}
+#socialBar:hover {
+    background: rgba(243, 245, 244, 1);
+}
+#socialBar ul li {
+    margin: 10px 0 0;
 }

@@ -160,7 +160,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 
 /** Container Styles **/
 
-#container { width: 980px; margin: 0 auto; }
+#container { width: 1065px; margin: 0 auto; }
 
 .top-search { padding: 25px 0; background: image-url("pet-border.png") bottom repeat-x; position: relative; }
 .top-search h3 { margin: 0 0 10px; font-weight: bold; }
@@ -175,7 +175,7 @@ hr { border: none; height: 2px; background: image-url("pet-border.png"); }
 .top-search .statement a:hover, .top-search .statement a:focus { color: #444; }
 .top-search .most-rated { display: block; width: 31px; height: 86px; background: image-url("most-rated-btn.png") no-repeat; position: absolute; top: 0; right: 0; }
 
-#content { background: image-url("content-bg.jpg") repeat-x #fff; padding: 0 0 135px; z-index: 600; }
+#content { background: image-url("content-bg.jpg") repeat-x #fff; padding: 0 0 135px; z-index: 600; margin-left:85px }
 
 
 /** Sliders Styles **/

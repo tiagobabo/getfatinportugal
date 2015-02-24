@@ -101,31 +101,32 @@
 
 	</div><!-- end of header-wrapper div -->
 
+
 <!-- ============= HEADER ENDS HERE ============== -->
-<div id="socialBar" style="opacity: 0.9639; display: block; margin-top: 0px;">
-   <ul>
-        <li>
-           <div class="fb-like" style="margin:5px" data-href="https://www.facebook.com/DeliciouslyPortugal" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
-        </li>
-
-        <li>
-           	<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-url="http://www.deliciouslyportugal.com/" data-hashtags="deliciouslyPT" data-via="DeliciouslyPT">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        <li>
-            <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
-			<script src="https://apis.google.com/js/platform.js" async defer>
-			  {lang: 'pt-BR'}
-			</script>
-
-			<!-- Posicione esta tag onde você deseja que o botão +1 apareça. -->
-			<div class="g-plusone" data-size="tall" data-href="https://plus.google.com/+Deliciouslyportugal"></div>
-        </li>        
-   </ul>
-</div>
-
 <div id="container">
+<div id="socialBar">
+	   <ul>
+	        <li>
+	           <div class="fb-like" style="margin:5px" data-href="https://www.facebook.com/DeliciouslyPortugal" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
+	        </li>
+
+	        <li>
+	           	<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-url="http://www.deliciouslyportugal.com/" data-hashtags="deliciouslyPT" data-via="DeliciouslyPT">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	        <li>
+	            <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
+				<script src="https://apis.google.com/js/platform.js" async defer>
+				  {lang: 'pt-BR'}
+				</script>
+
+				<!-- Posicione esta tag onde você deseja que o botão +1 apareça. -->
+				<div class="g-plusone" data-size="tall" data-href="https://plus.google.com/+Deliciouslyportugal"></div>
+	        </li>        
+	   </ul>
+	</div>
+
 	<!-- WEBSITE SEARCH STARTS HERE -->    	
-	<div class="top-search clearfix">
+	<div class="top-search clearfix" style="margin-left:85px">
 		<h3 class="head-pet"><span>Search delicious portuguese food</span></h3>
 		<form action="#" id="searchform" method="post">
 			<p>
@@ -133,8 +134,9 @@
 				<input type="submit" name="s_submit" id="s-submit" value="" />
 			</p>
 		</form>
-		<p class="statement"><span class="fireRed">Popular searches :</span> <a href="/products/pastel-de-nata">Pastel de nata</a>, <a href="/products/bacalhau-a-bras">Bacalhau à brás</a>, <a href="/products/vinho-do-porto">Vinho do Porto</a>, <a href="/products/alheira-de-mirandela"> Alheira de Mirandela</a></p>
+		<p class="statement"><span class="fireRed">Popular searches :</span> <a href="/products/pastel-de-nata">Pastel de nata</a>, <a href="/products/bacalhau-a-bras">Bacalhau à brás</a>, <a href="/products/vinho-do-porto">Vinho do Porto</a>, <a href="/products/alheira-de-mirandela"> Alheira de Mirandela</a></p>		
 	</div><!-- end of top-search div-->
+	
 	<%= yield %>
 </div>
 <div class="w-pet-border"></div>
