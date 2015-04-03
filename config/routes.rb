@@ -10,7 +10,11 @@ DeliciouslyPortugalV2::Application.routes.draw do
     match 'products/activate/:id' => "products#activate"
     get 'products/product_month' => "products#product_month"
     post 'products/set_prod_month' => 'products#set_prod_month'
+    get 'related_content/products'=>'related_content#products'
+    get 'related_content/recipes'=>'related_content#recipes'
+    match 'related_content/products_related/:id'=>'related_content#products_related'
 
+    resources :related_contents  
     resources :products  
     resources :categories	
     resources :clients

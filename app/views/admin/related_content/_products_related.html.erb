@@ -1,0 +1,14 @@
+<div class="large-4 columns">
+ 	<%= select_tag 'products[]', options_for_select(@products.map {|p| [p.name, p.id]}), 
+:multiple => true, :size => 20 %>
+</div>	
+<div class="large-2 columns" style="text-align: center">
+	<button id="add_items_btn" class="small" >></button><br/>
+	<button id="rem_items_btn" class="small" ><</button>
+</div>
+<div class="large-4 columns">
+	 	<%= select_tag 'selected_products[]', options_for_select(@existing_relations.map {|p| [p.name, p.id]}), 
+	:multiple => true, :size => 20 %> 
+</div>		
+<div class="large-2 columns"/>
+

@@ -1,0 +1,15 @@
+  <%= form_for [:admin, @related_content], :html => {:class => 'custom',"data-abide" => ''} do |f| %>
+<div class="row">
+	<div class="large-12 columns">
+		<input type="text" name="2" id="search_products"  style="z-index:999;" class="field" value="Search for..." />		
+	</div>
+</div>
+<div class="row">  
+	<div id="teste"/>
+</div>
+
+<input type="hidden" id="selected_product_id"/>
+
+<%= f.submit 'submit', :class => 'radius button' %>
+</form>
+<%end%>
