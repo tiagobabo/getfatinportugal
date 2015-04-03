@@ -7,7 +7,7 @@ end
 
 def products 
   @all_products = Product.active  
- @related_content =RelatedContent.new
+  @related_content =RelatedContent.new
 end
 
 
